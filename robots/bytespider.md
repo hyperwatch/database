@@ -101,7 +101,7 @@ Reverse DNS hostnames:
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `Bytespider`. `src/modules/identity.js` sets the identity
-`Bytespider` when the reverse-confirmed hostname ends with `.crawl.bytedance.com` or
+`Bytespider` when the reverse DNS hostname (not confirmed by a forward lookup) ends with `.crawl.bytedance.com` or
 `.ap-southeast-1.compute.amazonaws.com`. These suffixes are not documented by ByteDance. The second
 one matches any AWS EC2 instance in the Singapore region, so it does not prove that a request comes
 from ByteDance.

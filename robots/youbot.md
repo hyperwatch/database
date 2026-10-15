@@ -94,7 +94,8 @@ https://you.com/.well-known/http-message-signatures-directory. No ASN is documen
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses both strings above as family `YouBot`. Hyperwatch sets the
-identity `You.com` when the verified hostname ends with `.search.you.com`. It does not check the
+identity `You.com` when the reverse DNS hostname ends with `.search.you.com`, without the forward lookup
+You.com documents. It does not check the
 `68.67.112.0/24` range or Web Bot Auth signatures.
 
 ## Misc

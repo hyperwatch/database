@@ -83,7 +83,7 @@ Reverse DNS hostnames:
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `MJ12bot`. Hyperwatch sets the identity
-`Majestic` when the verified hostname ends with `.mj12bot.com`. This hostname suffix is not
+`Majestic` when the reverse DNS hostname ends with `.mj12bot.com`, without a forward lookup to confirm it. This hostname suffix is not
 documented by Majestic. Hyperwatch also sets `Majestic` for requests with no other identity whose
 header signature is `3d36aa5118581a33dd2704f3b0c22a0b`.
 

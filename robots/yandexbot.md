@@ -95,7 +95,8 @@ Networks of the addresses verified by reverse DNS (the operator publishes no ran
 
 `@hyperwatch/useragent` returns the family `YandexBot`. `src/modules/identity.js` sets the identity
 `Yandex` for the families `YandexBot`, `YandexImages`, `YandexMobileBot` and
-`YandexAccessibilityBot` when the reverse-confirmed hostname ends with `.yandex.com`. Hostnames in
+`YandexAccessibilityBot` when the reverse DNS hostname ends with `.yandex.com`, without the forward lookup Yandex
+documents. Hostnames in
 `yandex.ru` or `yandex.net`, which Yandex also documents, are not accepted by that rule.
 
 ## Misc
