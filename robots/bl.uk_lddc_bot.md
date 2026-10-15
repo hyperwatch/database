@@ -12,7 +12,7 @@ verification:
   hostnames: []
 hyperwatch:
   family: bl.uk lddc bot
-  identity: null
+  identity: British Library
 last_checked: 2026-10-15
 ---
 
@@ -68,12 +68,11 @@ None published. No hostnames or ASN are documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `bl.uk lddc bot`. The rule in
-`src/modules/identity.js` is for the family `bl.uk ldfc bot` (`ldfc`, not `lddc`), so the
-documented crawler never gets the identity `British Library`. No source found documents a
-`bl.uk_ldfc_bot` user agent. For a request that did parse as `bl.uk ldfc bot`, the rule checks that
-the reverse DNS name ends with `.bl.uk`, without a forward lookup. The British Library does not
-document this hostname.
+`@hyperwatch/useragent` parses the string above as family `bl.uk lddc bot`. In Hyperwatch `main`
+(after 5.3.3), `src/modules/identity.js` sets the identity `British Library` for the families
+`bl.uk lddc bot` and `bl.uk ldfc bot` when the unconfirmed hostname ends with `.bl.uk`. The British
+Library does not document this hostname, and no source found documents a `bl.uk_ldfc_bot` user
+agent.
 
 ## Misc
 

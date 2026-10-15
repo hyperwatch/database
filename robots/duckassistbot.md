@@ -12,7 +12,7 @@ verification:
   hostnames: []
 hyperwatch:
   family: DuckAssistBot
-  identity: null
+  identity: DuckDuckGo
 last_checked: 2026-10-15
 ---
 
@@ -84,8 +84,13 @@ https://duckduckgo.com/duckduckbot.json. No IPv6 entries, reverse DNS names or A
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `DuckAssistBot`. `src/modules/identity.js` has no rule
-for it, so Hyperwatch sets no identity. A rule could use the published IP list.
+`@hyperwatch/useragent` returns the family `DuckAssistBot`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `DuckDuckGo` for the families `DuckDuckGo` (the
+DuckDuckGo browser's user agent), `DuckDuckBot`, `DuckDuckBot-Https`, `DuckAssistBot` and
+`DuckDuckGo-Favicons-Bot` on an unconfirmed hostname ending with `.duckduckgo.com` or the published
+lists (`duckduckbot-ips.json` and `duckassistbot-ips.json`, joined). DuckDuckGo documents no reverse
+DNS names: the hostname suffix is Hyperwatch's own, and whoever controls an address's reverse DNS
+can pass it.
 
 ## Misc
 

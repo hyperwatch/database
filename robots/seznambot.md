@@ -78,11 +78,11 @@ not say to confirm the name with a forward lookup. `2a02:598::/32` is registered
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `SeznamBot`. `src/modules/identity.js` sets the
-identity `Seznam` when the unconfirmed hostname ends with `.seznam.cz`, or when the address is in
-the inline range `2a02:598::/32`. That range is Seznam's whole IPv6 allocation, wider than the
-published crawler prefixes. The IPv4 addresses are only matched through the unconfirmed hostname,
-and the JSON list is not used.
+`@hyperwatch/useragent` returns the family `SeznamBot`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `Seznam` on an unconfirmed hostname ending with
+`.seznam.cz`, the inline range `2a02:598::/32` or the published list (`seznambot-ips.json`). The
+inline range is Seznam's whole IPv6 allocation, wider than the published crawler prefixes. The
+hostname is not confirmed with a forward lookup, which Seznam does not mention either.
 
 ## Misc
 

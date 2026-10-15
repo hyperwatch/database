@@ -83,10 +83,11 @@ held 39 IPv4 prefixes and was dated 2026-01-02. No reverse DNS hostnames or ASN 
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses all the strings above as family `OAI-SearchBot`. Hyperwatch sets
-the identity `OpenAI SearchBot` when the client address is inside the ranges of
+`@hyperwatch/useragent` parses all the strings above as family `OAI-SearchBot`. Hyperwatch sets the
+identity `OpenAI SearchBot` when the client address is inside the ranges of
 `src/data/openai-searchbot-ips.json`, a copy of OpenAI's list refreshed by
-`scripts/fetch-openai-ips.js`.
+`node scripts/fetch-ips.js` (in Hyperwatch `main` (after 5.3.3), 39 ranges, the same as the
+published list on 2026-10-15).
 
 ## Misc
 

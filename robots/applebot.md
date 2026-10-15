@@ -107,10 +107,11 @@ No ASN is documented by Apple.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the user agent as family `Applebot`. In `src/modules/identity.js`,
-Hyperwatch sets identity `Applebot` when the reverse DNS hostname ends with `.apple.com`. This
-check uses the plain reverse DNS hostname, not the forward-confirmed one, and does not use the
-published IP list.
+`@hyperwatch/useragent` parses the user agent as family `Applebot`. In Hyperwatch `main` (after
+5.3.3), `src/modules/identity.js` sets the identity `Applebot` on an unconfirmed hostname ending
+with `.apple.com` or the published list (`applebot-ips.json`). Apple documents a forward lookup back
+to the same address; the hostname is still not confirmed, and its suffix is wider than the
+documented `applebot.apple.com`.
 
 ## Misc
 

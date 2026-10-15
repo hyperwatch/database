@@ -103,7 +103,8 @@ Reverse DNS hostnames:
 
 `@hyperwatch/useragent` parses the user agent as family `KeenableBot`. In `src/modules/identity.js`,
 Hyperwatch sets identity `Keenable` when the address is in `src/data/keenablebot-ips.json`, a copy
-of the published list refreshed by `node scripts/fetch-keenable-ips.js`.
+of the published list refreshed by `node scripts/fetch-ips.js` (in Hyperwatch `main` (after 5.3.3),
+30 ranges, the same as the published list on 2026-10-15).
 
 ## Misc
 

@@ -73,10 +73,10 @@ documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `SofyaBot`. Hyperwatch sets the identity
-`Sofya` when the reverse DNS name ends with `.sofya.co`. The rule uses the unconfirmed hostname, not
-the forward-confirmed one, although Sofya documents forward-confirmed reverse DNS: whoever controls
-an address's reverse DNS can pass it. It does not use the IP list.
+`@hyperwatch/useragent` parses the string above as family `SofyaBot`. In Hyperwatch `main` (after
+5.3.3), `src/modules/identity.js` sets the identity `Sofya` on an unconfirmed hostname ending with
+`.sofya.co` or the published list (`sofyabot-ips.json`). Sofya documents forward-confirmed reverse
+DNS; the hostname is still not confirmed: whoever controls an address's reverse DNS can pass it.
 
 ## Misc
 

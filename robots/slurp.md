@@ -12,7 +12,7 @@ verification:
   hostnames: []
 hyperwatch:
   family: Yahoo! Slurp
-  identity: null
+  identity: Yahoo
 last_checked: 2026-10-15
 ---
 
@@ -64,11 +64,11 @@ this.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Yahoo! Slurp`. `src/modules/identity.js` has a rule
-for the family `Yahoo` (unconfirmed hostname ending with `.crawl.yahoo.net`), which this user agent
-doesn't produce, and no "Hostname only" fallback for Yahoo. So Hyperwatch sets no identity for
-Slurp. The rule would also use the unconfirmed hostname where the 2007 instructions describe a
-forward-confirmed one.
+`@hyperwatch/useragent` returns the family `Yahoo! Slurp`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `Yahoo` for the families `Yahoo` and `Yahoo! Slurp` when
+the unconfirmed hostname ends with `.crawl.yahoo.net`. The 2007 instructions describe a
+forward-confirmed check; the rule does not use the confirmed hostname. No current Yahoo page
+documents the suffix.
 
 ## Misc
 

@@ -13,7 +13,7 @@ verification:
     - .rootcrawl.org
 hyperwatch:
   family: RootCrawl
-  identity: null
+  identity: RootCrawl
 last_checked: 2026-10-15
 ---
 
@@ -87,11 +87,11 @@ to the same address. No ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses both strings above as family `RootCrawl`. `src/modules/identity.js`
-has a rule for the family `RootCrawl-Crawler`, which no documented user agent produces, so the
-documented crawler never gets the identity `RootCrawl`. For a request that did parse as
-`RootCrawl-Crawler`, the rule checks that the reverse DNS name ends with `.rootcrawl.org`, without
-a forward lookup. It does not use the signature, the IP list or the forward-confirmed hostname.
+`@hyperwatch/useragent` parses both strings above as family `RootCrawl`. In Hyperwatch `main` (after
+5.3.3), `src/modules/identity.js` sets the identity `RootCrawl` for the families `RootCrawl` and
+`RootCrawl-Crawler` when the unconfirmed hostname ends with `.rootcrawl.org`. RootCrawl documents a
+forward-confirmed check; the rule does not use the confirmed hostname. It does not use the published
+IP list or the Web Bot Auth signature, which RootCrawl recommends.
 
 ## Misc
 

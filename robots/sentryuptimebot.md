@@ -55,10 +55,10 @@ change without notice". No reverse DNS hostname or ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `SentryUptimeBot`. `src/modules/identity.js` sets the
-identity `Sentry` when the reverse DNS hostname ends with `.googleusercontent.com`. This is a cloud
-hostname: any Google Cloud customer passes it. The suffix is not documented by Sentry, and
-Hyperwatch does not use the published list.
+`@hyperwatch/useragent` returns the family `SentryUptimeBot`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `Sentry` on a cloud hostname ending with
+`.googleusercontent.com` or the published list (`sentry-uptime-ips.json`). The cloud hostname is not
+documented by Sentry, and any Google Cloud customer passes it.
 
 ## Misc
 

@@ -79,10 +79,9 @@ Cốc Cốc documents a forward-confirmed reverse DNS check: the reverse DNS nam
 `coccocbot-web` strings) and `Coc Coc Bot Image`. `coccocbot-fast`, `coccocbot-ads` and
 `coccocbot-shopping` parse as their own token (`coccocbot-fast` and so on).
 
-`src/modules/identity.js` sets the identity `Coc Coc` for the first three families when the
-unconfirmed hostname ends with `.coccoc.com`. Cốc Cốc documents a forward-confirmed check; the rule
-does not use the confirmed hostname. The fast, ads and shopping robots have no rule, so they get no
-identity.
+In Hyperwatch `main` (after 5.3.3), `src/modules/identity.js` sets the identity `Coc Coc` for all
+six families when the unconfirmed hostname ends with `.coccoc.com`. Cốc Cốc documents a
+forward-confirmed check; the rule does not use the confirmed hostname.
 
 ## Misc
 

@@ -70,10 +70,10 @@ but that its requests "do not carry signatures yet". No reverse DNS hostname or 
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Keenable-User`. In `src/modules/identity.js`,
-Hyperwatch sets the identity `Keenable` when the address is in `src/data/keenable-user-ips.json`,
-written by `node scripts/fetch-keenable-ips.js` from the published list. On 2026-10-15 it held the
-same 7 addresses as the published list.
+`@hyperwatch/useragent` returns the family `Keenable-User`. In `src/modules/identity.js`, Hyperwatch
+sets the identity `Keenable` when the address is in `src/data/keenable-user-ips.json`, written by
+`node scripts/fetch-ips.js` from the published list. In Hyperwatch `main` (after 5.3.3) it holds the
+same 7 addresses as the published list on 2026-10-15.
 
 ## Misc
 

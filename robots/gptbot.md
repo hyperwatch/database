@@ -81,10 +81,10 @@ No reverse DNS hostnames are published.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `GPTBot` for all three strings.
-`src/modules/identity.js` sets the identity `OpenAI GPTBot` when the address is in
-`src/data/gptbot-ips.json`, a copy of OpenAI's list refreshed by `scripts/fetch-openai-ips.js`
-(18 entries on 2026-10-15).
+`@hyperwatch/useragent` returns the family `GPTBot` for all three strings. `src/modules/identity.js`
+sets the identity `OpenAI GPTBot` when the address is in `src/data/gptbot-ips.json`, a copy of
+OpenAI's list refreshed by `node scripts/fetch-ips.js` (in Hyperwatch `main` (after 5.3.3), 18
+ranges, the same as the published list on 2026-10-15).
 
 ## Misc
 

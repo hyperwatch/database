@@ -80,8 +80,9 @@ yet available for IPv6. The addresses are in AWS; an `amazonaws.com` hostname al
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `CCBot`. `src/modules/identity.js` sets the identity
-`Common Crawl` when the address is in `src/data/ccbot-ips.json` (5 ranges, copied from
-`ccbot.json`). It does not use reverse DNS for CCBot.
+`Common Crawl` when the address is in `src/data/ccbot-ips.json`, written from `ccbot.json` by
+`node scripts/fetch-ips.js` (in Hyperwatch `main` (after 5.3.3), 5 ranges, the same as the published
+list on 2026-10-15). It does not use reverse DNS for CCBot.
 
 ## Misc
 

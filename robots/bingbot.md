@@ -82,10 +82,12 @@ Tools also has a "Verify Bingbot" tool (https://www.bing.com/toolbox/verify-bing
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `BingBot`. `src/modules/identity.js` sets the identity
-`Bing` for the families `BingBot` and `BingPreview` when the reverse DNS hostname ends with
-`.search.msn.com`, without a forward lookup to confirm it. It also sets `Bing` for any request whose hostname ends with `.search.msn.com`
-when no other rule matched. The IP list is not used.
+`@hyperwatch/useragent` returns the family `BingBot`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `Bing` for the families `BingBot` and `BingPreview` on
+an unconfirmed hostname ending with `.search.msn.com` or the published list (`bingbot-ips.json`). It
+also sets `Bing` for any request whose unconfirmed hostname ends with `.search.msn.com` when no
+other rule matched. Bing documents a forward lookup back to the same address; the hostname is still
+not confirmed.
 
 ## Misc
 

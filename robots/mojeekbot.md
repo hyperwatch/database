@@ -76,9 +76,10 @@ with an `ipv4Prefix` key. On 2026-10-15 it held 1 IPv4 prefix (`5.102.173.64/28`
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `MojeekBot`. Hyperwatch sets the
-identity `Mojeek` when the reverse DNS hostname ends with `.mojeek.com`, without the forward lookup Mojeek
-recommends. It does not use the IP list.
+`@hyperwatch/useragent` parses the string above as family `MojeekBot`. In Hyperwatch `main` (after
+5.3.3), `src/modules/identity.js` sets the identity `Mojeek` on an unconfirmed hostname ending with
+`.mojeek.com` or the published list (`mojeekbot-ips.json`). Mojeek recommends a forward-confirmed
+check; the hostname is still not confirmed.
 
 ## Misc
 

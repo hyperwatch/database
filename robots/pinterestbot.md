@@ -73,15 +73,16 @@ has no fixed range. No list file and no ASN are published.
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `Pinterestbot` for the second and third strings above,
-and `Pinterest` for the first one. `src/modules/identity.js` sets the identity `Pinterest` for the
-family `Pinterestbot` when the reverse DNS hostname ends with `.pinterest.com`.
+and `Pinterest` for the first one. In Hyperwatch `main` (after 5.3.3), `src/modules/identity.js`
+sets the identity `Pinterest` for the families `Pinterest` and `Pinterestbot` when the unconfirmed
+hostname ends with `.pinterest.com`. The parser also returns `Pinterest` for Pinterest's Android app
+and some versions of its iOS app, whose in-app browsers are used by people.
 
 Where it falls short of the documentation:
 
 - it reads the unconfirmed hostname, not the forward-confirmed one;
 - it does not accept `.pinterestcrawler.com`;
-- it does not use the US range;
-- the `Pinterest/0.2` user agent (family `Pinterest`) never gets an identity.
+- it does not use the US range `54.236.1.0/24`.
 
 ## Misc
 

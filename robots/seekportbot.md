@@ -67,13 +67,14 @@ forward lookup, and no name for the other 5. Seekport does not document this dom
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `SeekportBot`. `src/modules/identity.js` sets the
-identity `Seekport` when the unconfirmed hostname ends with `.007ac9.net`, a suffix Seekport does
-not document and that some listed addresses don't have. The published IP list is not used.
+`@hyperwatch/useragent` returns the family `SeekportBot`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `Seekport` on an unconfirmed hostname ending with
+`.007ac9.net` or the published list (`seekportbot-ips.json`). The suffix is not documented by
+Seekport, and the hostname is not confirmed with a forward lookup.
 
 The rule also covers the family `Seekport Crawler` (for example
-`Mozilla/5.0 (compatible; Seekport Crawler; http://seekport.com/)`) with a cloud hostname: any
-unconfirmed hostname ending with `.clients.your-server.de` (any Hetzner customer) passes. Seekport's
+`Mozilla/5.0 (compatible; Seekport Crawler; http://seekport.com/)`) on a cloud hostname ending with
+`.clients.your-server.de` (any Hetzner customer passes) or the same published list. Seekport's
 current page does not mention that user agent.
 
 ## Misc

@@ -82,9 +82,8 @@ once nested ones were removed (50 IPv4, 9 IPv6). No reverse DNS hostname is docu
 `@hyperwatch/useragent` returns the family `meta-externalagent` for both strings. In
 `src/modules/identity.js`, Hyperwatch sets the identity `Meta` for the families
 `meta-externalagent`, `meta-webindexer` and `Hyperlink` when the address is in
-`src/data/meta-ips.json`, the AS32934 routes from RADb written by `node scripts/fetch-meta-ips.js`.
-On 2026-10-15 the file held 55 ranges; the live query had 4 more (`57.141.26.0/24` to
-`57.141.29.0/24`), none removed.
+`src/data/meta-ips.json`, the AS32934 routes from RADb written by `node scripts/fetch-ips.js`. In
+Hyperwatch `main` (after 5.3.3) the file holds 59 ranges, the same as the live query on 2026-10-15.
 
 ## Misc
 

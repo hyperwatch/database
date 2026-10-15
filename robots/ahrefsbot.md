@@ -83,10 +83,12 @@ dated 2026-09-03. No ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `AhrefsBot`. Hyperwatch sets the
-identity `Ahrefs` when the unconfirmed hostname ends with `.ahrefs.com`. It does not confirm the
-hostname with a forward lookup, does not accept `.ahrefs.net`, which Ahrefs documents, and does
-not use the published IP list.
+`@hyperwatch/useragent` parses the string above as family `AhrefsBot`. In Hyperwatch `main` (after
+5.3.3), `src/modules/identity.js` sets the identity `Ahrefs` for the families `AhrefsBot` and
+`AhrefsSiteAudit` on an unconfirmed hostname ending with `.ahrefs.com` or the published list
+(`ahrefs-ips.json`, fetched from `crawler-ip-ranges`). The hostname is not confirmed with a forward
+lookup, and `.ahrefs.net`, which Ahrefs documents, is not accepted: such an address passes only
+through the list.
 
 ## Misc
 

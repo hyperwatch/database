@@ -79,9 +79,10 @@ No ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses both strings above as family `Yeti`. `src/modules/identity.js` sets
-the identity `Naver` when the unconfirmed hostname ends with `.naver.com`. Naver documents a
-forward-confirmed check and an IP list; the rule uses neither.
+`@hyperwatch/useragent` parses both strings above as family `Yeti`. In Hyperwatch `main` (after
+5.3.3), `src/modules/identity.js` sets the identity `Naver` on an unconfirmed hostname ending with
+`.naver.com` or the published list (`naverbot-ips.json`). Naver documents a forward-confirmed check;
+the hostname is still not confirmed.
 
 ## Misc
 

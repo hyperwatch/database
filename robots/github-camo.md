@@ -66,17 +66,15 @@ others, with no date in the file). None of the arrays is named for Camo.
 `github-camo`, and `Camo Asset Proxy` for the open-source default. `src/modules/identity.js` sets
 the identity `GitHub Camo` for the family `github-camo` when the address is in
 `src/data/github-ips.json` (published list: the `hooks`, `web`, `api`, `git`, `pages`, `packages`,
-`importer`, `github_enterprise_importer` and `copilot` ranges of `api.github.com/meta`, 136
-prefixes, refreshed with `node scripts/fetch-github-ips.js`) or in the inline range
-`9.234.0.0/17`.
+`importer`, `github_enterprise_importer` and `copilot` ranges of `api.github.com/meta`, refreshed
+with `node scripts/fetch-ips.js`; in Hyperwatch `main` (after 5.3.3) 139 prefixes, the same as the
+published list on 2026-10-15) or in the inline range `9.234.0.0/17`.
 
 Where it falls short:
 
 - GitHub does not say that Camo fetches from these ranges: the choice of arrays is Hyperwatch's own.
 - `9.234.0.0/17` is listed by GitHub under `actions`. Actions runners there run any GitHub user's
   workflows, which can send the same user agent.
-- On 2026-10-15 `api.github.com/meta` listed 139 prefixes under those arrays: the 3 new ones are
-  `hooks` ranges inside `9.234.0.0/17`, so already accepted.
 
 ## Misc
 

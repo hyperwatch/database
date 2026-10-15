@@ -85,10 +85,11 @@ No ASN is documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `AIWebIndex` for the first and third strings and
-`AIWebIndex-Agent` for the second. In `src/modules/identity.js`, Hyperwatch sets the identity
-`Lyrenth` for both families when the reverse DNS hostname ends with `.lyrenth.com`. The code comment
-says forward-confirmed, but the rule reads `hostname`, not `verifiedHostname`, so the forward lookup
-Lyrenth documents is not checked. Hyperwatch uses neither the IP list nor the signatures.
+`AIWebIndex-Agent` for the second. In Hyperwatch `main` (after 5.3.3), `src/modules/identity.js`
+sets the identity `Lyrenth` for both families on an unconfirmed hostname ending with `.lyrenth.com`
+or the published list (`lyrenth-ips.json`). The code comment says forward-confirmed, but the rule
+reads `hostname`, not `verifiedHostname`, so the forward lookup Lyrenth documents is not checked.
+The Web Bot Auth signatures are not checked either.
 
 ## Misc
 

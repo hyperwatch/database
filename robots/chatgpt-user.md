@@ -72,9 +72,9 @@ documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `ChatGPT-User`. Hyperwatch sets the
-identity `ChatGPT` when the client address is inside the ranges of
-`src/data/chatgpt-user-ips.json`, a copy of OpenAI's list refreshed by
-`scripts/fetch-openai-ips.js`.
+identity `ChatGPT` when the client address is inside the ranges of `src/data/chatgpt-user-ips.json`,
+a copy of OpenAI's list refreshed by `node scripts/fetch-ips.js` (in Hyperwatch `main` (after
+5.3.3), 234 ranges, the same as the published list on 2026-10-15).
 
 ## Misc
 

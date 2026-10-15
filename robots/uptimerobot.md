@@ -62,10 +62,10 @@ ASN is documented. UptimeRobot also says checks can be recognized by their user 
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `UptimeRobot`. `src/modules/identity.js` sets the
-identity `Uptime Robot` when the reverse DNS hostname ends with `.uptimerobot.com`. This reads the
-unconfirmed hostname, the suffix is not documented by UptimeRobot, and Hyperwatch does not use the
-published list.
+`@hyperwatch/useragent` returns the family `UptimeRobot`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `Uptime Robot` on an unconfirmed hostname ending with
+`.uptimerobot.com` or the published list (`uptimerobot-ips.json`, IPv4 and IPv6). The hostname
+suffix is not documented by UptimeRobot and is not confirmed with a forward lookup.
 
 ## Misc
 

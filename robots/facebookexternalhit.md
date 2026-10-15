@@ -89,9 +89,9 @@ documented.
 `@hyperwatch/useragent` returns the family `FacebookBot` for both strings above. In
 `src/modules/identity.js`, `FacebookBot` gets the identity `Facebook` when the reverse DNS hostname
 ends with `.fbsv.net`, or when the address is in `src/data/meta-ips.json`. That file holds the
-AS32934 routes from RADb (55 ranges, IPv4 and IPv6), refreshed with
-`node scripts/fetch-meta-ips.js`. The `.fbsv.net` suffix is Hyperwatch's own rule, not documented by
-Meta.
+AS32934 routes from RADb, refreshed with `node scripts/fetch-ips.js`: in Hyperwatch `main` (after
+5.3.3) 59 ranges, IPv4 and IPv6, the same as the live query on 2026-10-15. The `.fbsv.net` suffix is
+Hyperwatch's own rule, not documented by Meta.
 
 ## Misc
 

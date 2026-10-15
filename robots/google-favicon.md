@@ -72,9 +72,9 @@ belongs to Google Cloud customers' App Engine apps.
 `@hyperwatch/useragent` returns the family `Google Favicon`. In `src/modules/identity.js`,
 Hyperwatch sets the identity `Google` for the families `Google`, `GoogleDocs`, `docs.google.com`,
 `Google Favicon` and `GoogleImageProxy` when the reverse DNS hostname (not forward-confirmed) ends
-with `.google.com`. It uses no address list for them: `src/data/google-user-triggered-fetchers-ips.json`
-(Google's `user-triggered-fetchers.json`, fetched by `scripts/fetch-google-ips.js`) is not read by
-`identity.js`.
+with `.google.com`. It uses no address list for them:
+`src/data/google-user-triggered-fetchers-ips.json` (Google's `user-triggered-fetchers.json`, fetched
+by `node scripts/fetch-ips.js`) is not read by `identity.js` in Hyperwatch `main` (after 5.3.3).
 
 ## Misc
 

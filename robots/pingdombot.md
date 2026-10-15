@@ -63,16 +63,11 @@ hostname. No ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `PingdomBot` for the three forms above.
-`src/modules/identity.js` sets the identity `Pingdom` when the reverse DNS hostname ends with
-`.pingdom.com`.
-
-Where it falls short:
-
-- it reads the unconfirmed hostname, not the forward-confirmed one;
-- reverse DNS is not a method Pingdom documents;
-- probes named under `cloud.solarwinds.com` or without a name in the feed do not pass;
-- Hyperwatch does not use the published lists.
+`@hyperwatch/useragent` returns the family `PingdomBot` for the three forms above. In Hyperwatch
+`main` (after 5.3.3), `src/modules/identity.js` sets the identity `Pingdom` on an unconfirmed
+hostname ending with `.pingdom.com` or the published list (`pingdom-ips.json`, the IPv4 and IPv6
+probe lists joined). Reverse DNS is not a method Pingdom documents, and the hostname is not
+confirmed with a forward lookup: whoever controls an address's reverse DNS can pass it.
 
 ## Misc
 

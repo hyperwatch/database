@@ -80,10 +80,11 @@ No ASN is documented by Babbar.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the user agent as family `Barkrowler`. In `src/modules/identity.js`,
-Hyperwatch sets identity `Babbar` when the reverse DNS hostname ends with `.babbar.eu`. This check
-uses the plain reverse DNS hostname, not the forward-confirmed one, and does not use the published
-IP list.
+`@hyperwatch/useragent` parses the user agent as family `Barkrowler`. In Hyperwatch `main` (after
+5.3.3), `src/modules/identity.js` sets the identity `Babbar` on an unconfirmed hostname ending with
+`.babbar.eu` or the published list (`barkrowler-ips.json`). The hostname is not confirmed with a
+forward lookup, which Babbar does not mention either: whoever controls an address's reverse DNS can
+pass it.
 
 ## Misc
 

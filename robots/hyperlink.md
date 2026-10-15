@@ -67,13 +67,13 @@ None published for this robot.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Hyperlink` for the string above and for strings
-starting with `Hyperlink/<version>` (for example `Hyperlink/2.8`). `src/modules/identity.js` sets
-the identity `Meta` when the address is in `src/data/meta-ips.json` (published list: the routes of
-Meta's network AS32934 in RADb, 55 ranges, IPv4 and IPv6, refreshed with
-`node scripts/fetch-meta-ips.js`). Meta documents this check for its own crawlers, not for
-`Hyperlink`: the identity says the request came from Meta's network, not that Meta documents the
-robot.
+`@hyperwatch/useragent` returns the family `Hyperlink` for the string above and for strings starting
+with `Hyperlink/<version>` (for example `Hyperlink/2.8`). `src/modules/identity.js` sets the
+identity `Meta` when the address is in `src/data/meta-ips.json` (published list: the routes of
+Meta's network AS32934 in RADb, refreshed with `node scripts/fetch-ips.js`; in Hyperwatch `main`
+(after 5.3.3) 59 ranges, IPv4 and IPv6, the same as the live query on 2026-10-15). Meta documents
+this check for its own crawlers, not for `Hyperlink`: the identity says the request came from Meta's
+network, not that Meta documents the robot.
 
 ## Misc
 

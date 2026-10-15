@@ -123,11 +123,13 @@ Common crawlers always respect `robots.txt` for automatic crawls. Special-case c
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `Googlebot` for the `Googlebot`, `Googlebot/2.1` and
-smartphone strings, and `Googlebot-Image` for `Googlebot-Image/1.0`. In `src/modules/identity.js`,
-`Googlebot` gets the identity `Googlebot` when the reverse DNS hostname ends with `.googlebot.com`.
-`Googlebot-Image` has no rule of its own, but any request whose hostname ends with `.googlebot.com`
-also gets `Googlebot` when no other rule matched. These rules read the reverse DNS hostname, not the
-forward-confirmed one. The IP list is not used.
+smartphone strings, and `Googlebot-Image` for `Googlebot-Image/1.0`. In Hyperwatch `main` (after
+5.3.3), `src/modules/identity.js` sets the identity `Googlebot` for the family `Googlebot` on an
+unconfirmed hostname ending with `.googlebot.com` or the published list (`googlebot-ips.json`,
+Google's `common-crawlers.json`). `Googlebot-Image` has no rule of its own: it gets `Googlebot` only
+through the fallback for any request whose unconfirmed hostname ends with `.googlebot.com` when no
+other rule matched, and the list is not checked for it. Google documents a forward lookup back to
+the same address; the hostname is still not confirmed.
 
 ## Misc
 

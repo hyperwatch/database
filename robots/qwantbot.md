@@ -12,7 +12,7 @@ verification:
   hostnames:
     - .qwant.com
 hyperwatch:
-  family: help.qwant.com
+  family: Qwantbot
   identity: Qwant
 last_checked: 2026-10-15
 ---
@@ -43,6 +43,12 @@ Mozilla/5.0 (compatible; Qwantbot-news/2.0; +https://help.qwant.com/bot/)
 
 The constant element is the single word `Qwantbot`.
 
+The form seen in traffic has no worker ID:
+
+```
+Mozilla/5.0 (compatible; Qwantbot/1.0; +https://help.qwant.com/bot/)
+```
+
 ## Observed HTTP headers
 
 No requests from this robot were captured with their headers yet.
@@ -70,14 +76,18 @@ Qwant's own reverse DNS example is not in that prefix. No ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `help.qwant.com` for the `Qwantbot` example and
-`Qwantbot-news` for the news one.
+`@hyperwatch/useragent` returns the family `Qwantbot` for `Qwantbot/1.0` (the form seen in traffic),
+`help.qwant.com` for the documented `Qwantbot/1.0_12345` example, and `Qwantbot-news` for the news
+one. The `help.qwant.com` family is a parser issue:
+https://github.com/hyperwatch/useragent/issues/226.
 
-`src/modules/identity.js` has a rule for the families `Qwantify` and `Qwantify-dev` (unconfirmed
-hostname ending with `.qwant.com`), which the documented user agents don't produce. They get the
-identity `Qwant` from the "Hostname only" fallback instead: any request, whatever its user agent,
-whose unconfirmed hostname ends with `.qwant.com`. Qwant documents a forward-confirmed check; the
-rule does not use the confirmed hostname, and the IP list is not used.
+In Hyperwatch `main` (after 5.3.3), `src/modules/identity.js` sets the identity `Qwant` for the
+families `Qwantify`, `Qwantify-dev`, `Qwantbot` and `Qwantbot-news` when the unconfirmed hostname
+ends with `.qwant.com` or the address is in the published list `src/data/qwantbot-ips.json`
+(Qwant's qwantbot.json). The family `help.qwant.com` is not in the rule; such requests get the
+identity `Qwant` only from the "Hostname only" fallback: any request, whatever its user agent, whose
+unconfirmed hostname ends with `.qwant.com`. Qwant documents a forward-confirmed check; neither
+check uses the confirmed hostname.
 
 ## Misc
 

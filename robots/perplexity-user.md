@@ -68,8 +68,8 @@ ASN is documented.
 
 `@hyperwatch/useragent` returns the family `Perplexity-User`. In `src/modules/identity.js`,
 Hyperwatch sets the identity `Perplexity` when the address is in
-`src/data/perplexity-user-ips.json`, written by `node scripts/fetch-perplexity-ips.js` from the
-published list. On 2026-10-15 it held the same 4 prefixes as the published list.
+`src/data/perplexity-user-ips.json`, written by `node scripts/fetch-ips.js` from the published list.
+In Hyperwatch `main` (after 5.3.3) it holds the same 4 prefixes as the published list.
 
 ## Misc
 

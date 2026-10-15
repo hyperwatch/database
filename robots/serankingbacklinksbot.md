@@ -74,10 +74,12 @@ On 2026-10-15, the first addresses of the IPv4 list had reverse DNS names under
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `SERankingBacklinksBot`. Hyperwatch sets
-the identity `SE Ranking` when the unconfirmed hostname ends with `.blex.seranking.com`. It does
-not confirm the hostname with a forward lookup and does not use the published address list. The
-`blex` subdomain is narrower than the documented `seranking.com`.
+`@hyperwatch/useragent` parses the string above as family `SERankingBacklinksBot`. In Hyperwatch
+`main` (after 5.3.3), `src/modules/identity.js` sets the identity `SE Ranking` on an unconfirmed
+hostname ending with `.blex.seranking.com` or the published list (`seranking-ips.json`). The list is
+the default response, IPv4 only: the IPv6 addresses (`?v=6`) are not in it, so they pass only
+through the hostname. The hostname is not confirmed with a forward lookup, and the `blex` subdomain
+is narrower than the documented `seranking.com`.
 
 ## Misc
 

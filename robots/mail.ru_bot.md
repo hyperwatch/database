@@ -64,11 +64,10 @@ None found. No Mail.ru page with an IP list, reverse DNS hostnames or ASN could 
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the CL SEO string as family `Mail.RU Bot` and the Known Agents
-string as `Mail.RU Bot Robots`. `src/modules/identity.js` sets the identity `Mail.RU` for the
-families `Mail.RU Bot`, `Mail.RU Bot Img` and `Mail.RU Bot Fast` when the unconfirmed hostname ends
-with `.go.mail.ru`. The family `Mail.RU Bot Robots` is not in that list, so requests with the Known
-Agents string are never verified. Mail.ru's suffix could not be checked against its documentation,
-and the check is not forward-confirmed.
+string as `Mail.RU Bot Robots`. In Hyperwatch `main` (after 5.3.3), `src/modules/identity.js` sets
+the identity `Mail.RU` for the families `Mail.RU Bot`, `Mail.RU Bot Img`, `Mail.RU Bot Fast` and
+`Mail.RU Bot Robots` when the unconfirmed hostname ends with `.go.mail.ru`. Mail.ru's suffix could
+not be checked against its documentation, and the check is not forward-confirmed.
 
 ## Misc
 

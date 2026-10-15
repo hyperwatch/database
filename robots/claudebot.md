@@ -96,11 +96,11 @@ No reverse DNS hostnames are published. The crawlers run on shared cloud infrast
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `ClaudeBot` for both strings.
-`src/modules/identity.js` sets the identity `Claude` for the families `ClaudeBot`, `Claude-User`,
-`Claude-SearchBot`, `Claude-Web` and `anthropic-ai` when the address is in
-`src/data/claude-bot-ips.json`, a copy of Anthropic's list refreshed by
-`scripts/fetch-anthropic-ips.js`. On 2026-10-15 the copy had 28 entries and the published list 38.
+`@hyperwatch/useragent` returns the family `ClaudeBot` for both strings. `src/modules/identity.js`
+sets the identity `Claude` for the families `ClaudeBot`, `Claude-User`, `Claude-SearchBot`,
+`Claude-Web` and `anthropic-ai` when the address is in `src/data/claude-bot-ips.json`, a copy of
+Anthropic's list refreshed by `node scripts/fetch-ips.js`. In Hyperwatch `main` (after 5.3.3) the
+copy holds 38 ranges, the same as the published list on 2026-10-15.
 
 ## Misc
 

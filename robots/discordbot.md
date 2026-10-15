@@ -68,10 +68,10 @@ previews. No reverse DNS hostname or ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Discordbot`. `src/modules/identity.js` sets the identity
-`Discord` when the reverse DNS hostname ends with `.googleusercontent.com`. This is a cloud hostname:
-any Google Cloud customer passes it. The suffix is not documented by Discord, and Hyperwatch does
-not use the published list.
+`@hyperwatch/useragent` returns the family `Discordbot`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `Discord` on a cloud hostname ending with
+`.googleusercontent.com` or the published list (`discord-ips.json`). The cloud hostname is not
+documented by Discord, and any Google Cloud customer passes it.
 
 ## Misc
 
