@@ -17,7 +17,7 @@ for adding or updating robots.
 |---|---|---|---|---|
 | [360Spider](robots/360spider.md) | 360 Search (Qihoo 360) | search-engine | ip-list | 360Spider |
 | [AhrefsBot](robots/ahrefsbot.md) | Ahrefs | seo | both | Ahrefs |
-| [AhrefsSiteAudit](robots/ahrefssiteaudit.md) | Ahrefs | seo | both | - |
+| [AhrefsSiteAudit](robots/ahrefssiteaudit.md) | Ahrefs | seo | both | Ahrefs |
 | [AIWebIndex](robots/aiwebindex.md) | Aleksma Ai, Inc. (Lyrenth) | ai-search | both | Lyrenth |
 | [alexa site audit](robots/alexa-site-audit.md) | Alexa Internet (Amazon); service shut down | seo | none | Alexa |
 | [AliyunSecBot](robots/aliyunsecbot.md) | Alibaba Cloud (by its user agent's contact address; not confirmed by Alibaba documentation) | other | none | AliyunSecBot |
@@ -29,7 +29,7 @@ for adding or updating robots.
 | [Applebot](robots/applebot.md) | Apple | search-engine | both | Applebot |
 | [Aranet-SearchBot](robots/aranet-searchbot.md) | Unknown | unknown | none | Aranet |
 | [archive.org_bot](robots/archive.org_bot.md) | Internet Archive | archive | none | Archive.org |
-| [Arquivo-web-crawler](robots/arquivo-web-crawler.md) | Arquivo.pt (Portuguese Web Archive) | archive | ip-list | - |
+| [Arquivo-web-crawler](robots/arquivo-web-crawler.md) | Arquivo.pt (Portuguese Web Archive) | archive | ip-list | Arquivo |
 | [AwarioBot](robots/awariobot.md) | Awario | marketing | none | WebMeUp |
 | [AzureAI-SearchBot](robots/azureai-searchbot.md) | Microsoft (by its name; not confirmed by Microsoft documentation) | unknown | none | - |
 | [Baiduspider](robots/baiduspider.md) | Baidu | search-engine | reverse-dns | Baidu |
@@ -37,7 +37,7 @@ for adding or updating robots.
 | [BelleaireCrawler](robots/belleairecrawler.md) | Unknown | unknown | none | - |
 | [bingbot](robots/bingbot.md) | Microsoft | search-engine | both | Bing |
 | [BitMoversBot](robots/bitmoversbot.md) | Byte Dev Limited | research | none | - |
-| [bl.uk_lddc_bot](robots/bl.uk_lddc_bot.md) | British Library (UK legal deposit libraries) | archive | none | - |
+| [bl.uk_lddc_bot](robots/bl.uk_lddc_bot.md) | British Library (UK legal deposit libraries) | archive | none | British Library |
 | [BLEXBot](robots/blexbot.md) | WebMeUp | seo | reverse-dns | WebMeUp |
 | [BluechipBacklinks](robots/bluechipbacklinks.md) | Bluechip Backlinks | seo | none | Bluechip Backlinks |
 | [bnf.fr_bot](robots/bnf.fr_bot.md) | Bibliothèque nationale de France (BnF) | archive | none | BnF.fr |
@@ -58,8 +58,8 @@ for adding or updating robots.
 | [dksearch-bot](robots/dksearch-bot.md) | Unknown | research | none | - |
 | [DolfeEngineCrawler](robots/dolfeenginecrawler.md) | Unknown | unknown | none | Dolfe |
 | [DotBot](robots/dotbot.md) | Moz | seo | none | Moz |
-| [DuckAssistBot](robots/duckassistbot.md) | DuckDuckGo | ai-search | ip-list | - |
-| [DuckDuckBot](robots/duckduckbot.md) | DuckDuckGo | search-engine | ip-list | - |
+| [DuckAssistBot](robots/duckassistbot.md) | DuckDuckGo | ai-search | ip-list | DuckDuckGo |
+| [DuckDuckBot](robots/duckduckbot.md) | DuckDuckGo | search-engine | ip-list | DuckDuckGo |
 | [ev-crawler](robots/ev-crawler.md) | Headline | other | none | Headline |
 | [ExaSearchBot](robots/exasearchbot.md) | Exa | ai-search | web-bot-auth | Exa |
 | [facebookexternalhit](robots/facebookexternalhit.md) | Meta | social-preview | ip-list | Facebook |
@@ -107,7 +107,7 @@ for adding or updating robots.
 | [RavenCrawler](robots/ravencrawler.md) | Raven Tools (TapClicks, Inc.) | seo | none | - |
 | [Reflectionbot](robots/reflectionbot.md) | Reflection AI | ai-training | both | Reflection |
 | [Riddler](robots/riddler.md) | F-Secure (riddler.io is registered to WithSecure Corporation) | research | none | Riddler |
-| [RootCrawl](robots/rootcrawl.md) | RootCrawl (operated by DataChaser) | archive | web-bot-auth | - |
+| [RootCrawl](robots/rootcrawl.md) | RootCrawl (operated by DataChaser) | archive | web-bot-auth | RootCrawl |
 | [RyteBot](robots/rytebot.md) | Semrush (formerly Ryte GmbH, acquired by Semrush in 2024) | seo | none | Semrush |
 | [SeekportBot](robots/seekportbot.md) | SISTRIX | search-engine | ip-list | Seekport |
 | [SemanticScholarBot](robots/semanticscholarbot.md) | Allen Institute for AI (Ai2) | research | none | - |
@@ -140,7 +140,7 @@ for adding or updating robots.
 | [VelenPublicWebCrawler](robots/velenpublicwebcrawler.md) | Velen (for Hunter) | other | none | Velen |
 | [VivianCrawler](robots/viviancrawler.md) | unknown | search-engine | none | - |
 | [yacybot](robots/yacybot.md) | YaCy users (open-source peer-to-peer search engine project) | search-engine | none | - |
-| [Yahoo! Slurp](robots/slurp.md) | Yahoo | search-engine | none | - |
+| [Yahoo! Slurp](robots/slurp.md) | Yahoo | search-engine | none | Yahoo |
 | [YahooMailProxy](robots/yahoomailproxy.md) | Yahoo | other | ip-list | Yahoo |
 | [YandexBot](robots/yandexbot.md) | Yandex | search-engine | reverse-dns | Yandex |
 | [Yeti](robots/yeti.md) | Naver | search-engine | both | Naver |
