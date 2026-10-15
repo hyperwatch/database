@@ -80,12 +80,15 @@ published; hostnames only when different from the documented ones.
 | Check | the terms above, joined with "or" as in the code |
 | Robot files | links to the files it covers, or "-" |
 
-Below the table, three lists:
+Below the table, four lists:
 
 1. **Weak checks**: identities relying on an unconfirmed hostname, a cloud hostname or an
    unchecked header, with what the operator documents that would be stronger.
 2. **Missing or outdated ranges**: rules whose ranges differ from the operator's published ones.
-3. **Robots without identity**: robot files with `hyperwatch.identity: null` whose operator
+   Published lists the rule doesn't use go here too.
+3. **Rules that miss the documented user agent**: the operator's user agent parses as a family
+   the rule doesn't name, so the robot never gets the identity.
+4. **Robots without identity**: robot files with `hyperwatch.identity: null` whose operator
    publishes ranges or hostnames, i.e. could be verified.
 
 When the identity rules change, update the version line at the top of `identities.md`, re-check
