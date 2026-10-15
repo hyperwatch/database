@@ -7,8 +7,8 @@ with `robots.txt`, and how to verify that a request really comes from it.
 Each file starts with YAML front matter for tools, followed by sections for people. See
 [`TEMPLATE.md`](TEMPLATE.md).
 
-[`identities.md`](identities.md) lists every identity Hyperwatch sets, how it checks it, and where
-those checks fall short of what the operators document. [`AGENTS.md`](AGENTS.md) is the procedure
+[`identities.md`](identities.md) lists every identity Hyperwatch sets, how it checks it, and the robot
+files it covers. [`AGENTS.md`](AGENTS.md) is the procedure
 for adding or updating robots.
 
 ## Robots
