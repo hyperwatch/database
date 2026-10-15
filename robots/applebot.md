@@ -59,7 +59,16 @@ Apple says it occasionally updates the browser version while keeping the format.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Applebot by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (89%), `*/*` (11%) |
+| `accept-language` | `en-US,en;q=0.90` (11%) |
+| `referer` | `(present)` (<1%) |
+| `sec-fetch-dest` | `empty` (11%), `document` (<1%) |
+| `sec-fetch-mode` | `cors` (11%), `navigate` (<1%) |
+| `sec-fetch-site` | `same-origin` (11%), `cross-site` (<1%) |
 
 ## Blocking with robots.txt
 
@@ -94,6 +103,7 @@ Apple documents two methods:
   ranges (`/27` and `/28`), no IPv6, `creationTime` 2026-09-15.
 
 No ASN is documented by Apple.
+
 
 ## Hyperwatch
 

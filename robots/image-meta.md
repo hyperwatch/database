@@ -54,7 +54,11 @@ Mozilla/5.0 (compatible; heritrix/3.14.2-SNAPSHOT-2026-04-13T06:21:22Z +https://
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Only header signatures are available (they keep `accept`, `accept-language` and `dnt`), from fewer than 10 distinct signatures seen on 2026-10-15:
+
+- `accept`: `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`
+- `accept-language`: never sent
+- `dnt`: never sent
 
 ## Blocking with robots.txt
 
@@ -72,6 +76,24 @@ https://image-meta.com/data-removal.
 ## IP ranges and verification
 
 None published. No reverse DNS hostnames or ASN are documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS19318 Interserver, Inc: `104.37.185.0/24`, `69.10.37.0/24`, `104.37.191.0/24`
+
+Reverse DNS hostnames:
+
+- `*.worth.eu.com` (not forward-confirmed)
+- `*.x.com` (not forward-confirmed)
+- `*.x.net` (not forward-confirmed)
+- `*.brestexz.com` (not forward-confirmed)
+- `*.x.uk` (not forward-confirmed)
+- `*.trandt.net` (not forward-confirmed)
+- `*.steventon.info` (not forward-confirmed)
 
 ## Hyperwatch
 

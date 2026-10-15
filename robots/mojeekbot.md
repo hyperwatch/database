@@ -44,7 +44,13 @@ The operator page does not give a full user agent string, only the `MojeekBot` t
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on fewer than 10 requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Mojeek by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 

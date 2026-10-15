@@ -56,7 +56,13 @@ documented user agent. Any client can send the `Claude-User` name.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on fewer than 10 requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Claude by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -75,6 +81,14 @@ reverse DNS hostnames are published.
 
 The `Claude-User (claude-code/...)` strings come from Claude Code, which runs on the user's own
 computer. Anthropic does not document those requests as coming from the published ranges.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Reverse DNS hostnames:
+
+- `*.bc.googleusercontent.com` (forward-confirmed, addresses in the published ranges)
 
 ## Hyperwatch
 

@@ -50,7 +50,14 @@ documented. `http://www.bing.com/bingbot.htm` redirects to the Bing crawlers hel
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Bing by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+| `from` | `bingbot(at)microsoft.com` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -71,6 +78,7 @@ check date it held 28 IPv4 prefixes and no IPv6, with `creationTime` 2024-01-03.
 Microsoft's documented check is reverse DNS: the address must resolve to a name ending in
 `search.msn.com`, and a forward lookup of that name must return the same address. Bing Webmaster
 Tools also has a "Verify Bingbot" tool (https://www.bing.com/toolbox/verify-bingbot).
+
 
 ## Hyperwatch
 

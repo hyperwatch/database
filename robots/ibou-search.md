@@ -47,7 +47,17 @@ with `www.` in the URL. Its technical table gives the version as 1.0 while the u
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html;q=0.95,text/*;q=0.9,*/*;q=0.8` (100%) |
+| `from` | `network-abuse@ibou.com` (100%) |
+| `signature` | `(present)` (100%) |
+| `signature-agent` | `https://ibou.io` (100%) |
+| `signature-input` | `(present)` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 

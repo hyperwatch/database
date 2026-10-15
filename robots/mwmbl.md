@@ -62,7 +62,13 @@ crawler, so the contact part differs per operator. It can be empty.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -79,6 +85,34 @@ a group whose `User-agent` value is contained in it, case-insensitively. `User-a
 
 None published. Volunteers run the crawler on their own networks, so there is no IP list, reverse
 DNS name or ASN.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS5482 AllPoints Fibre Limited (not a hosting network: prefixes not listed)
+- AS51167 Contabo GmbH: `156.67.24.0/24`
+- AS9009 M247 Europe SRL: `66.234.159.0/24`
+- AS812 Rogers Communications Canada Inc. (not a hosting network: prefixes not listed)
+- AS803 Saskatchewan Telecommunications (not a hosting network: prefixes not listed)
+- AS5410 Bouygues Telecom SA (not a hosting network: prefixes not listed)
+- AS4764 Aussie Fibre Pty Ltd (not a hosting network: prefixes not listed)
+- AS212238 Datacamp Limited: `95.173.221.0/24`
+- AS136258 BrainStorm Network, Inc: `86.54.82.0/24`
+- AS20473 The Constant Company, LLC: `216.238.105.0/24`
+- 2 other networks
+
+Reverse DNS hostnames:
+
+- `*.customers.as5482.net` (not forward-confirmed)
+- `*.contaboserver.net` (forward-confirmed)
+- `*.cpe.net.cable.rogers.com` (forward-confirmed)
+- `*.cgps.ch` (forward-confirmed)
+- `*.datapacket.com` (not forward-confirmed)
+- `*.vultrusercontent.com` (not forward-confirmed)
+- `*.serverdedicati.aruba.it` (not forward-confirmed)
 
 ## Hyperwatch
 

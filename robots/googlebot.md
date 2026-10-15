@@ -67,7 +67,16 @@ verifying: anyone can send these strings.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Googlebot by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/signed-exchange;v=b3,application/xml;q=0.9,*/*;q=0.8` (68%), `image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8` (18%), `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exch` (4%), `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (4%), 2 other values |
+| `accept-language` | `en-US` (23%) |
+| `amp-cache-transform` | `(present)` (68%) |
+| `from` | `googlebot(at)googlebot.com` (97%) |
+| `referer` | `(present)` (22%) |
+| `upgrade-insecure-requests` | `1` (4%) |
 
 ## Blocking with robots.txt
 
@@ -109,6 +118,7 @@ Common crawlers always respect `robots.txt` for automatic crawls. Special-case c
   `user-triggered-agents.json`, all under `https://developers.google.com/static/crawling/ipranges/`,
   and all Google addresses at https://www.gstatic.com/ipranges/goog.json.
 - ASN: not used by Google's verification guide.
+
 
 ## Hyperwatch
 

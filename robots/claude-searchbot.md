@@ -44,7 +44,7 @@ string varies.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+No requests from this robot were captured with their headers yet.
 
 ## Blocking with robots.txt
 
@@ -60,6 +60,7 @@ This token is independent of `ClaudeBot` (training) and `Claude-User` (user fetc
 Anthropic publishes one list for all its crawlers: https://claude.com/crawling/bots.json (JSON,
 `prefixes` array of `ipv4Prefix` objects, 38 IPv4 prefixes on 2026-10-15). See `claudebot.md`. No
 reverse DNS hostnames are published.
+
 
 ## Hyperwatch
 

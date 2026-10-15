@@ -47,7 +47,12 @@ CCBot/2.0 (https://commoncrawl.org/faq/)
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Common Crawl by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (100%) |
+| `accept-language` | `en-US,en;q=0.5` (100%) |
 
 ## Blocking with robots.txt
 
@@ -70,6 +75,7 @@ held 5 prefixes (4 IPv4, 1 IPv6), created 2026-08-11.
 CCBot runs on dedicated ranges with reverse DNS. An IPv4 address resolves to a name such as
 `18-97-14-84.crawl.commoncrawl.org`, which resolves back to the same address. Reverse DNS is not
 yet available for IPv6. The addresses are in AWS; an `amazonaws.com` hostname alone proves nothing.
+
 
 ## Hyperwatch
 

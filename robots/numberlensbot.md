@@ -35,7 +35,7 @@ NumberLensBot/0.2
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+No requests from this robot were captured with their headers yet.
 
 ## Blocking with robots.txt
 
@@ -50,6 +50,18 @@ The token is not documented, and it is not known whether the robot reads `robots
 ## IP ranges and verification
 
 None published.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS8447 A1 Telekom Austria AG (not a hosting network: prefixes not listed)
+
+Reverse DNS hostnames:
+
+- `*.oan.highway.a1.net` (forward-confirmed)
 
 ## Hyperwatch
 

@@ -46,7 +46,12 @@ This matches the string on CMU's crawler page.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (100%) |
+| `accept-language` | `en-US,en;q=0.5` (100%) |
 
 ## Blocking with robots.txt
 
@@ -64,6 +69,18 @@ permanently".
 
 None published. CMU's page only says the crawler comes from the "CMU SCS IP range" (School of
 Computer Science), without listing ranges, hostnames or an ASN.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS9 Carnegie Mellon University: `128.2.204.0/24`
+
+Reverse DNS hostnames:
+
+- `*.lti.cs.cmu.edu` (forward-confirmed)
 
 ## Hyperwatch
 

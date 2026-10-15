@@ -40,7 +40,7 @@ ClatterLabsSearchBot/1.0 (+https://www.clatterai.com) (variant; SupabaseEdgeRunt
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+No requests from this robot were captured with their headers yet.
 
 ## Blocking with robots.txt
 
@@ -55,6 +55,14 @@ documented.
 ## IP ranges and verification
 
 None published.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS16509 Amazon.com, Inc.: `2a05:d01c:76e::/48`
 
 ## Hyperwatch
 

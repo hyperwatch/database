@@ -47,7 +47,7 @@ The operator documents the same string.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+No requests from this robot were captured with their headers yet.
 
 ## Blocking with robots.txt
 
@@ -62,6 +62,18 @@ without a `robots.txt`.
 ## IP ranges and verification
 
 None published. No IP list, reverse DNS hostnames or ASN are documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS24940 Hetzner Online GmbH: `46.225.48.0/24`, `46.225.180.0/24`
+
+Reverse DNS hostnames:
+
+- `*.clients.your-server.de` (forward-confirmed)
 
 ## Hyperwatch
 

@@ -47,7 +47,7 @@ full v2 string.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+No requests from this robot were captured with their headers yet.
 
 ## Blocking with robots.txt
 
@@ -67,6 +67,18 @@ rather than adding to it.
 None published. Majestic does not document reverse DNS hostnames, an IP list or an ASN, and asks
 site owners not to block it by IP. For verification, site owners can ask Majestic for a
 pre-arranged ident string, sent in the user agent or in a `CRAWLER-IDENT` header.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS16276 OVH SAS: `51.68.111.0/24`, `51.68.236.0/24`, `51.68.107.0/24`, `46.105.42.0/24`, `46.105.40.0/24`, `2001:41d0:303::/48`, `46.105.48.0/24`, `46.105.46.0/24`, and 2 more
+
+Reverse DNS hostnames:
+
+- `*.mj12bot.com` (forward-confirmed)
 
 ## Hyperwatch
 

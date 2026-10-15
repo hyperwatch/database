@@ -51,7 +51,11 @@ Yandex also lists `YandexBot/3.0 (MirrorDetector)` among its robots.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Only header signatures are available (they keep `accept`, `accept-language` and `dnt`), from fewer than 10 distinct signatures seen on 2026-10-15:
+
+- `accept`: `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`
+- `accept-language`: `ru, tr;q=0.9, be;q=0.8, kk;q=0.7, en;q=0.6, *;q=0.01`
+- `dnt`: never sent
 
 ## Blocking with robots.txt
 
@@ -77,6 +81,15 @@ robots run from AS13238, AS208722 and AS212066.
 Verify with reverse DNS: the hostname must end in `yandex.ru`, `yandex.net` or `yandex.com`, and a
 forward lookup of that hostname must return the same address. Yandex also offers an IP check tool
 in Yandex Webmaster for its indexing robots.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks of the addresses verified by reverse DNS (the operator publishes no ranges):
+
+- AS212066 Buyuk Reklam Cozumleri LLC: `45.148.65.0/24`
+- AS13238 YANDEX LLC: `5.255.231.0/24`, `87.250.224.0/24`, `95.108.213.0/24`, `213.180.203.0/24`, `2a02:6b8:c42::/48`
 
 ## Hyperwatch
 

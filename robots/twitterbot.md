@@ -50,7 +50,19 @@ behaves "like Twitterbot": it does not come from X.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on fewer than 10 requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Twitter by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (89%) |
+| `finagle-ctx-com.twitter.finagle.retries` | `(present)` (100%) |
+| `x-b3-flags` | `(present)` (100%) |
+| `x-b3-parentspanid` | `(present)` (100%) |
+| `x-b3-sampled` | `(present)` (100%) |
+| `x-b3-spanid` | `(present)` (100%) |
+| `x-b3-traceid` | `(present)` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -82,6 +94,7 @@ X's Cards troubleshooting guide gives two methods:
 
 The guide's current URL redirects to the X developer platform overview; the text above was read
 from the archived copy of December 2025.
+
 
 ## Hyperwatch
 

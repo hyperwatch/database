@@ -49,7 +49,24 @@ The operator documents the second form, with `X.X.X.X` standing for the Chrome v
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on fewer than 10 requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as You.com by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exch` (100%) |
+| `cache-control` | `no-cache` (100%) |
+| `pragma` | `no-cache` (100%) |
+| `priority` | `u=0, i` (100%) |
+| `sec-ch-ua` | `"HeadlessChrome";v="153", "Not_A Brand";v="8", "Chromium";v="153"` (100%) |
+| `sec-ch-ua-mobile` | `?0` (100%) |
+| `sec-ch-ua-platform` | `"Linux"` (100%) |
+| `sec-fetch-dest` | `document` (100%) |
+| `sec-fetch-mode` | `navigate` (100%) |
+| `sec-fetch-site` | `none` (100%) |
+| `sec-fetch-user` | `?1` (100%) |
+| `upgrade-insecure-requests` | `1` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -72,6 +89,7 @@ must return the same address.
 You.com also recommends cryptographic verification with Web Bot Auth (HTTP message signatures,
 Ed25519 keys in JWK format). The public keys are at
 https://you.com/.well-known/http-message-signatures-directory. No ASN is documented.
+
 
 ## Hyperwatch
 

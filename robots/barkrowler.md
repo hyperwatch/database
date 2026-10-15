@@ -49,7 +49,11 @@ Babbar's page names the robot and its version (0.9) but does not give the full s
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Only header signatures are available (they keep `accept`, `accept-language` and `dnt`), from fewer than 10 distinct signatures seen on 2026-10-15:
+
+- `accept`: `text/html;q=0.95,text/*;q=0.9,*/*;q=0.8`
+- `accept-language`: never sent
+- `dnt`: never sent
 
 ## Blocking with robots.txt
 

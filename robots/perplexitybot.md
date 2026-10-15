@@ -41,7 +41,15 @@ This matches the documented string.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Perplexity by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exch` (5%) |
+| `accept-language` | `en-US,en;q=0.9` (5%) |
+| `cache-control` | `no-cache` (5%) |
+| `from` | `crawler-support@perplexity.ai` (95%) |
+| `upgrade-insecure-requests` | `1` (5%) |
 
 ## Blocking with robots.txt
 
@@ -61,6 +69,14 @@ redirects to https://www.perplexity.ai/perplexitybot.json. The format is an obje
 8 IPv4 prefixes, with `creationTime` 2025-02-07. Perplexity recommends matching both the user agent
 and the source address, and refreshing rules from the list regularly. No reverse DNS names or ASN
 are documented. The addresses are in AWS, so an `amazonaws.com` hostname proves nothing.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Reverse DNS hostnames:
+
+- `*.compute-1.amazonaws.com` (forward-confirmed, addresses in the published ranges)
 
 ## Hyperwatch
 

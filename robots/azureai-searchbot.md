@@ -42,7 +42,7 @@ The string has no URL or contact address.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+No requests from this robot were captured with their headers yet.
 
 ## Blocking with robots.txt
 
@@ -58,6 +58,14 @@ obeys, is not documented.
 
 None published. No IP list, reverse DNS names or ASN are documented for this user agent. Bing's
 `bingbot.json` list covers bingbot only.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS8075 Microsoft Corporation: `40.71.11.0/24`, `40.78.227.0/24`, `40.79.154.0/24`, `20.55.229.0/24`, `13.73.240.0/24`, `51.12.147.0/24`, `68.154.117.0/24`, `51.12.146.0/24`, and 7 more
 
 ## Hyperwatch
 

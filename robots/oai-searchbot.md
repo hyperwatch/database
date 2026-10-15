@@ -52,7 +52,16 @@ a browser-style prefix, and says the version number may change.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as OpenAI SearchBot by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+| `from` | `oai-searchbot(at)openai.com` (100%) |
+| `referer` | `(present)` (53%) |
+| `x-openai-host-hash` | `(present)` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -70,6 +79,7 @@ opt-outs.
 OpenAI publishes the source ranges at https://openai.com/searchbot.json. The file is JSON with a
 `creationTime` field and a `prefixes` array of objects with an `ipv4Prefix` key. On 2026-10-15 it
 held 39 IPv4 prefixes and was dated 2026-01-02. No reverse DNS hostnames or ASN are documented.
+
 
 ## Hyperwatch
 

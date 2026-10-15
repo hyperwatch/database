@@ -51,7 +51,13 @@ AwarioRssBot/1.0 (+https://awario.com/bots.html; bots@awario.com)
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as WebMeUp by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -78,6 +84,18 @@ Awario does not document `AwarioBot` as a `robots.txt` token, although it lists 
 
 None published. Awario asks site owners not to identify the crawlers by IP address, because it
 does not use consecutive IP blocks. No reverse DNS hostnames are documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS24940 Hetzner Online GmbH: `65.21.113.0/24`
+
+Reverse DNS hostnames:
+
+- `*.webmeup.com` (forward-confirmed)
 
 ## Hyperwatch
 

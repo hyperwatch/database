@@ -47,7 +47,13 @@ This matches the string documented by Keenable.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Keenable by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,application/json;q=0.8,text/markdown;q=0.7,text/plain;q=0.6,text/c` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -84,6 +90,14 @@ Keenable says it is adding Web Bot Auth signatures (HTTP Message Signatures), wi
 at `keenablebot.keenable.ai` and `keenable-user.keenable.ai`. As of the documentation date its
 requests do not carry signatures yet, and it says to check the address instead. No ASN is
 documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Reverse DNS hostnames:
+
+- `*.bc.googleusercontent.com` (forward-confirmed, addresses in the published ranges)
 
 ## Hyperwatch
 

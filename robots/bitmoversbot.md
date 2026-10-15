@@ -47,7 +47,12 @@ Mozilla/5.0 (compatible; BitMoversBot/1.0; +https://bitmovers.co.uk/crawler/2daw
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on fewer than 10 requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml;q=0.9,*/*;q=0.5` (100%) |
+| `accept-language` | `en-GB,en;q=0.8` (100%) |
 
 ## Blocking with robots.txt
 
@@ -61,6 +66,14 @@ To slow it down instead, the operator suggests `Crawl-delay: 10`.
 ## IP ranges and verification
 
 None published. No IP list, reverse DNS names or ASN are documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS42611 Full Fibre Limited (not a hosting network: prefixes not listed)
 
 ## Hyperwatch
 

@@ -48,7 +48,13 @@ This matches the string documented by HaloScan.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on fewer than 10 requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8` (100%) |
+| `accept-language` | `en-US,en;q=0.9` (100%) |
+| `upgrade-insecure-requests` | `1` (100%) |
 
 ## Blocking with robots.txt
 
@@ -65,6 +71,14 @@ file of each visited host", including `Crawl-delay`.
 HaloScan lists 12 "official IP addresses" as an HTML table on its crawler page (single IPv4
 addresses, no CIDR ranges, no IPv6, no machine-readable file). No reverse DNS hostname or ASN is
 documented. HaloScan asks people to report "a suspicious IP address using our name".
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Reverse DNS hostnames:
+
+- `*.ip-54-36-150.eu` (forward-confirmed, addresses in the published ranges)
 
 ## Hyperwatch
 

@@ -56,7 +56,7 @@ is not documented. `SemrushBot-EO` is not listed on Semrush's bot page.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+No requests from this robot were captured with their headers yet.
 
 ## Blocking with robots.txt
 
@@ -98,6 +98,15 @@ In practice, many Semrush crawler addresses have PTR records under `bot.semrush.
 `<n>.bl.bot.semrush.com`) that resolve back to the same address. Some addresses have the generic
 PTR `bot.semrush.com`, which does not resolve back to them. The range `85.208.98.0/24` is
 announced by AS209366 (Semrush). This is not documented by Semrush.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks of the addresses verified by reverse DNS (the operator publishes no ranges):
+
+- AS396982 Google LLC: `85.208.98.0/24`
+- AS209366 SEMrush CY LTD: `85.208.96.0/24`, `185.191.171.0/24`
 
 ## Hyperwatch
 

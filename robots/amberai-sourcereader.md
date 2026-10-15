@@ -38,7 +38,11 @@ AmberAI-SourceReader/1.0
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Only header signatures are available (they keep `accept`, `accept-language` and `dnt`), from fewer than 10 distinct signatures seen on 2026-10-15:
+
+- `accept`: `application/json, application/xml, text/csv, text/html;q=0.8`
+- `accept-language`: `*`
+- `dnt`: never sent
 
 ## Blocking with robots.txt
 
@@ -53,6 +57,14 @@ documented.
 ## IP ranges and verification
 
 None published.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS8075 Microsoft Corporation: `20.171.3.0/24`, `172.184.209.0/24`, `132.196.83.0/24`, `40.78.174.0/24`, `20.169.99.0/24`, `172.182.213.0/24`, `172.182.195.0/24`, `172.184.211.0/24`, and 34 more
 
 ## Hyperwatch
 

@@ -49,7 +49,11 @@ This matches the string documented by Naget. `https://naget.ai/bot` redirects to
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Only header signatures are available (they keep `accept`, `accept-language` and `dnt`), from fewer than 10 distinct signatures seen on 2026-10-15:
+
+- `accept`: `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`
+- `accept-language`: `en-US,en;q=0.9`
+- `dnt`: never sent
 
 ## Blocking with robots.txt
 
@@ -68,6 +72,22 @@ Crawl-delay: 10
 ## IP ranges and verification
 
 None published. No reverse DNS hostnames or ASN are documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS47007 Colocation America Corporation: `67.227.120.0/24`, `216.74.75.0/24`, `216.10.0.0/24`, `185.207.96.0/24`
+- AS13886 Cloud South: `104.249.4.0/24`, `104.233.53.0/24`, `104.233.50.0/24`, `104.249.1.0/24`, `104.239.115.0/24`
+- AS16591 Google Fiber Inc.: `136.47.217.0/24`
+
+Reverse DNS hostnames:
+
+- `*.rdns.ColocationAmerica.com` (not forward-confirmed)
+- `*.googlefiber.net` (not forward-confirmed)
+- `*.colocationamerica.com` (not forward-confirmed)
 
 ## Hyperwatch
 

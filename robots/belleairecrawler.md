@@ -39,7 +39,13 @@ BelleaireCrawler/1.0 (+https://belleaire.xyz/bot)
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on fewer than 10 requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+| `accept-language` | `*` (100%) |
+| `sec-fetch-mode` | `cors` (100%) |
 
 ## Blocking with robots.txt
 
@@ -53,6 +59,18 @@ The token is taken from the user agent. Whether the robot obeys `robots.txt` is 
 ## IP ranges and verification
 
 None published.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS14593 Space Exploration Technologies Corporation: `98.97.42.0/24`
+
+Reverse DNS hostnames:
+
+- `*.sttlwax1.isp.starlink.com` (not forward-confirmed)
 
 ## Hyperwatch
 

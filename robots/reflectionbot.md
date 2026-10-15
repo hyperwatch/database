@@ -44,7 +44,17 @@ Reflection AI recommends matching on the `Reflectionbot` token only.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Reflection by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8` (100%) |
+| `accept-language` | `en-US,en;q=0.9` (100%) |
+| `sec-fetch-dest` | `document` (100%) |
+| `sec-fetch-mode` | `navigate` (100%) |
+| `sec-fetch-site` | `none` (100%) |
+| `sec-fetch-user` | `?1` (100%) |
+| `upgrade-insecure-requests` | `1` (100%) |
 
 ## Blocking with robots.txt
 
@@ -66,6 +76,7 @@ Two methods are documented:
   2026-10-15 they had the form `reflectionbot-<n>-<n>.reflection.ai`.
 
 ASN: not documented.
+
 
 ## Hyperwatch
 

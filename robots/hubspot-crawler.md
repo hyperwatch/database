@@ -41,7 +41,7 @@ HubSpot only documents the name `HubSpot Crawler`, not the full string.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+No requests from this robot were captured with their headers yet.
 
 ## Blocking with robots.txt
 
@@ -68,6 +68,14 @@ HubSpot Crawler: it covers all of HubSpot's crawling and user-generated traffic.
 ranges change over time and should be fetched regularly.
 
 No reverse DNS hostnames or ASN are documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Reverse DNS hostnames:
+
+- `*.eu-central-1.compute.amazonaws.com` (forward-confirmed, addresses in the published ranges)
 
 ## Hyperwatch
 

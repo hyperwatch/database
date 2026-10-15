@@ -38,7 +38,11 @@ image-crawler/0.1
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Only header signatures are available (they keep `accept`, `accept-language` and `dnt`), from fewer than 10 distinct signatures seen on 2026-10-15:
+
+- `accept`: `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`
+- `accept-language`: `en`
+- `dnt`: never sent
 
 ## Blocking with robots.txt
 
@@ -52,6 +56,18 @@ The token is taken from the user agent. Whether the robot reads `robots.txt` is 
 ## IP ranges and verification
 
 None published.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS24940 Hetzner Online GmbH: `95.216.75.0/24`, `65.108.38.0/24`
+
+Reverse DNS hostnames:
+
+- `*.clients.your-server.de` (forward-confirmed)
 
 ## Hyperwatch
 

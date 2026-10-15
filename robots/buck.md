@@ -43,7 +43,7 @@ Hypefactors does not publish the string. Third-party directories list older vers
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+No requests from this robot were captured with their headers yet.
 
 ## Blocking with robots.txt
 
@@ -58,6 +58,18 @@ also accepts removal requests by email (vyn@hypefactors.com) with the domain nam
 ## IP ranges and verification
 
 None published. No reverse DNS hostnames or ASN are documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS43515 Google Ireland Limited: `35.209.183.0/24`, `35.209.59.0/24`, `35.208.247.0/24`, `35.208.251.0/24`, `35.209.231.0/24`, `35.208.145.0/24`, `35.208.59.0/24`, `35.209.157.0/24`, and 7 more
+
+Reverse DNS hostnames:
+
+- `*.bc.googleusercontent.com` (forward-confirmed)
 
 ## Hyperwatch
 

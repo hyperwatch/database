@@ -42,7 +42,26 @@ The documented string is `DuckAssistBot/1.2; (+http://duckduckgo.com/duckassistb
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (60%), `image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8` (30%), `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exch` (10%) |
+| `accept-language` | `en-US,en;q=0.9` (40%) |
+| `priority` | `i` (30%), `u=0, i` (10%) |
+| `referer` | `(present)` (30%) |
+| `sec-ch-ua` | `"Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"` (40%) |
+| `sec-ch-ua-mobile` | `?0` (40%) |
+| `sec-ch-ua-platform` | `"Linux"` (40%) |
+| `sec-fetch-dest` | `image` (30%), `document` (10%) |
+| `sec-fetch-mode` | `no-cors` (30%), `navigate` (10%) |
+| `sec-fetch-site` | `cross-site` (30%), `none` (10%) |
+| `sec-fetch-storage-access` | `active` (30%) |
+| `sec-fetch-user` | `?1` (10%) |
+| `signature` | `(present)` (100%) |
+| `signature-agent` | `"https://assistbot.duckduckgo.com"` (100%) |
+| `signature-input` | `(present)` (100%) |
+| `upgrade-insecure-requests` | `1` (10%) |
 
 ## Blocking with robots.txt
 
@@ -61,6 +80,7 @@ https://duckduckgo.com/duckassistbot.json. The format is an object with `creatio
 `prefixes` array of `{"ipv4Prefix": ...}` objects. On the check date it held 486 IPv4 entries
 (mostly single `/32` addresses), with `creationTime` 2026-09-01, and its content was identical to
 https://duckduckgo.com/duckduckbot.json. No IPv6 entries, reverse DNS names or ASN are documented.
+
 
 ## Hyperwatch
 

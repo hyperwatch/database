@@ -46,7 +46,25 @@ desktop Chrome prefix, is not documented.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Claude by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (98%), `image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8` (1%), `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exch` (<1%) |
+| `cache-control` | `no-cache` (2%) |
+| `pragma` | `no-cache` (2%) |
+| `priority` | `i` (<1%), `u=0, i` (<1%), `u=1, i` (<1%) |
+| `referer` | `(present)` (1%) |
+| `sec-ch-ua` | `"Not=A?Brand";v="99", "HeadlessChrome";v="151", "Chromium";v="151"` (2%) |
+| `sec-ch-ua-mobile` | `?1` (2%) |
+| `sec-ch-ua-platform` | `"macOS"` (2%) |
+| `sec-fetch-dest` | `image` (1%), `document` (<1%) |
+| `sec-fetch-mode` | `no-cors` (1%), `navigate` (<1%) |
+| `sec-fetch-site` | `same-site` (1%), `none` (<1%) |
+| `sec-fetch-user` | `?1` (<1%) |
+| `upgrade-insecure-requests` | `1` (<1%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -74,6 +92,7 @@ CIDR notation. On 2026-10-15 it held 38 IPv4 prefixes (creation time 2026-10-07)
 request from an address in this list comes from Anthropic.
 
 No reverse DNS hostnames are published. The crawlers run on shared cloud infrastructure.
+
 
 ## Hyperwatch
 

@@ -7,7 +7,7 @@ category: ai-search
 robots_txt_token: ExaSearchBot
 respects_robots_txt: yes
 verification:
-  method: none
+  method: web-bot-auth
   ip_list: null
   hostnames: []
 hyperwatch:
@@ -45,7 +45,17 @@ This matches the string documented by Exa.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Exa by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/markdown,text/html;q=0.9,application/xhtml+xml;q=0.8,application/xml;q=0.7,image/webp;q=0.6,*/*;q=0.5` (100%) |
+| `accept-language` | `en-US,en;q=0.5` (100%) |
+| `cache-control` | `no-cache` (100%) |
+| `pragma` | `no-cache` (100%) |
+| `signature` | `(present)` (100%) |
+| `signature-agent` | `"https://crawler.exa.ai"` (100%) |
+| `signature-input` | `(present)` (100%) |
 
 ## Blocking with robots.txt
 
@@ -66,6 +76,20 @@ scheme, with Ed25519 keys. They carry `Signature`, `Signature-Input` and `Signat
 The public keys are a JSON Web Key Set at
 https://crawler.exa.ai/.well-known/http-message-signatures-directory (two `OKP` / `Ed25519` keys
 when checked). No reverse DNS hostnames or ASN are documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS396356 Latitude.sh: `72.63.173.0/24`
+- AS18779 EGIHosting: `203.100.218.0/24`
+- AS47007 Colocation America Corporation: `173.46.90.0/24`
+- AS16509 Amazon.com, Inc.: `32.188.113.0/24`
+- AS205659 UAB code200: `216.246.215.0/24`
+- AS51167 Contabo GmbH: `156.67.28.0/24`
+- AS30058 FDCservers.net: `64.144.193.0/24`
 
 ## Hyperwatch
 

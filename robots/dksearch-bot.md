@@ -41,7 +41,13 @@ loaded on the check date (no HTTP or HTTPS response).
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on fewer than 10 requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (100%) |
+| `accept-language` | `da, en;q=0.8` (100%) |
+| `sec-fetch-mode` | `cors` (100%) |
 
 ## Blocking with robots.txt
 
@@ -56,6 +62,14 @@ documented.
 ## IP ranges and verification
 
 None published.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS3356 Level 3 Parent, LLC: `205.188.212.0/24`, `205.188.213.0/24`
 
 ## Hyperwatch
 

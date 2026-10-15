@@ -42,7 +42,15 @@ LinkedIn does not document its user agents.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on fewer than 10 requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as LinkedIn by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (67%) |
+| `service-name` | `(present)` (67%) |
+| `x-li-calltree-request-id` | `(present)` (67%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -57,6 +65,20 @@ the token `LinkedInBot` (with `Allow: /`). Blocking it stops link previews on Li
 ## IP ranges and verification
 
 None published. LinkedIn documents no IP list, reverse DNS hostname or ASN for LinkedInBot.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS40793 LinkedIn Corporation: `108.174.5.0/24`
+- AS55163 LinkedIn Corporation: `108.174.2.0/24`
+- AS14413 LinkedIn Corporation: `108.174.8.0/24`
+
+Reverse DNS hostnames:
+
+- `*.fwd.linkedin.com` (forward-confirmed)
 
 ## Hyperwatch
 

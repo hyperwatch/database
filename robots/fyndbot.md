@@ -40,7 +40,13 @@ Known Agents also lists `fyndbot (crawler; https://fynd.bot)`, and a `recrawler`
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on fewer than 10 requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -55,6 +61,21 @@ token used by third-party directories.
 ## IP ranges and verification
 
 None published. No reverse DNS hostnames or ASN are documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS63018 Dedicated.com: `2605:9f80:8000::/48`, `169.197.183.0/24`
+- AS16509 Amazon.com, Inc.: `2a05:d014:1ce4::/48`, `2406:da18:93c::/48`
+- AS14618 Amazon.com, Inc.: `2600:1f18:1356::/48`
+- AS20473 The Constant Company, LLC: `2001:19f0:c800::/48`
+
+Reverse DNS hostnames:
+
+- `*.interlayer.net` (forward-confirmed)
 
 ## Hyperwatch
 

@@ -48,7 +48,16 @@ The first string is the one OpenAI documents. OpenAI says the version number may
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as OpenAI GPTBot by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+| `from` | `gptbot(at)openai.com` (100%) |
+| `referer` | `(present)` (100%) |
+| `x-openai-host-hash` | `(present)` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -68,6 +77,7 @@ OpenAI publishes GPTBot's addresses at https://openai.com/gptbot.json. It is a J
 2026-10-15 it held 18 IPv4 prefixes (creation time 2026-09-22), no IPv6.
 
 No reverse DNS hostnames are published.
+
 
 ## Hyperwatch
 

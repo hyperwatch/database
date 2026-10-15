@@ -61,7 +61,11 @@ The template in the YaCy source is `yacybot ($$SYSTEM$$) https://yacy.net/bot.ht
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Only header signatures are available (they keep `accept`, `accept-language` and `dnt`), from fewer than 10 distinct signatures seen on 2026-10-15:
+
+- `accept`: `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`
+- `accept-language`: `en-us,en;q=0.5`
+- `dnt`: never sent
 
 ## Blocking with robots.txt
 
@@ -83,6 +87,31 @@ do not match the `yacybot` token.
 
 None published. Peers run on any network, so there is no IP list, reverse DNS name or ASN that
 identifies yacybot.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- 26 different networks, hosting and access networks alike: other software reuses this user agent. The most frequent: AS16276 OVH SAS, AS212238 Datacamp Limited, AS9009 M247 Europe SRL, AS6805 Telefonica Germany GmbH & Co.OHG, AS62240 Clouvider.
+
+Reverse DNS hostnames:
+
+- `*.pool.telefonica.de` (forward-confirmed)
+- `*.ip-135-148-171.us` (forward-confirmed)
+- `*.evrt.wa.ptr.ziplyfiber.com` (not forward-confirmed)
+- `*.openhosting.co.uk` (not forward-confirmed)
+- `*.ip-51-83-7.eu` (forward-confirmed)
+- `*.static.edisglobal.com` (not forward-confirmed)
+- `*.apg2.de` (forward-confirmed)
+- `*.ip-51-75-119.eu` (forward-confirmed)
+- `*.ip-147-135-214.eu` (forward-confirmed)
+- `*.ip-51-75-116.eu` (forward-confirmed)
+- `*.ip-51-77-218.eu` (forward-confirmed)
+- `*.ip-135-148-169.us` (forward-confirmed)
+- `*.ip-145-239-69.eu` (forward-confirmed)
+- `*.ip-147-135-5.us` (forward-confirmed)
 
 ## Hyperwatch
 

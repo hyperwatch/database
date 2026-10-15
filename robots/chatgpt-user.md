@@ -45,7 +45,11 @@ OpenAI documents a string ending in `compatible; ChatGPT-User/1.0; +https://open
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Only header signatures are available (they keep `accept`, `accept-language` and `dnt`), from fewer than 10 distinct signatures seen on 2026-10-15:
+
+- `accept`: `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9`
+- `accept-language`: `en-US,en;q=0.9`
+- `dnt`: never sent
 
 ## Blocking with robots.txt
 
@@ -63,6 +67,7 @@ OpenAI publishes the source ranges at https://openai.com/chatgpt-user.json. The 
 a `creationTime` field and a `prefixes` array of objects with an `ipv4Prefix` key. On 2026-10-15
 it held 234 IPv4 prefixes and was dated 2026-10-07. No reverse DNS hostnames or ASN are
 documented.
+
 
 ## Hyperwatch
 

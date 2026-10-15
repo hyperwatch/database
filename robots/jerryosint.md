@@ -36,7 +36,7 @@ Mozilla/5.0 (compatible; JerryOSINT/1.0; personal open-source research; respects
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+No requests from this robot were captured with their headers yet.
 
 ## Blocking with robots.txt
 
@@ -50,6 +50,18 @@ The token is not documented. `JerryOSINT` is the product name in the user agent.
 ## IP ranges and verification
 
 None published.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Networks this user agent came from. The operator publishes no ranges or hostnames, so other clients using its name may be among them:
+
+- AS16509 Amazon.com, Inc.: `74.220.48.0/24`
+
+Reverse DNS hostnames:
+
+- `*.oregon-egress.render.com` (forward-confirmed)
 
 ## Hyperwatch
 

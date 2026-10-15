@@ -55,7 +55,13 @@ did not resolve in DNS on 2026-10-15.
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -93,6 +99,14 @@ apply:
 The bot page states that genuine requests come only from `141.94.42.166`. This address is in a
 network announced by AS16276 (OVH), with the PTR `vps-fe3a6202.vps.ovh.net`. No reverse DNS method
 is documented.
+
+### Observed
+
+Requests with this user agent seen between 2026-10-12 and 2026-10-15, compared with what the operator publishes. Only differences are listed.
+
+Reverse DNS hostnames:
+
+- `*.vps.ovh.net` (forward-confirmed, addresses in the published ranges)
 
 ## Hyperwatch
 

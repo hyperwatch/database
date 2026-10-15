@@ -50,7 +50,13 @@ the pages checked, so it does not by itself show that the request comes from Met
 
 ## Observed HTTP headers
 
-<!-- observed headers: to be filled -->
+Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages), verified as Facebook by Hyperwatch.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -76,6 +82,7 @@ whois -h whois.radb.net -- '-i origin AS32934' | grep ^route
 It also warned that these addresses change often. The page text retrieved on 2026-10-15 recommends
 allowlisting by IP address but no longer shows the command or any ranges. No reverse DNS hostname is
 documented.
+
 
 ## Hyperwatch
 
