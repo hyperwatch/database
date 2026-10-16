@@ -1,7 +1,7 @@
 # Hyperwatch identities
 
-Every identity set by Hyperwatch `main` at `33a4e4c` (`src/modules/identity.js`, after 5.3.3, not
-released yet), checked 2026-10-15: the agent
+Every identity set by Hyperwatch `main` at `bbb603e` (`src/modules/identity.js`, after 5.3.3, not
+released yet), checked 2026-10-16: the agent
 families leading to it, what is checked, and the robot files it covers. The terms in "Check" are
 defined in [`AGENTS.md`](AGENTS.md#hyperwatch-section). "Hostname only" and "signature" are the
 fallbacks applied to any user agent when no family rule matched. "Published list" means a list in
@@ -20,7 +20,7 @@ fallbacks applied to any user agent when no family rule matched. "Published list
 | Applebot | `Applebot` | unconfirmed hostname `.apple.com` or published list | [Applebot](robots/applebot.md) |
 | Aranet | `Aranet-SearchBot` | cloud hostname `.googleusercontent.com` | [Aranet-SearchBot](robots/aranet-searchbot.md) |
 | Archive.org | `archive.org bot`, `special archiver`; hostname only `.us.archive.org` | unconfirmed hostname `.archive.org` | [archive.org_bot](robots/archive.org_bot.md) |
-| Arquivo | `arquivo-web-crawler`, `Arquivo-web-crawler` | unconfirmed hostname `.arquivo.pt` | [Arquivo-web-crawler](robots/arquivo-web-crawler.md) |
+| Arquivo | `arquivo-web-crawler`, `Arquivo-web-crawler` | unconfirmed hostname `.arquivo.pt` or published list | [Arquivo-web-crawler](robots/arquivo-web-crawler.md) |
 | Babbar | `Barkrowler` | unconfirmed hostname `.babbar.eu` or published list | [Barkrowler](robots/barkrowler.md) |
 | Baidu | `Baiduspider`, `Baiduspider-render`, `Baiduspider-image` | unconfirmed hostname `.baidu.com` | [Baiduspider](robots/baiduspider.md) |
 | Bing | `BingBot`, `BingPreview`; hostname only `.search.msn.com` | unconfirmed hostname `.search.msn.com` or published list | [bingbot](robots/bingbot.md) |
@@ -43,9 +43,13 @@ fallbacks applied to any user agent when no family rule matched. "Published list
 | Flipboard | `FlipboardProxy` | unconfirmed hostname `.flipboard.com` | [FlipboardProxy](robots/flipboardproxy.md) |
 | GitHub Camo | `github-camo` | published list (`github-ips.json`) or inline range `9.234.0.0/17` | [github-camo](robots/github-camo.md) |
 | Google | `Google`, `GoogleDocs`, `docs.google.com`, `Google Favicon`, `GoogleImageProxy` | unconfirmed hostname `.google.com` | [Google Favicon](robots/google-favicon.md), [GoogleDocs](robots/googledocs.md), [GoogleImageProxy](robots/googleimageproxy.md) |
-| Googlebot | `Googlebot`; hostname only `.googlebot.com` (how `Googlebot-Image` and `Googlebot-Video` get it) | unconfirmed hostname `.googlebot.com` or published list (`Googlebot` only) | [Googlebot](robots/googlebot.md) |
+| Googlebot | `Googlebot`, `Googlebot-Image`, `Googlebot-Video`; hostname only `.googlebot.com` | unconfirmed hostname `.googlebot.com` or published list | [Googlebot](robots/googlebot.md) |
+| HaloScan | `HaloBot` | published list (read from a table on its crawler page) | [HaloBot](robots/halobot.md) |
 | Happy Apps | `HappyApps-WebCheck` | cloud hostname `.compute-1.amazonaws.com` | [HappyApps-WebCheck](robots/happyapps-webcheck.md) |
 | Headline | `ev-crawler` | unconfirmed hostname `.headline.com` | [ev-crawler](robots/ev-crawler.md) |
+| HubSpot | `HubSpot Crawler` | published list (the `WEB_SCRAPING` ranges of its network origins API) | [HubSpot Crawler](robots/hubspot-crawler.md) |
+| ibou | `ibou-search`, `IbouBot` | forward-confirmed hostname `.ibou.io` or published list (one per family) | [ibou-search](robots/ibou-search.md), [IbouBot](robots/iboubot.md); `IbouBot`'s user agent parses as `www.ibou.com` (fixed in `@hyperwatch/useragent` [#227](https://github.com/hyperwatch/useragent/pull/227), not released) |
+| Idarus | `IdarusBot` | inline range `141.94.42.166/32` | [IdarusBot](robots/idarusbot.md) |
 | InfoTiger | `InfoTigerBot` | unconfirmed hostname `.infotiger.com` | [InfoTigerBot](robots/infotigerbot.md) |
 | Keenable | `KeenableBot`, `Keenable-User` | published lists | [KeenableBot](robots/keenablebot.md), [Keenable-User](robots/keenable-user.md) |
 | Line | `Linespider` | unconfirmed hostname `.search.line-apps.com` | [Linespider](robots/linespider.md) |
@@ -67,12 +71,12 @@ fallbacks applied to any user agent when no family rule matched. "Published list
 | Perplexity | `PerplexityBot`, `Perplexity-User` | published lists | [PerplexityBot](robots/perplexitybot.md), [Perplexity-User](robots/perplexity-user.md) |
 | PetalBot | `PetalBot` | unconfirmed hostname `.petalsearch.com` | [PetalBot](robots/petalbot.md) |
 | Pingdom | `PingdomBot` | unconfirmed hostname `.pingdom.com` or published list | [PingdomBot](robots/pingdombot.md) |
-| Pinterest | `Pinterest`, `Pinterestbot` | unconfirmed hostname `.pinterest.com` | [Pinterestbot](robots/pinterestbot.md); the parser also returns `Pinterest` for Pinterest's Android and some iOS in-app browsers |
+| Pinterest | `Pinterest`, `Pinterestbot` | unconfirmed hostname `.pinterest.com` or inline range `54.236.1.0/24` | [Pinterestbot](robots/pinterestbot.md); the parser also returns `Pinterest` for Pinterest's Android and some iOS in-app browsers |
 | Qwant | `Qwantify`, `Qwantify-dev`, `Qwantbot`, `Qwantbot-news`; hostname only `.qwant.com` | unconfirmed hostname `.qwant.com` or published list | [Qwantbot](robots/qwantbot.md) |
 | Raven | `Raven` | cloud hostname `.compute-1.amazonaws.com` | none matches: [RavenCrawler](robots/ravencrawler.md) parses as `RavenCrawler` |
-| Reflection | `Reflectionbot` | forward-confirmed hostname `.reflection.ai` | [Reflectionbot](robots/reflectionbot.md) |
+| Reflection | `Reflectionbot` | forward-confirmed hostname `.reflection.ai` or published list | [Reflectionbot](robots/reflectionbot.md) |
 | Riddler | `Riddler` | cloud hostname `.eu-west-1.compute.amazonaws.com` | [Riddler](robots/riddler.md) |
-| RootCrawl | `RootCrawl`, `RootCrawl-Crawler` | unconfirmed hostname `.rootcrawl.org` | [RootCrawl](robots/rootcrawl.md) |
+| RootCrawl | `RootCrawl`, `RootCrawl-Crawler` | unconfirmed hostname `.rootcrawl.org` or published list | [RootCrawl](robots/rootcrawl.md) |
 | SE Ranking | `SERankingBacklinksBot` | unconfirmed hostname `.blex.seranking.com` or published list | [SERankingBacklinksBot](robots/serankingbacklinksbot.md) |
 | Seekport | `SeekportBot`, `Seekport Crawler` | published list, or unconfirmed hostname `.007ac9.net` (`SeekportBot`), cloud hostname `.clients.your-server.de` (`Seekport Crawler`) | [SeekportBot](robots/seekportbot.md) |
 | Semrush | `SemrushBot`, `SemrushBot-SWA`, `SemrushBot-OCOB`, `SemrushBot-FT`, `SemrushBot-ESI`, `SiteAuditBot`, `SplitSignalBot`, `RyteBot`; hostname only (forward-confirmed `.semrush.com`); signature `75e08e387505289898138bab5c6ee557` | forward-confirmed hostname `.semrush.com` or inline range `85.208.98.0/24` | [SemrushBot](robots/semrushbot.md), [SemrushBot-SWA](robots/semrushbot-swa.md), [SemrushBot-OCOB](robots/semrushbot-ocob.md), [SemrushBot-FT](robots/semrushbot-ft.md), [SemrushBot-ESI](robots/semrushbot-esi.md), [SiteAuditBot](robots/siteauditbot.md), [SplitSignalBot](robots/splitsignalbot.md), [RyteBot](robots/rytebot.md) |
@@ -97,4 +101,4 @@ fallbacks applied to any user agent when no family rule matched. "Published list
 | Wise | `TransferWise-Webhook` | cloud hostname `.eu-central-1.compute.amazonaws.com` | - (webhooks, not a robot) |
 | Yahoo | `Yahoo`, `Yahoo! Slurp`, `YahooMailProxy` | unconfirmed hostname `.crawl.yahoo.net` (`Yahoo`, `Yahoo! Slurp`), `.yahoo.net` (`YahooMailProxy`) | [Slurp](robots/slurp.md), [YahooMailProxy](robots/yahoomailproxy.md) (old user agent only) |
 | Yandex | `YandexBot`, `YandexImages`, `YandexMobileBot`, `YandexAccessibilityBot` | unconfirmed hostname `.yandex.com` | [YandexBot](robots/yandexbot.md) |
-| You.com | `YouBot` | unconfirmed hostname `.search.you.com` | [YouBot](robots/youbot.md) |
+| You.com | `YouBot` | unconfirmed hostname `.search.you.com` or inline range `68.67.112.0/24` | [YouBot](robots/youbot.md) |
