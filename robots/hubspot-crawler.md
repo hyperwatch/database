@@ -12,8 +12,8 @@ verification:
   hostnames: []
 hyperwatch:
   family: HubSpot Crawler
-  identity: null
-last_checked: 2026-10-15
+  identity: HubSpot
+last_checked: 2026-10-16
 ---
 
 # HubSpot Crawler
@@ -79,8 +79,10 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the user agent as family `HubSpot Crawler`. `src/modules/identity.js`
-has no rule for it, so it gets no identity.
+`@hyperwatch/useragent` parses the user agent as family `HubSpot Crawler`. In Hyperwatch `main`
+(after 5.3.3), `src/modules/identity.js` sets the identity `HubSpot` when the address is in the
+published list (`hubspot-ips.json`, the 36 `WEB_SCRAPING` ranges). Those ranges cover all of
+HubSpot's crawling and user-generated traffic, not only HubSpot Crawler.
 
 ## Misc
 

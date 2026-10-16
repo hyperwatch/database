@@ -12,8 +12,8 @@ verification:
   hostnames: []
 hyperwatch:
   family: IdarusBot
-  identity: null
-last_checked: 2026-10-15
+  identity: Idarus
+last_checked: 2026-10-16
 ---
 
 # IdarusBot
@@ -110,8 +110,9 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `IdarusBot`. `src/modules/identity.js` has no rule for
-it, so it gets no identity.
+`@hyperwatch/useragent` returns the family `IdarusBot`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `Idarus` when the address is `141.94.42.166`, the one
+address its page gives (inline range `141.94.42.166/32`).
 
 ## Misc
 

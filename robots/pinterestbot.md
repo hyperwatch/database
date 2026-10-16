@@ -15,7 +15,7 @@ verification:
 hyperwatch:
   family: Pinterestbot
   identity: Pinterest
-last_checked: 2026-10-15
+last_checked: 2026-10-16
 ---
 
 # Pinterestbot
@@ -74,15 +74,15 @@ has no fixed range. No list file and no ASN are published.
 
 `@hyperwatch/useragent` returns the family `Pinterestbot` for the second and third strings above,
 and `Pinterest` for the first one. In Hyperwatch `main` (after 5.3.3), `src/modules/identity.js`
-sets the identity `Pinterest` for the families `Pinterest` and `Pinterestbot` when the unconfirmed
-hostname ends with `.pinterest.com`. The parser also returns `Pinterest` for Pinterest's Android app
-and some versions of its iOS app, whose in-app browsers are used by people.
+sets the identity `Pinterest` for the families `Pinterest` and `Pinterestbot` on an unconfirmed
+hostname ending with `.pinterest.com` or the inline range `54.236.1.0/24` (the documented US range).
+The parser also returns `Pinterest` for Pinterest's Android app and some versions of its iOS app,
+whose in-app browsers are used by people.
 
 Where it falls short of the documentation:
 
 - it reads the unconfirmed hostname, not the forward-confirmed one;
-- it does not accept `.pinterestcrawler.com`;
-- it does not use the US range `54.236.1.0/24`.
+- it does not accept `.pinterestcrawler.com`.
 
 ## Misc
 

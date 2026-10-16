@@ -13,8 +13,8 @@ verification:
     - ibou.io
 hyperwatch:
   family: ibou-search
-  identity: null
-last_checked: 2026-10-15
+  identity: ibou
+last_checked: 2026-10-16
 ---
 
 # ibou-search
@@ -84,13 +84,15 @@ Crawl-Delay: 10
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `ibou-search`. `src/modules/identity.js` has no rule for
-it, so it gets no identity, even though ibou publishes both an IP list and reverse DNS.
+`@hyperwatch/useragent` returns the family `ibou-search`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `ibou` on a forward-confirmed hostname ending with
+`.ibou.io` or the published list (`ibou-ips.json`, 2 prefixes). IbouBot has its own rule and list
+(see [IbouBot](iboubot.md)).
 
 ## Misc
 
-- ibou's site also links to a page about `IbouBot`. The crawler page does not say how the two
-  relate.
+- ibou documents a second crawler, `IbouBot`, with its own page, user agent and IP list: see
+  [IbouBot](iboubot.md).
 - Cloudflare classifies ibou-search as a search crawler, according to ibou.
 
 ## Sources

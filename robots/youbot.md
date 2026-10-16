@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: YouBot
   identity: You.com
-last_checked: 2026-10-15
+last_checked: 2026-10-16
 ---
 
 # YouBot
@@ -93,10 +93,10 @@ https://you.com/.well-known/http-message-signatures-directory. No ASN is documen
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses both strings above as family `YouBot`. Hyperwatch sets the
-identity `You.com` when the reverse DNS hostname ends with `.search.you.com`, without the forward lookup
-You.com documents. It does not check the
-`68.67.112.0/24` range or Web Bot Auth signatures.
+`@hyperwatch/useragent` parses both strings above as family `YouBot`. In Hyperwatch `main` (after
+5.3.3), `src/modules/identity.js` sets the identity `You.com` on an unconfirmed hostname ending with
+`.search.you.com` or the inline range `68.67.112.0/24`. It does not do the forward lookup You.com
+documents, and does not check Web Bot Auth signatures.
 
 ## Misc
 

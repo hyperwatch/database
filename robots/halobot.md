@@ -12,8 +12,8 @@ verification:
   hostnames: []
 hyperwatch:
   family: HaloBot
-  identity: null
-last_checked: 2026-10-15
+  identity: HaloScan
+last_checked: 2026-10-16
 ---
 
 # HaloBot
@@ -82,8 +82,10 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `HaloBot`. `src/modules/identity.js` has no rule for it,
-so it gets no identity.
+`@hyperwatch/useragent` returns the family `HaloBot`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `HaloScan` when the address is in the published list
+(`halobot-ips.json`, the 12 addresses of the "Official IP addresses" row of the crawler page, which
+has no machine-readable list).
 
 ## Misc
 

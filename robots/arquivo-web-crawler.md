@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: Arquivo-web-crawler
   identity: Arquivo
-last_checked: 2026-10-15
+last_checked: 2026-10-16
 ---
 
 # Arquivo-web-crawler
@@ -78,9 +78,8 @@ Reverse DNS hostnames and ASN are not documented.
 
 `@hyperwatch/useragent` parses all three strings as family `Arquivo-web-crawler`. In Hyperwatch
 `main` (after 5.3.3), `src/modules/identity.js` sets the identity `Arquivo` for the families
-`arquivo-web-crawler` and `Arquivo-web-crawler` when the unconfirmed hostname ends with
-`.arquivo.pt`. Arquivo.pt does not document this hostname, and the rule does not use the published
-IP list.
+`arquivo-web-crawler` and `Arquivo-web-crawler` on an unconfirmed hostname ending with `.arquivo.pt`
+or the published list (`arquivo-ips.json`, 2 entries). Arquivo.pt does not document this hostname.
 
 ## Misc
 

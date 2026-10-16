@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: Reflectionbot
   identity: Reflection
-last_checked: 2026-10-15
+last_checked: 2026-10-16
 ---
 
 # Reflectionbot
@@ -80,9 +80,9 @@ ASN: not documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Reflectionbot`. `src/modules/identity.js` sets the
-identity `Reflection` when the reverse DNS name ends with `.reflection.ai` and is confirmed by a
-forward lookup. The IP list is not used.
+`@hyperwatch/useragent` returns the family `Reflectionbot`. In Hyperwatch `main` (after 5.3.3),
+`src/modules/identity.js` sets the identity `Reflection` on a forward-confirmed hostname ending with
+`.reflection.ai` or the published list (`reflectionbot-ips.json`, 2 entries).
 
 ## Misc
 

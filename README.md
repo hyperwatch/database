@@ -71,13 +71,14 @@ for adding or updating robots.
 | [GoogleDocs](robots/googledocs.md) | Google | other | none | Google |
 | [GoogleImageProxy](robots/googleimageproxy.md) | Google | other | none | Google |
 | [GPTBot](robots/gptbot.md) | OpenAI | ai-training | ip-list | OpenAI GPTBot |
-| [HaloBot](robots/halobot.md) | HaloScan | seo | ip-list | - |
+| [HaloBot](robots/halobot.md) | HaloScan | seo | ip-list | HaloScan |
 | [HappyApps-WebCheck](robots/happyapps-webcheck.md) | Happy Apps, LLC | monitoring | none | Happy Apps |
 | [heritrix (Image-Meta)](robots/image-meta.md) | Erie Data Systems, LLC | search-engine | none | - |
-| [HubSpot Crawler](robots/hubspot-crawler.md) | HubSpot | seo | ip-list | - |
+| [HubSpot Crawler](robots/hubspot-crawler.md) | HubSpot | seo | ip-list | HubSpot |
 | [Hyperlink](robots/hyperlink.md) | Unknown | unknown | none | Meta |
-| [ibou-search](robots/ibou-search.md) | ibou | search-engine | both | - |
-| [IdarusBot](robots/idarusbot.md) | Idarus | search-engine | ip-list | - |
+| [ibou-search](robots/ibou-search.md) | ibou | search-engine | both | ibou |
+| [IbouBot](robots/iboubot.md) | ibou | search-engine | both | - |
+| [IdarusBot](robots/idarusbot.md) | Idarus | search-engine | ip-list | Idarus |
 | [image-crawler](robots/image-crawler.md) | Unknown | unknown | none | - |
 | [InfoTigerBot](robots/infotigerbot.md) | Infotiger UG (haftungsbeschränkt) | search-engine | reverse-dns | InfoTiger |
 | [JerryOSINT](robots/jerryosint.md) | unknown | research | none | - |
