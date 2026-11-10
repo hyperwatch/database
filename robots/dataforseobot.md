@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: DataForSeoBot
   identity: DataForSeo
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # DataForSeoBot
@@ -44,7 +44,14 @@ The page gives the version as 1.0, but the string above has no version number.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on dozens of requests seen on 2026-11-10, pages, verified as DataForSeo by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept-language` | `*` (100%) |
+| `upgrade-insecure-requests` | `1` (100%) |
+
+Never sent: `accept`.
 
 ## Blocking with robots.txt
 
@@ -72,9 +79,12 @@ with a forward lookup.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `DataForSeoBot`. Hyperwatch sets the
-identity `DataForSeo` when the unconfirmed hostname ends with `.dataforseo.com`. It does not
-confirm the hostname with a forward lookup and does not use the published subnets.
+`@hyperwatch/useragent` parses the string above as family `DataForSeoBot`. In Hyperwatch `main`
+(after 5.4.0), `src/modules/identity.js` sets the identity `DataForSeo` on the forward-confirmed
+hostname `crawling-gateway-*.dataforseo.com` or the published list `dataforseo-ips.json` (the
+3 IPv4 `/29` and 3 IPv6 `/64` prefixes from the documentation page, copied by hand, so it is not
+refreshed when the page changes). The forward lookup is Hyperwatch's own addition: DataForSEO does
+not ask for it.
 
 ## Misc
 

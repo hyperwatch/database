@@ -15,7 +15,7 @@ verification:
 hyperwatch:
   family: Baiduspider
   identity: Baidu
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Baiduspider
@@ -92,10 +92,11 @@ No ASN is documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses both strings above as family `Baiduspider`, and the Known Agents
-string as `Baiduspider-render`. `src/modules/identity.js` sets the identity `Baidu` for the families
-`Baiduspider`, `Baiduspider-render` and `Baiduspider-image` when the unconfirmed hostname ends with
-`.baidu.com`. Baidu documents a forward-confirmed check, which the rule does not do, and the
-`.baidu.jp` suffix, which the rule does not accept.
+string as `Baiduspider-render`. In Hyperwatch `main` (after 5.4.0), `src/modules/identity.js` sets
+the identity `Baidu` for the families `Baiduspider`, `Baiduspider-render` and `Baiduspider-image` on
+an unconfirmed hostname matching `baiduspider-*.crawl.baidu.com`. Baidu documents a
+forward-confirmed check, which the rule does not do, and the suffixes `.baidu.com` and `.baidu.jp`,
+broader than the pattern: a name like `BaiduMobaider-119-63-195-254.crawl.baidu.jp` is not accepted.
 
 ## Misc
 

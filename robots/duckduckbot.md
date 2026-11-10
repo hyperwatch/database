@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: DuckDuckBot
   identity: DuckDuckGo
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # DuckDuckBot
@@ -65,13 +65,13 @@ names or ASN are documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `DuckDuckBot`. In Hyperwatch `main` (after 5.3.3),
+`@hyperwatch/useragent` returns the family `DuckDuckBot`. In Hyperwatch `main` (after 5.4.0),
 `src/modules/identity.js` sets the identity `DuckDuckGo` for the families `DuckDuckGo` (the
 DuckDuckGo browser's user agent), `DuckDuckBot`, `DuckDuckBot-Https`, `DuckAssistBot` and
-`DuckDuckGo-Favicons-Bot` on an unconfirmed hostname ending with `.duckduckgo.com` or the published
-lists (`duckduckbot-ips.json` and `duckassistbot-ips.json`, joined). DuckDuckGo documents no reverse
-DNS names: the hostname suffix is Hyperwatch's own, and whoever controls an address's reverse DNS
-can pass it.
+`DuckDuckGo-Favicons-Bot` on the forward-confirmed hostname `*.crawl.duckduckgo.com`, the published
+lists (`duckduckbot-ips.json` and `duckassistbot-ips.json`, joined), or a verified signature of
+`https://assistbot.duckduckgo.com` (DuckAssistBot's, needs the `webbotauth` module, off by
+default). DuckDuckGo documents no reverse DNS names: the hostname pattern is Hyperwatch's own.
 
 ## Misc
 

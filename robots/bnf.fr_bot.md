@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: bnf.fr bot
   identity: BnF.fr
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # bnf.fr_bot
@@ -44,7 +44,13 @@ comes from Known Agents.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, all paths (`robots.txt` and pages), verified as BnF.fr by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/xml, application/xml, application/xhtml+xml, text/html; q=0.9, text/plain; q=0.8, image/png, */*; q=0.5` (100%) |
+| `accept-language` | `fr, en; q=0.3` (100%) |
+| `from` | `robot@bnf.fr` (100%) |
 
 ## Blocking with robots.txt
 
@@ -64,10 +70,10 @@ None published. No hostnames or ASN are documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `bnf.fr bot`. Hyperwatch sets the
-identity `BnF.fr` when the reverse DNS name ends with `.bnf.fr`. The hostname is not confirmed by a
-forward lookup, so whoever controls an address's reverse DNS can set it. The BnF does not document
-this hostname.
+`@hyperwatch/useragent` parses the string above as family `bnf.fr bot`. In Hyperwatch `main`
+(after 5.4.0), `src/modules/identity.js` sets the identity `BnF.fr` on the forward-confirmed
+hostname `robot*-depot-legal-web.bnf.fr`. The BnF documents no hostname: the pattern is
+Hyperwatch's own.
 
 ## Misc
 

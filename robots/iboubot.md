@@ -78,7 +78,7 @@ Crawl-Delay: 10
 
 `@hyperwatch/useragent` returns the family `www.ibou.com` for the current string and `ibou.io` for
 the older one: the contact address between the version and the URL makes it fall back to the URL's
-host. In Hyperwatch `main` (after 5.3.3), `src/modules/identity.js` sets the identity `ibou` for the
+host. In Hyperwatch `main` (after 5.4.0), `src/modules/identity.js` sets the identity `ibou` for the
 family `IbouBot` on a forward-confirmed hostname ending with `.ibou.io` or the published list
 (`iboubot-ips.json`, 1 prefix). Until the parser returns `IbouBot` (fixed in `@hyperwatch/useragent`
 [#227](https://github.com/hyperwatch/useragent/pull/227), not released), that rule never matches

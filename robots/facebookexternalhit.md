@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: FacebookBot
   identity: Facebook
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # facebookexternalhit
@@ -86,12 +86,12 @@ documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `FacebookBot` for both strings above. In
-`src/modules/identity.js`, `FacebookBot` gets the identity `Facebook` when the reverse DNS hostname
-ends with `.fbsv.net`, or when the address is in `src/data/meta-ips.json`. That file holds the
-AS32934 routes from RADb, refreshed with `node scripts/fetch-ips.js`: in Hyperwatch `main` (after
-5.3.3) 59 ranges, IPv4 and IPv6, the same as the live query on 2026-10-15. The `.fbsv.net` suffix is
-Hyperwatch's own rule, not documented by Meta.
+`@hyperwatch/useragent` returns the family `FacebookBot` for both strings above. In Hyperwatch
+`main` (after 5.4.0), `src/modules/identity.js` gives `FacebookBot` the identity `Facebook` on the
+forward-confirmed hostname `fwdproxy-*.fbsv.net` or the published list `src/data/meta-ips.json`.
+That file holds the AS32934 routes from RADb, refreshed with `node scripts/fetch-ips.js`: 59
+ranges, IPv4 and IPv6, the same as the live query on 2026-10-15. The `fwdproxy-*.fbsv.net` pattern
+is Hyperwatch's own, not documented by Meta.
 
 ## Misc
 

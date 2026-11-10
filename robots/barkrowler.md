@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: Barkrowler
   identity: Babbar
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Barkrowler
@@ -81,10 +81,10 @@ No ASN is documented by Babbar.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the user agent as family `Barkrowler`. In Hyperwatch `main` (after
-5.3.3), `src/modules/identity.js` sets the identity `Babbar` on an unconfirmed hostname ending with
-`.babbar.eu` or the published list (`barkrowler-ips.json`). The hostname is not confirmed with a
-forward lookup, which Babbar does not mention either: whoever controls an address's reverse DNS can
-pass it.
+5.4.0), `src/modules/identity.js` sets the identity `Babbar` on a forward-confirmed hostname
+matching `c*.babbar.eu` or the published list (`barkrowler-ips.json`). Babbar gives only the suffix
+`babbar.eu`, without example hostnames, so the pattern is narrower than the documentation and does
+not come from it.
 
 ## Misc
 

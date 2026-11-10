@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: SERankingBacklinksBot
   identity: SE Ranking
-last_checked: 2026-10-16
+last_checked: 2026-11-10
 ---
 
 # SERankingBacklinksBot
@@ -43,7 +43,13 @@ Mozilla/5.0 (compatible; SERankingBacklinksBot/1.0; +https://seranking.com/backl
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as SE Ranking by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/plain,text/html,application/xhtml+xml,application/xml` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -75,10 +81,11 @@ On 2026-10-15, the first addresses of the IPv4 list had reverse DNS names under
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `SERankingBacklinksBot`. In Hyperwatch
-`main` (after 5.3.3), `src/modules/identity.js` sets the identity `SE Ranking` on an unconfirmed
-hostname ending with `.blex.seranking.com` or the published list (`seranking-ips.json`, the IPv4 and
-IPv6 responses, 131 addresses). The hostname is not confirmed with a forward lookup, and the `blex`
-subdomain is narrower than the documented `seranking.com`.
+`main` (after 5.4.0), `src/modules/identity.js` sets the identity `SE Ranking` on a
+forward-confirmed hostname matching `discovery-crawler*.blex.seranking.com` or the published list
+(`seranking-ips.json`, the IPv4 and IPv6 responses, 131 addresses). The pattern is narrower than the
+documented `seranking.com`: the `blex` subdomain and the `discovery-crawler` prefix come from
+observed names, not from SE Ranking's documentation, which does not mention a forward lookup either.
 
 ## Misc
 

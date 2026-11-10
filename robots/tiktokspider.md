@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: TikTokSpider
   identity: TikTok
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # TikTokSpider
@@ -43,7 +43,16 @@ This string comes from Known Agents, not from TikTok.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as TikTok by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `image/heif,image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8` (100%) |
+| `accept-language` | `en-US,en;q=0.5` (100%) |
+| `priority` | `u=1, i` (100%) |
+| `sec-fetch-dest` | `image` (100%) |
+| `sec-fetch-mode` | `no-cors` (100%) |
+| `sec-fetch-site` | `same-site` (100%) |
 
 ## Blocking with robots.txt
 

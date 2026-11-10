@@ -69,7 +69,7 @@ No reverse DNS hostnames or ASN are documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `Daum`. In Hyperwatch `main` (after
-5.3.3), `src/modules/identity.js` sets the identity `Daum` when the address is in the published list
+5.4.0), `src/modules/identity.js` sets the identity `Daum` when the address is in the published list
 `src/data/daumbot-ips.json`. That file is Daum's daumbot.json copied by hand (52 prefixes, the same
 count as on 2026-10-15): Daum's server does not send its intermediate certificate, so Hyperwatch's
 fetch script cannot download it. Because the copy is manual, it is not refreshed when Daum updates

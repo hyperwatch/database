@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: AhrefsSiteAudit
   identity: Ahrefs
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # AhrefsSiteAudit
@@ -74,11 +74,11 @@ Neither file says when it was generated. No ASN is documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses both strings above as family `AhrefsSiteAudit`. In Hyperwatch `main`
-(after 5.3.3), `src/modules/identity.js` sets the identity `Ahrefs` for the families `AhrefsBot` and
-`AhrefsSiteAudit` on an unconfirmed hostname ending with `.ahrefs.com` or the published list
-(`ahrefs-ips.json`, fetched from `crawler-ip-ranges`). The hostname is not confirmed with a forward
-lookup, and `.ahrefs.net`, which Ahrefs documents, is not accepted: such an address passes only
-through the list.
+(after 5.4.0), `src/modules/identity.js` sets the identity `Ahrefs` for the families `AhrefsBot`,
+`AhrefsSiteAudit` and `YepBot` on a forward-confirmed hostname ending with `.ahrefs.com`, the
+published list (`ahrefs-ips.json`, fetched from `crawler-ip-ranges`) or a verified signature of
+`https://ahrefs.com` (needs the `webbotauth` module, off by default). `.ahrefs.net`, which Ahrefs
+documents, is not accepted: such an address passes only through the list.
 
 ## Misc
 

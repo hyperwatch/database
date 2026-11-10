@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: Stripebot
   identity: Stripe
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Stripebot
@@ -62,10 +62,12 @@ same address. No IP list or ASN is published.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Stripebot`. `src/modules/identity.js` sets the identity
-`Stripe` when the reverse DNS hostname ends with `.stripe.com`. It reads the unconfirmed hostname,
-not the forward-confirmed one, and accepts any name under `stripe.com`, not only
-`crawl.stripe.com`.
+`@hyperwatch/useragent` returns the family `Stripebot`. In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` sets the identity `Stripe` for the families `Stripe` and `Stripebot` on a
+forward-confirmed hostname matching `crawl.stripe.com`, `*.crawl.stripe.com` or `ip-*.stripe.com`. A
+"hostname only" fallback sets `Stripe` on the same forward-confirmed names whatever the user agent.
+The first two patterns follow Stripe's documentation; `ip-*.stripe.com` is not documented for
+Stripebot.
 
 ## Misc
 

@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: SentryUptimeBot
   identity: Sentry
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # SentryUptimeBot
@@ -38,7 +38,13 @@ SentryUptimeBot/1.0 (+https://docs.sentry.io/product/monitors-and-alerts/monitor
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as Sentry by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -55,7 +61,7 @@ change without notice". No reverse DNS hostname or ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `SentryUptimeBot`. In Hyperwatch `main` (after 5.3.3),
+`@hyperwatch/useragent` returns the family `SentryUptimeBot`. In Hyperwatch `main` (after 5.4.0),
 `src/modules/identity.js` sets the identity `Sentry` on a cloud hostname ending with
 `.googleusercontent.com` or the published list (`sentry-uptime-ips.json`). The cloud hostname is not
 documented by Sentry, and any Google Cloud customer passes it.

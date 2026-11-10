@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: AhrefsBot
   identity: Ahrefs
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # AhrefsBot
@@ -46,7 +46,16 @@ Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, all paths (`robots.txt` and pages), verified as Ahrefs by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+| `signature` | `(present)` (100%) |
+| `signature-agent` | `"https://ahrefs.com"` (100%) |
+| `signature-input` | `(present)` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -84,11 +93,11 @@ dated 2026-09-03. No ASN is documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `AhrefsBot`. In Hyperwatch `main` (after
-5.3.3), `src/modules/identity.js` sets the identity `Ahrefs` for the families `AhrefsBot` and
-`AhrefsSiteAudit` on an unconfirmed hostname ending with `.ahrefs.com` or the published list
-(`ahrefs-ips.json`, fetched from `crawler-ip-ranges`). The hostname is not confirmed with a forward
-lookup, and `.ahrefs.net`, which Ahrefs documents, is not accepted: such an address passes only
-through the list.
+5.4.0), `src/modules/identity.js` sets the identity `Ahrefs` for the families `AhrefsBot`,
+`AhrefsSiteAudit` and `YepBot` on a forward-confirmed hostname ending with `.ahrefs.com`, the
+published list (`ahrefs-ips.json`, fetched from `crawler-ip-ranges`) or a verified signature of
+`https://ahrefs.com` (needs the `webbotauth` module, off by default). `.ahrefs.net`, which Ahrefs
+documents, is not accepted: such an address passes only through the list.
 
 ## Misc
 

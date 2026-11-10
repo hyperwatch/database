@@ -110,7 +110,7 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `IdarusBot`. In Hyperwatch `main` (after 5.3.3),
+`@hyperwatch/useragent` returns the family `IdarusBot`. In Hyperwatch `main` (after 5.4.0),
 `src/modules/identity.js` sets the identity `Idarus` when the address is `141.94.42.166`, the one
 address its page gives (inline range `141.94.42.166/32`).
 

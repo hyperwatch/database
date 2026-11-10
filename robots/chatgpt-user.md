@@ -64,8 +64,8 @@ opt-outs and automatic crawling, OpenAI points to the OAI-SearchBot token.
 ## IP ranges and verification
 
 OpenAI publishes the source ranges at https://openai.com/chatgpt-user.json. The file is JSON with
-a `creationTime` field and a `prefixes` array of objects with an `ipv4Prefix` key. On 2026-10-15
-it held 234 IPv4 prefixes and was dated 2026-10-07. No reverse DNS hostnames or ASN are
+a `creationTime` field and a `prefixes` array of objects with an `ipv4Prefix` key. On 2026-11-10
+it held 237 IPv4 prefixes and was dated 2026-11-06. No reverse DNS hostnames or ASN are
 documented.
 
 
@@ -74,7 +74,7 @@ documented.
 `@hyperwatch/useragent` parses the string above as family `ChatGPT-User`. Hyperwatch sets the
 identity `ChatGPT` when the client address is inside the ranges of `src/data/chatgpt-user-ips.json`,
 a copy of OpenAI's list refreshed by `node scripts/fetch-ips.js` (in Hyperwatch `main` (after
-5.3.3), 234 ranges, the same as the published list on 2026-10-15).
+5.4.0), 237 ranges, the same as the published list on 2026-11-10).
 
 ## Misc
 
@@ -84,4 +84,4 @@ and IP list.
 ## Sources
 
 - https://developers.openai.com/api/docs/bots (checked 2026-10-15)
-- https://openai.com/chatgpt-user.json (checked 2026-10-15)
+- https://openai.com/chatgpt-user.json (checked 2026-11-10)

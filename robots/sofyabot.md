@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: SofyaBot
   identity: Sofya
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # SofyaBot
@@ -45,7 +45,12 @@ Sofya says this user agent is sent on every request.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on hundreds of requests seen on 2026-11-10, pages, verified as Sofya by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml` (100%) |
+| `accept-language` | `en-US,en;q=0.9` (100%) |
 
 ## Blocking with robots.txt
 
@@ -74,9 +79,9 @@ documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `SofyaBot`. In Hyperwatch `main` (after
-5.3.3), `src/modules/identity.js` sets the identity `Sofya` on an unconfirmed hostname ending with
-`.sofya.co` or the published list (`sofyabot-ips.json`). Sofya documents forward-confirmed reverse
-DNS; the hostname is still not confirmed: whoever controls an address's reverse DNS can pass it.
+5.4.0), `src/modules/identity.js` sets the identity `Sofya` on a forward-confirmed hostname matching
+`crawl-*.sofya.co` or the published list (`sofyabot-ips.json`). Both follow Sofya's documentation:
+the pattern covers the names it lists, such as `crawl-1.sofya.co`.
 
 ## Misc
 

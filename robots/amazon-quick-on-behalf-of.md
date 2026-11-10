@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: amazon-Quick-on-behalf-of
   identity: Amazon Quick
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # amazon-Quick-on-behalf-of
@@ -53,7 +53,24 @@ AWS gives only this form; `<UUID>` is a per-setup identifier.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on dozens of requests seen on 2026-11-10, pages, verified as Amazon Quick by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (46%), `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7` (35%), `image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8` (19%) |
+| `accept-language` | `en-US` (53%) |
+| `cache-control` | `no-cache` (54%) |
+| `pragma` | `no-cache` (54%) |
+| `priority` | `u=0, i` (35%), `i` (16%), `u=1, i` (4%) |
+| `sec-ch-ua` | `"Chromium";v="152", "Not?A_Brand";v="24", "HeadlessChrome";v="152"` (53%), `"Not;A=Brand";v="8", "Chromium";v="150", "HeadlessChrome";v="150"` (2%) |
+| `sec-ch-ua-mobile` | `?0` (54%) |
+| `sec-ch-ua-platform` | `"Windows"` (54%) |
+| `sec-fetch-dest` | `document` (35%), `image` (19%) |
+| `sec-fetch-mode` | `navigate` (35%), `no-cors` (19%) |
+| `sec-fetch-site` | `none` (35%), `same-site` (16%), `cross-site` (4%) |
+| `sec-fetch-storage-access` | `active` (4%) |
+| `sec-fetch-user` | `?1` (35%) |
+| `upgrade-insecure-requests` | `1` (35%) |
 
 ## Blocking with robots.txt
 

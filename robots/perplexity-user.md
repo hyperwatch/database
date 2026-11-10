@@ -59,8 +59,8 @@ a server or firewall rule. Blocking PerplexityBot does not affect it.
 
 Perplexity publishes the addresses at https://www.perplexity.com/perplexity-user.json, which
 redirects to https://www.perplexity.ai/perplexity-user.json. The format is an object with
-`creationTime` and a `prefixes` array of `{"ipv4Prefix": ...}` objects. On 2026-10-15 it held 4
-IPv4 prefixes, with `creationTime` 2025-10-17. Perplexity recommends matching both the user agent
+`creationTime` and a `prefixes` array of `{"ipv4Prefix": ...}` objects. On 2026-11-10 it held 10
+IPv4 prefixes, with `creationTime` 2026-10-28 (4 on 2026-10-15). Perplexity recommends matching both the user agent
 and the source address, and refreshing rules from the list regularly. No reverse DNS hostname or
 ASN is documented.
 
@@ -69,7 +69,8 @@ ASN is documented.
 `@hyperwatch/useragent` returns the family `Perplexity-User`. In `src/modules/identity.js`,
 Hyperwatch sets the identity `Perplexity` when the address is in
 `src/data/perplexity-user-ips.json`, written by `node scripts/fetch-ips.js` from the published list.
-In Hyperwatch `main` (after 5.3.3) it holds the same 4 prefixes as the published list.
+In Hyperwatch `main` (after 5.4.0) it holds the same 10 prefixes as the published list on
+2026-11-10.
 
 ## Misc
 
@@ -80,4 +81,4 @@ In Hyperwatch `main` (after 5.3.3) it holds the same 4 prefixes as the published
 ## Sources
 
 - https://docs.perplexity.ai/guides/bots (checked 2026-10-15, redirects to https://docs.perplexity.ai/docs/resources/perplexity-crawlers)
-- https://www.perplexity.com/perplexity-user.json (checked 2026-10-15)
+- https://www.perplexity.com/perplexity-user.json (checked 2026-11-10)

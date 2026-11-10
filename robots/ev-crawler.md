@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: ev-crawler
   identity: Headline
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # ev-crawler
@@ -42,7 +42,22 @@ Headline's page does not give the user agent. This string comes from Known Agent
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on dozens of requests seen on 2026-11-10, pages, verified as Headline by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8` (97%), `text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7` (1%), `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7` (1%) |
+| `accept-language` | `en-US,en;q=0.9` (100%) |
+| `priority` | `i` (95%), `u=0, i` (3%), `u=2, i` (3%) |
+| `sec-ch-ua` | `"Chromium";v="151", "Not=A?Brand";v="99"` (99%), `"Not:A-Brand";v="8", "Chromium";v="156"` (1%) |
+| `sec-ch-ua-mobile` | `?0` (100%) |
+| `sec-ch-ua-platform` | `"Linux"` (100%) |
+| `sec-fetch-dest` | `image` (97%), `document` (3%) |
+| `sec-fetch-mode` | `no-cors` (97%), `navigate` (3%) |
+| `sec-fetch-site` | `cross-site` (85%), `same-site` (12%), `none` (3%) |
+| `sec-fetch-storage-access` | `none` (85%) |
+| `sec-fetch-user` | `?1` (3%) |
+| `upgrade-insecure-requests` | `1` (3%) |
 
 ## Blocking with robots.txt
 
@@ -60,10 +75,9 @@ None published. No hostnames or ASN are documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `ev-crawler`. Hyperwatch sets the
-identity `Headline` when the reverse DNS name ends with `.headline.com`. The hostname is not
-confirmed by a forward lookup, so whoever controls an address's reverse DNS can set it. Headline
-does not document this hostname.
+`@hyperwatch/useragent` parses the string above as family `ev-crawler`. In Hyperwatch `main`
+(after 5.4.0), `src/modules/identity.js` sets the identity `Headline` on the forward-confirmed
+hostname `*.core.headline.com`. Headline documents no hostname: the pattern is Hyperwatch's own.
 
 ## Misc
 

@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: SeznamBot
   identity: Seznam
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # SeznamBot
@@ -48,7 +48,12 @@ Mozilla/5.0 (compatible; SeznamBot/4.0; +https://o-seznam.cz/napoveda/vyhledavan
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on dozens of requests seen on 2026-11-10, pages, verified as Seznam by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+| `accept-language` | `cs-CZ,cs;q=0.9` (100%) |
 
 ## Blocking with robots.txt
 
@@ -78,11 +83,12 @@ not say to confirm the name with a forward lookup. `2a02:598::/32` is registered
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `SeznamBot`. In Hyperwatch `main` (after 5.3.3),
-`src/modules/identity.js` sets the identity `Seznam` on an unconfirmed hostname ending with
-`.seznam.cz`, the inline range `2a02:598::/32` or the published list (`seznambot-ips.json`). The
-inline range is Seznam's whole IPv6 allocation, wider than the published crawler prefixes. The
-hostname is not confirmed with a forward lookup, which Seznam does not mention either.
+`@hyperwatch/useragent` returns the family `SeznamBot`. In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` sets the identity `Seznam` on a forward-confirmed hostname matching
+`fulltextrobot-*.seznam.cz`, the inline range `2a02:598::/32` or the published list
+(`seznambot-ips.json`). The pattern follows Seznam's documented names, test version included. The
+inline range is Seznam's whole IPv6 allocation, wider than the published crawler prefixes. Seznam
+does not mention the forward lookup the rule adds.
 
 ## Misc
 

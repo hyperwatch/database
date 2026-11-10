@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: Amazonbot
   identity: Amazonbot
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Amazonbot
@@ -52,7 +52,11 @@ example from the archived January 2025 version of the page.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on hundreds of requests seen on 2026-11-10, pages, verified as Amazonbot by Hyperwatch 5.4.0.
+
+No header other than the user agent and those set on the way.
+
+Never sent: `accept`, `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -78,12 +82,12 @@ current page no longer mentions reverse DNS, and three addresses of the publishe
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Amazonbot` for both strings above. In
-`src/modules/identity.js`, Hyperwatch sets the identity `Amazonbot` when the reverse DNS hostname
-(not forward-confirmed) ends with `.crawl.amazonbot.amazon`, or when the address is in
+`@hyperwatch/useragent` returns the family `Amazonbot` for both strings above. In Hyperwatch `main`
+(after 5.4.0), `src/modules/identity.js` sets the identity `Amazonbot` on a forward-confirmed
+hostname matching `*.crawl.amazonbot.amazon`, or when the address is in
 `src/data/amazonbot-ips.json`. That file is updated by hand (there is no fetch script); on
-2026-10-15 it held the same 1,292 addresses as the published list. The hostname suffix comes from
-Amazon's older documentation, and the check does not use the forward lookup Amazon described.
+2026-10-15 it held the same 1,292 addresses as the published list. The hostname pattern comes from
+Amazon's older documentation, which the current page no longer gives.
 
 ## Misc
 

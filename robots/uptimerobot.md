@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: UptimeRobot
   identity: Uptime Robot
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # UptimeRobot
@@ -39,7 +39,13 @@ UptimeRobot documents only this string.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on dozens of requests seen on 2026-11-10, pages, verified as Uptime Robot by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (100%) |
+| `accept-language` | `en-US,en;q=0.8` (100%) |
+| `cache-control` | `no-cache` (100%) |
 
 ## Blocking with robots.txt
 
@@ -62,10 +68,10 @@ ASN is documented. UptimeRobot also says checks can be recognized by their user 
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `UptimeRobot`. In Hyperwatch `main` (after 5.3.3),
-`src/modules/identity.js` sets the identity `Uptime Robot` on an unconfirmed hostname ending with
-`.uptimerobot.com` or the published list (`uptimerobot-ips.json`, IPv4 and IPv6). The hostname
-suffix is not documented by UptimeRobot and is not confirmed with a forward lookup.
+`@hyperwatch/useragent` returns the family `UptimeRobot`. In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` sets the identity `Uptime Robot` on a forward-confirmed hostname matching
+`checker-*.uptimerobot.com` or the published list (`uptimerobot-ips.json`, IPv4 and IPv6). The
+pattern is not documented by UptimeRobot, which documents no hostname.
 
 ## Misc
 

@@ -64,7 +64,7 @@ this.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Yahoo! Slurp`. In Hyperwatch `main` (after 5.3.3),
+`@hyperwatch/useragent` returns the family `Yahoo! Slurp`. In Hyperwatch `main` (after 5.4.0),
 `src/modules/identity.js` sets the identity `Yahoo` for the families `Yahoo` and `Yahoo! Slurp` when
 the unconfirmed hostname ends with `.crawl.yahoo.net`. The 2007 instructions describe a
 forward-confirmed check; the rule does not use the confirmed hostname. No current Yahoo page

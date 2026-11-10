@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: PetalBot
   identity: PetalBot
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # PetalBot
@@ -45,7 +45,12 @@ Mozilla/5.0 (Linux; Android 7.0;) AppleWebKit/537.36 (KHTML, like Gecko) Mobile 
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as PetalBot by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8` (100%) |
+| `accept-language` | `en` (100%) |
 
 ## Blocking with robots.txt
 
@@ -71,9 +76,11 @@ an address belongs to PetalBot. No ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses both strings above as family `PetalBot`. `src/modules/identity.js`
-sets the identity `PetalBot` when the unconfirmed hostname ends with `.petalsearch.com`. Huawei
-documents a forward-confirmed check, which the rule does not do.
+`@hyperwatch/useragent` parses both strings above as family `PetalBot`. In Hyperwatch `main` (after
+5.4.0), `src/modules/identity.js` sets the identity `PetalBot` on a forward-confirmed hostname
+matching `petalbot-*.petalsearch.com`, the form of Huawei's example. Huawei documents any name in
+`petalsearch.com`, so a crawler under another name there gets no identity. The rule does not use
+Huawei's address-checking form.
 
 ## Misc
 

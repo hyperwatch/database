@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: KeenableBot
   identity: Keenable
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # KeenableBot
@@ -101,10 +101,11 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the user agent as family `KeenableBot`. In `src/modules/identity.js`,
-Hyperwatch sets identity `Keenable` when the address is in `src/data/keenablebot-ips.json`, a copy
-of the published list refreshed by `node scripts/fetch-ips.js` (in Hyperwatch `main` (after 5.3.3),
-30 ranges, the same as the published list on 2026-10-15).
+`@hyperwatch/useragent` parses the user agent as family `KeenableBot`. In Hyperwatch `main` (after
+5.4.0), `src/modules/identity.js` sets the identity `Keenable` when the address is in the published
+list (`keenablebot-ips.json`, refreshed by `node scripts/fetch-ips.js`: 30 ranges, the same as the
+published list on 2026-10-15) or on a verified signature from `https://keenablebot.keenable.ai`,
+which needs the `webbotauth` module. Keenable says its requests do not carry signatures yet.
 
 ## Misc
 

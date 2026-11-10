@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: archive.org bot
   identity: Archive.org
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # archive.org_bot
@@ -46,7 +46,11 @@ Agents. The URL in the second one is Archive-It's page for site owners.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on hundreds of requests seen on 2026-11-10, pages, verified as Archive.org by Hyperwatch 5.4.0.
+
+No header other than the user agent and those set on the way.
+
+Never sent: `accept`, `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -69,10 +73,11 @@ None published. No hostnames or ASN are documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the first string as family `archive.org bot` and the second as
-`special archiver`. For both, Hyperwatch sets the identity `Archive.org` when the reverse DNS name
-ends with `.archive.org`. A fallback also sets `Archive.org` for any user agent when the name ends
-with `.us.archive.org`. Neither check uses a forward lookup, so whoever controls an address's
-reverse DNS can pass them. The Internet Archive does not document these hostnames.
+`special archiver`. For both, Hyperwatch `main` (after 5.4.0) sets the identity `Archive.org` on a
+forward-confirmed hostname matching `k8s-worker-*.ca.archive.org`, `crawl*.us.archive.org` or
+`wbgrp-crawl*.us.archive.org`. A "hostname only" fallback also sets `Archive.org` for any user
+agent on the last two forward-confirmed patterns. The Internet Archive does not document these
+hostnames.
 
 ## Misc
 

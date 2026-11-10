@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: BingBot
   identity: Bing
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # bingbot
@@ -72,8 +72,9 @@ example `adidxbot` (Bing Ads) and `MicrosoftPreview` (page previews).
 ## IP ranges and verification
 
 Microsoft publishes bingbot's addresses at https://www.bing.com/toolbox/bingbot.json. The format
-is an object with `creationTime` and a `prefixes` array of `{"ipv4Prefix": ...}` objects. On the
-check date it held 28 IPv4 prefixes and no IPv6, with `creationTime` 2024-01-03.
+is an object with `creationTime` and a `prefixes` array of `{"ipv4Prefix": ...}` objects. On
+2026-11-10 it held 29 IPv4 prefixes and no IPv6, still with `creationTime` 2024-01-03 (28 prefixes
+on 2026-10-15).
 
 Microsoft's documented check is reverse DNS: the address must resolve to a name ending in
 `search.msn.com`, and a forward lookup of that name must return the same address. Bing Webmaster
@@ -82,12 +83,12 @@ Tools also has a "Verify Bingbot" tool (https://www.bing.com/toolbox/verify-bing
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `BingBot`. In Hyperwatch `main` (after 5.3.3),
+`@hyperwatch/useragent` returns the family `BingBot`. In Hyperwatch `main` (after 5.4.0),
 `src/modules/identity.js` sets the identity `Bing` for the families `BingBot` and `BingPreview` on
-an unconfirmed hostname ending with `.search.msn.com` or the published list (`bingbot-ips.json`). It
-also sets `Bing` for any request whose unconfirmed hostname ends with `.search.msn.com` when no
-other rule matched. Bing documents a forward lookup back to the same address; the hostname is still
-not confirmed.
+a forward-confirmed hostname matching `msnbot-*.search.msn.com` or the published list
+(`bingbot-ips.json`). A "hostname only" fallback also sets `Bing` for any user agent on the same
+forward-confirmed pattern. Microsoft documents any name ending in `search.msn.com`; the pattern is
+narrower, so a confirmed name of another shape passes only through the list.
 
 ## Misc
 
@@ -100,7 +101,7 @@ not confirmed.
 ## Sources
 
 - https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0 (checked 2026-10-15, content not readable without JavaScript)
-- https://www.bing.com/toolbox/bingbot.json (checked 2026-10-15)
+- https://www.bing.com/toolbox/bingbot.json (checked 2026-11-10)
 - https://www.bing.com/toolbox/verify-bingbot (checked 2026-10-15)
 - https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot (checked 2026-10-15)
 - https://blogs.bing.com/webmaster/2009/08/10/crawl-delay-and-the-bing-crawler-msnbot (checked 2026-10-15)

@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: LinkedInBot
   identity: LinkedIn
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # LinkedInBot
@@ -82,10 +82,10 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `LinkedInBot`. `src/modules/identity.js` sets the
-identity `LinkedIn` when the reverse DNS hostname of the address ends with `.linkedin.com`. This rule
-reads the reverse DNS hostname, not the forward-confirmed one. The suffix is Hyperwatch's own rule,
-not documented by LinkedIn.
+`@hyperwatch/useragent` returns the family `LinkedInBot`. In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` sets the identity `LinkedIn` on a forward-confirmed hostname matching
+`*.fwd.linkedin.com`. LinkedIn documents no hostname: the pattern is taken from the names observed
+in traffic, so LinkedInBot requests from other names get no identity.
 
 ## Misc
 

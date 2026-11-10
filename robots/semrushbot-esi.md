@@ -53,12 +53,13 @@ None published for SemrushBot-ESI. Semrush's bot page documents no IP list or re
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `SemrushBot-ESI` for the bare token and for a string in the
-`Mozilla/5.0 (compatible; <token>; +http://www.semrush.com/bot.html)` form used by SemrushBot (the
-real string is not published). `src/modules/identity.js` sets the identity `Semrush` when the
+`@hyperwatch/useragent` returns the family `SemrushBot-ESI` for the bare token and for a string in
+the `Mozilla/5.0 (compatible; <token>; +http://www.semrush.com/bot.html)` form used by SemrushBot
+(the real string is not published). `src/modules/identity.js` sets the identity `Semrush` when the
 forward-confirmed hostname ends with `.semrush.com`, or when the address is in the inline range
-`85.208.98.0/24`. Semrush documents neither for SemrushBot-ESI: the hostname suffix is not documented for
-any Semrush crawler, and the only documented range, `85.208.98.128/25`, is for Site Audit.
+`85.208.98.0/24`. Semrush documents neither for SemrushBot-ESI: the hostname suffix is not
+documented for any Semrush crawler, and the only documented range, `85.208.98.128/25`, is for Site
+Audit.
 
 ## Misc
 

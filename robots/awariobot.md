@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: AwarioBot
   identity: WebMeUp
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # AwarioBot
@@ -99,10 +99,10 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `AwarioBot`. `src/modules/identity.js` sets the
-identity `WebMeUp` for this family when the reverse DNS name ends with `.webmeup.com` (the same
-rule as BLEXBot). The hostname is not confirmed by a forward lookup in this rule, and Awario does
-not document it. Without such a hostname, the identity is null.
+`@hyperwatch/useragent` returns the family `AwarioBot`. In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` sets the identity `WebMeUp` for this family on a forward-confirmed
+hostname matching `pot*.webmeup.com` (the same rule as BLEXBot). Awario does not document this
+hostname. Without such a hostname, the identity is null.
 
 ## Misc
 

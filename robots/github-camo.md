@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: github-camo
   identity: GitHub Camo
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # github-camo
@@ -46,7 +46,13 @@ is not documented by GitHub.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on thousands of requests seen on 2026-11-10, pages, verified as GitHub Camo by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8` (52%), `image/jxl,image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8` (24%), `image/avif,image/jxl,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5` (18%), and 8 other values |
+| `accept-language` | `en-US,en;q=0.9` (23%), `en-US` (17%), `zh-CN` (15%), and 70 other values |
+| `cache-control` | `no-cache` (17%) |
 
 ## Blocking with robots.txt
 
@@ -67,8 +73,9 @@ others, with no date in the file). None of the arrays is named for Camo.
 the identity `GitHub Camo` for the family `github-camo` when the address is in
 `src/data/github-ips.json` (published list: the `hooks`, `web`, `api`, `git`, `pages`, `packages`,
 `importer`, `github_enterprise_importer` and `copilot` ranges of `api.github.com/meta`, refreshed
-with `node scripts/fetch-ips.js`; in Hyperwatch `main` (after 5.3.3) 139 prefixes, the same as the
-published list on 2026-10-15) or in the inline range `9.234.0.0/17`.
+with `node scripts/fetch-ips.js`; in Hyperwatch `main` (after 5.4.0) 183 prefixes; on 2026-11-10
+those arrays held 188 distinct prefixes, so the copy is a refresh behind) or in the inline range
+`9.234.0.0/17`.
 
 Where it falls short:
 
@@ -85,4 +92,4 @@ Where it falls short:
 - https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-anonymized-urls (checked 2026-10-15)
 - https://github.blog/news-insights/product-news/proxying-user-images (checked 2026-10-15)
 - https://github.com/atmos/camo (checked 2026-10-15)
-- https://api.github.com/meta (checked 2026-10-15)
+- https://api.github.com/meta (checked 2026-11-10)

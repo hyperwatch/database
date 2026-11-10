@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: DotBot
   identity: Moz
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # DotBot
@@ -39,7 +39,14 @@ https://opensiteexplorer.org/dotbot redirects to the documentation page.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on hundreds of requests seen on 2026-11-10, pages, verified as Moz by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+| `accept-charset` | `utf-8;q=0.7,iso-8859-1;q=0.2,*;q=0.1` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 

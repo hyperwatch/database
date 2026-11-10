@@ -76,18 +76,19 @@ Crawl-Delay: 10
 ## IP ranges and verification
 
 - IP list: https://www.ibou.com/ibousearch-ip-ranges.json. JSON object with `creationTime` and a
-  `prefixes` array whose objects carry `ipv4Prefix` and `ipv6Prefix` keys. On the check date it held
-  one entry: `188.241.38.0/24` and `2a0e:6240:e000::/44`, with `creationTime` 2026-09-28. ibou says
+  `prefixes` array whose objects carry `ipv4Prefix` and `ipv6Prefix` keys. On 2026-11-10 it held
+  three prefixes: `188.241.38.0/24`, `217.113.196.0/24` and `2a0e:6240:e000::/44`, with
+  `creationTime` 2026-11-04 (on 2026-10-15, the first and the last, dated 2026-09-28). ibou says
   the list may change and should be fetched periodically.
 - Reverse DNS: forward-confirmed names under `ibou.io`, for example `c40037.ibou.io`.
 - ASN: not documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `ibou-search`. In Hyperwatch `main` (after 5.3.3),
+`@hyperwatch/useragent` returns the family `ibou-search`. In Hyperwatch `main` (after 5.4.0),
 `src/modules/identity.js` sets the identity `ibou` on a forward-confirmed hostname ending with
-`.ibou.io` or the published list (`ibou-ips.json`, 2 prefixes). IbouBot has its own rule and list
-(see [IbouBot](iboubot.md)).
+`.ibou.io` or the published list (`ibou-ips.json`, the same 3 prefixes). IbouBot has its own rule
+and list (see [IbouBot](iboubot.md)).
 
 ## Misc
 
@@ -98,4 +99,4 @@ Crawl-Delay: 10
 ## Sources
 
 - https://www.ibou.com/crawlers.html (checked 2026-10-15)
-- https://www.ibou.com/ibousearch-ip-ranges.json (checked 2026-10-15)
+- https://www.ibou.com/ibousearch-ip-ranges.json (checked 2026-11-10)

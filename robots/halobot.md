@@ -82,7 +82,7 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `HaloBot`. In Hyperwatch `main` (after 5.3.3),
+`@hyperwatch/useragent` returns the family `HaloBot`. In Hyperwatch `main` (after 5.4.0),
 `src/modules/identity.js` sets the identity `HaloScan` when the address is in the published list
 (`halobot-ips.json`, the 12 addresses of the "Official IP addresses" row of the crawler page, which
 has no machine-readable list).

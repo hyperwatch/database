@@ -80,7 +80,7 @@ ASN: not documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Reflectionbot`. In Hyperwatch `main` (after 5.3.3),
+`@hyperwatch/useragent` returns the family `Reflectionbot`. In Hyperwatch `main` (after 5.4.0),
 `src/modules/identity.js` sets the identity `Reflection` on a forward-confirmed hostname ending with
 `.reflection.ai` or the published list (`reflectionbot-ips.json`, 2 entries).
 

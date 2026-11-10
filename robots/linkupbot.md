@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: LinkupBot
   identity: Linkup
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # LinkupBot
@@ -80,9 +80,10 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `LinkupBot`. Hyperwatch sets the
-identity `Linkup` when the client address is in `35.198.113.100/32`, hard-coded in
-`src/modules/identity.js` from Linkup's list.
+`@hyperwatch/useragent` parses the string above as family `LinkupBot`. In Hyperwatch `main` (after
+5.4.0), `src/modules/identity.js` sets the identity `Linkup` when the address is in the published
+list (`linkupbot-ips.json`, fetched by `node scripts/fetch-ips.js` from Linkup's linkupbot-ips.txt:
+1 range, `35.198.113.100/32`, the same as the published list on 2026-10-15).
 
 ## Misc
 

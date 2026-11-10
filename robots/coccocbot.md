@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: Coc Coc Bot Web
   identity: Coc Coc
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # coccocbot
@@ -54,7 +54,12 @@ The short `coccocbot-web/1.0` string is used "in some cases" instead of the `Moz
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, all paths (`robots.txt` and pages), verified as Coc Coc by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+| `accept-language` | `en-us;q=0.7,en;q=0.3` (100%) |
 
 ## Blocking with robots.txt
 
@@ -79,9 +84,11 @@ Cốc Cốc documents a forward-confirmed reverse DNS check: the reverse DNS nam
 `coccocbot-web` strings) and `Coc Coc Bot Image`. `coccocbot-fast`, `coccocbot-ads` and
 `coccocbot-shopping` parse as their own token (`coccocbot-fast` and so on).
 
-In Hyperwatch `main` (after 5.3.3), `src/modules/identity.js` sets the identity `Coc Coc` for all
-six families when the unconfirmed hostname ends with `.coccoc.com`. Cốc Cốc documents a
-forward-confirmed check; the rule does not use the confirmed hostname.
+In Hyperwatch `main` (after 5.4.0), `src/modules/identity.js` sets the identity `Coc Coc` for all
+six families on the forward-confirmed hostname `bot-*.coccoc.com`. The "hostname only" fallback
+gives `Coc Coc` to any other user agent from the same names. Cốc Cốc documents the suffix
+`.coccoc.com`: the `bot-*` prefix is narrower than the documentation, so a confirmed name under
+`.coccoc.com` that does not start with `bot-` fails.
 
 ## Misc
 

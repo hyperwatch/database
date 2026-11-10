@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: Keenable-User
   identity: Keenable
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Keenable-User
@@ -70,10 +70,11 @@ but that its requests "do not carry signatures yet". No reverse DNS hostname or 
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Keenable-User`. In `src/modules/identity.js`, Hyperwatch
-sets the identity `Keenable` when the address is in `src/data/keenable-user-ips.json`, written by
-`node scripts/fetch-ips.js` from the published list. In Hyperwatch `main` (after 5.3.3) it holds the
-same 7 addresses as the published list on 2026-10-15.
+`@hyperwatch/useragent` returns the family `Keenable-User`. In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` sets the identity `Keenable` when the address is in the published list
+(`keenable-user-ips.json`, refreshed by `node scripts/fetch-ips.js`: 7 addresses, the same as the
+published list on 2026-10-15) or on a verified signature from `https://keenable-user.keenable.ai`,
+which needs the `webbotauth` module. Keenable says its requests do not carry signatures yet.
 
 ## Misc
 

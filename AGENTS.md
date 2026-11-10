@@ -44,17 +44,19 @@ Read Hyperwatch's source at the version named in `identities.md`, not memory:
 Say exactly what the rule checks, in the terms below, and where it falls short of the operator's
 documentation (a missing range, a hostname suffix not documented, a list not used). Read the code
 carefully: `hostname` is the unconfirmed reverse DNS name, `verifiedHostname` the forward-confirmed
-one. Don't call a check forward-confirmed unless it uses `verifiedHostname`.
+one. Don't call a check forward-confirmed unless it uses `verifiedHostname`. Write hostnames as the code has them:
+the pattern given to `hostnameMatches`, or the suffix given to `endsWith`.
 
 | Term | Rule |
 |---|---|
 | published list | the address is in a list from `src/data/`, fetched from the operator |
 | inline range | the address is in a range written in `identity.js` |
-| forward-confirmed hostname | `verifiedHostname` ends with a suffix |
-| unconfirmed hostname | `hostname` ends with a suffix: whoever controls the address's reverse DNS can set it |
+| forward-confirmed hostname | `verifiedHostname` matches a pattern (`crawl-*.googlebot.com`: `*` stands for part of one label) or ends with a suffix (`.ahrefs.com`) |
+| unconfirmed hostname | `hostname` matches a pattern or ends with a suffix: whoever controls the address's reverse DNS can set it |
 | cloud hostname | `hostname` ends with a cloud provider's suffix (`*.compute-1.amazonaws.com`, `*.googleusercontent.com`, `*.your-server.de`): any customer of that provider passes |
 | header | a request header's value, not checked cryptographically |
 | signature | the request's header fingerprint (`signature.id`) |
+| verified signature | the `webbotauth` module verified the request's Web Bot Auth signature (RFC 9421) with a key of the agent's directory (`signedBy(log, agent)`); only when the module is active |
 
 ## Observed parts
 
@@ -68,6 +70,14 @@ With data, the rules in the README apply: no site names, no request counts (only
 (verified ones when Hyperwatch has an identity), no headers set by the site's own code or by the CDN
 (`accept-encoding`, `if-none-match`, `if-modified-since`). Networks only when no ranges are
 published; hostnames only when different from the documented ones.
+
+## Last seen
+
+The "Last seen" column of `identities.md` comes from the logs of a site running Hyperwatch: the
+month (`2026-11`) of the latest request verified as the identity, or "-" when none was seen since
+its logs start. Look identities up by the name that site's Hyperwatch version gives them, and
+filter by nothing else. Update the column at each refresh of the index, and only move a month
+forward or to "-" from what the logs show: no guess, no reason for an absence.
 
 ## Identities index
 

@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: Slackbot-LinkExpanding
   identity: Slack
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Slackbot-LinkExpanding
@@ -43,7 +43,13 @@ Slackbot-LinkExpanding 1.0 (+https://api.slack.com/robots)
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as Slack by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 

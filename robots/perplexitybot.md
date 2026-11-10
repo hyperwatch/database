@@ -65,8 +65,8 @@ pages on behalf of users, "generally ignores robots.txt rules".
 
 Perplexity publishes the addresses at https://www.perplexity.com/perplexitybot.json, which
 redirects to https://www.perplexity.ai/perplexitybot.json. The format is an object with
-`creationTime` and a `prefixes` array of `{"ipv4Prefix": ...}` objects. On the check date it held
-8 IPv4 prefixes, with `creationTime` 2025-02-07. Perplexity recommends matching both the user agent
+`creationTime` and a `prefixes` array of `{"ipv4Prefix": ...}` objects. On 2026-11-10 it held
+13 IPv4 prefixes, with `creationTime` 2026-10-28 (8 on 2026-10-15). Perplexity recommends matching both the user agent
 and the source address, and refreshing rules from the list regularly. No reverse DNS names or ASN
 are documented. The addresses are in AWS, so an `amazonaws.com` hostname proves nothing.
 
@@ -81,8 +81,8 @@ Reverse DNS hostnames:
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `PerplexityBot`. `src/modules/identity.js` sets the
-identity `Perplexity` when the address is in `src/data/perplexitybot-ips.json` (8 ranges, from the
-published list).
+identity `Perplexity` when the address is in `src/data/perplexitybot-ips.json` (13 ranges, the same
+as the published list on 2026-11-10).
 
 ## Misc
 
@@ -99,6 +99,6 @@ published list).
 ## Sources
 
 - https://docs.perplexity.ai/guides/bots (checked 2026-10-15)
-- https://www.perplexity.com/perplexitybot.json (checked 2026-10-15)
-- https://www.perplexity.com/perplexity-user.json (checked 2026-10-15)
+- https://www.perplexity.com/perplexitybot.json (checked 2026-11-10)
+- https://www.perplexity.com/perplexity-user.json (checked 2026-11-10)
 - https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/ (checked 2026-10-15)

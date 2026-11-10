@@ -88,7 +88,8 @@ because the bots then cannot read `robots.txt`.
 
 Anthropic publishes one list for all its crawlers: https://claude.com/crawling/bots.json. It is a
 JSON object with `creationTime` and `prefixes`, an array of objects with an `ipv4Prefix` key in
-CIDR notation. On 2026-10-15 it held 38 IPv4 prefixes (creation time 2026-10-07), no IPv6. A
+CIDR notation. On 2026-11-10 it held 14 IPv4 prefixes (creation time 2026-10-20), no IPv6; it held 38 on
+2026-10-15. A
 request from an address in this list comes from Anthropic.
 
 No reverse DNS hostnames are published. The crawlers run on shared cloud infrastructure.
@@ -99,8 +100,8 @@ No reverse DNS hostnames are published. The crawlers run on shared cloud infrast
 `@hyperwatch/useragent` returns the family `ClaudeBot` for both strings. `src/modules/identity.js`
 sets the identity `Claude` for the families `ClaudeBot`, `Claude-User`, `Claude-SearchBot`,
 `Claude-Web` and `anthropic-ai` when the address is in `src/data/claude-bot-ips.json`, a copy of
-Anthropic's list refreshed by `node scripts/fetch-ips.js`. In Hyperwatch `main` (after 5.3.3) the
-copy holds 38 ranges, the same as the published list on 2026-10-15.
+Anthropic's list refreshed by `node scripts/fetch-ips.js`. In Hyperwatch `main` (after 5.4.0) the
+copy holds 14 ranges, the same as the published list on 2026-11-10.
 
 ## Misc
 
@@ -112,4 +113,4 @@ domain concerned.
 ## Sources
 
 - https://support.claude.com/en/articles/8896518-does-anthropic-crawl-the-web (checked 2026-10-15)
-- https://claude.com/crawling/bots.json (checked 2026-10-15)
+- https://claude.com/crawling/bots.json (checked 2026-11-10)

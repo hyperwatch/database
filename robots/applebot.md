@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: Applebot
   identity: Applebot
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Applebot
@@ -108,10 +108,9 @@ No ASN is documented by Apple.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the user agent as family `Applebot`. In Hyperwatch `main` (after
-5.3.3), `src/modules/identity.js` sets the identity `Applebot` on an unconfirmed hostname ending
-with `.apple.com` or the published list (`applebot-ips.json`). Apple documents a forward lookup back
-to the same address; the hostname is still not confirmed, and its suffix is wider than the
-documented `applebot.apple.com`.
+5.4.0), `src/modules/identity.js` sets the identity `Applebot` on a forward-confirmed hostname
+matching `*.applebot.apple.com` or the published list (`applebot-ips.json`). Both match Apple's
+documented methods.
 
 ## Misc
 

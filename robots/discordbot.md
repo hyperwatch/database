@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: Discordbot
   identity: Discord
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Discordbot
@@ -44,7 +44,13 @@ word `Discordbot` only.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as Discord by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (25%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -68,7 +74,7 @@ previews. No reverse DNS hostname or ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Discordbot`. In Hyperwatch `main` (after 5.3.3),
+`@hyperwatch/useragent` returns the family `Discordbot`. In Hyperwatch `main` (after 5.4.0),
 `src/modules/identity.js` sets the identity `Discord` on a cloud hostname ending with
 `.googleusercontent.com` or the published list (`discord-ips.json`). The cloud hostname is not
 documented by Discord, and any Google Cloud customer passes it.

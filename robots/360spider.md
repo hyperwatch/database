@@ -68,9 +68,9 @@ date; the PDF's metadata gives 2025-11-04. No ASN is documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `360Spider`. In Hyperwatch `main` (after
-5.3.3), `src/modules/identity.js` sets the identity `360Spider` when the address is in the published
-list `src/data/360spider-ips.json`, the 2,183 addresses of 360's PDF copied by hand. Because the copy
-is manual, it is not refreshed when 360 updates the PDF.
+5.4.0), `src/modules/identity.js` sets the identity `360Spider` when the address is in the published
+list `src/data/360spider-ips.json`, the 2,183 addresses of 360's PDF copied by hand. Because the
+copy is manual, it is not refreshed when 360 updates the PDF.
 
 ## Misc
 

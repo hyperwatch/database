@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: Twitterbot
   identity: Twitter
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Twitterbot
@@ -99,12 +99,11 @@ from the archived copy of December 2025.
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `Twitterbot` for `Twitterbot/1.0`. In Hyperwatch `main`
-(after 5.3.3), `src/modules/identity.js` gives `Twitterbot` the identity `Twitter` when the
-unconfirmed hostname ends with `.twttr.com` or when the address is in one of the inline ranges
-`199.16.156.0/22`, `199.59.148.0/22` and `192.133.76.0/22`, X's three published ranges. The
-hostname check reads the unconfirmed hostname, while X documents a forward lookup. The combined
-Safari string parses as `FacebookBot` (handled by the Meta rule), and the WoltLab string as
-`WoltLabSuite` (no identity).
+(after 5.4.0), `src/modules/identity.js` gives `Twitterbot` the identity `Twitter` on a
+forward-confirmed hostname matching `r-*.twttr.com` or when the address is in one of the inline
+ranges `199.16.156.0/22`, `199.59.148.0/22` and `192.133.76.0/22`, X's three published ranges. Both
+follow X's guide. The combined Safari string parses as `FacebookBot` (handled by the Meta rule), and
+the WoltLab string as `WoltLabSuite` (no identity).
 
 ## Misc
 

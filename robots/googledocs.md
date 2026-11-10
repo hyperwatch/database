@@ -12,8 +12,8 @@ verification:
   hostnames: []
 hyperwatch:
   family: GoogleDocs
-  identity: Google
-last_checked: 2026-10-15
+  identity: Google Proxy
+last_checked: 2026-11-10
 ---
 
 # GoogleDocs
@@ -45,7 +45,11 @@ other values are not documented.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as Google by Hyperwatch 5.4.0.
+
+No header other than the user agent and those set on the way.
+
+Never sent: `accept`, `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -63,11 +67,21 @@ Docs Editors fetch from these addresses.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `GoogleDocs` for the string above. In
-`src/modules/identity.js`, Hyperwatch sets the identity `Google` for the families `Google`,
-`GoogleDocs`, `docs.google.com` (described in the code as "how the parser reads the GoogleDocs
-agent"), `Google Favicon` and `GoogleImageProxy` when the reverse DNS hostname (not
-forward-confirmed) ends with `.google.com`. It uses no address list for them.
+`@hyperwatch/useragent` returns the family `GoogleDocs` for the string above (the code also lists
+`docs.google.com`, "how the parser reads the GoogleDocs agent"). In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` gives the families `Google`, `GoogleDocs`, `docs.google.com`,
+`Google Favicon` and `GoogleImageProxy` the identity of the Google address pool the request comes
+from. `Google Special Crawlers` is checked first: the published list
+`google-special-crawlers-ips.json` (Google's `special-crawlers.json`) or the forward-confirmed
+hostname `rate-limited-proxy-*.google.com`. Then `Google Agent`, whose published list
+`google-user-triggered-agents-ips.json` (Google's `user-triggered-agents.json`) is the only check,
+and `Google Proxy`: the published list `google-user-triggered-fetchers-google-ips.json` (Google's
+`user-triggered-fetchers-google.json`) or the forward-confirmed hostname
+`google-proxy-*.google.com`. The same check runs for any user agent after the "hostname only"
+fallback. `*.gae.googleusercontent.com` and `user-triggered-fetchers.json` are not used: they cover
+Google Cloud customers' code. Google does not say whether the Docs Editors fetch from its
+user-triggered fetchers' pool: from it they get `Google Proxy`, from the special crawlers' pool
+`Google Special Crawlers`, from any other none.
 
 ## Misc
 

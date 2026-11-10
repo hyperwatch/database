@@ -76,7 +76,7 @@ This token is independent of `ClaudeBot` (training) and `Claude-SearchBot` (sear
 ## IP ranges and verification
 
 Anthropic publishes one list for all its crawlers: https://claude.com/crawling/bots.json (JSON,
-`prefixes` array of `ipv4Prefix` objects, 38 IPv4 prefixes on 2026-10-15). See `claudebot.md`. No
+`prefixes` array of `ipv4Prefix` objects, 14 IPv4 prefixes on 2026-11-10). See `claudebot.md`. No
 reverse DNS hostnames are published.
 
 The `Claude-User (claude-code/...)` strings come from Claude Code, which runs on the user's own
@@ -107,4 +107,4 @@ See `claudebot.md` and `claude-searchbot.md` for Anthropic's other robots.
 ## Sources
 
 - https://support.claude.com/en/articles/8896518-does-anthropic-crawl-the-web (checked 2026-10-15)
-- https://claude.com/crawling/bots.json (checked 2026-10-15)
+- https://claude.com/crawling/bots.json (checked 2026-11-10)

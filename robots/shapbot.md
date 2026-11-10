@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: ShapBot
   identity: Parallel
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # ShapBot
@@ -43,7 +43,25 @@ This is the documented string.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on hundreds of requests seen on 2026-11-10, pages, verified as Parallel by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/markdown, text/html;q=0.9, */*;q=0.8` (63%), `text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7` (18%), `*/*` (12%), and 1 other value |
+| `accept-language` | `en-US,en;q=0.9` (37%) |
+| `priority` | `u=0, i` (18%), `u=1, i` (15%), `i` (4%) |
+| `sec-ch-ua` | `"Not:A-Brand";v="8", "Chromium";v="156", "Google Chrome";v="156"` (37%) |
+| `sec-ch-ua-mobile` | `?0` (37%) |
+| `sec-ch-ua-platform` | `"Linux"` (37%) |
+| `sec-fetch-dest` | `document` (18%), `empty` (12%), `image` (7%), and 1 other value |
+| `sec-fetch-mode` | `navigate` (18%), `cors` (12%), `no-cors` (7%) |
+| `sec-fetch-site` | `none` (18%), `same-origin` (12%), `same-site` (5%), and 1 other value |
+| `sec-fetch-storage-access` | `active` (2%) |
+| `sec-fetch-user` | `?1` (18%) |
+| `signature` | `(present)` (98%) |
+| `signature-agent` | `"https://shapbot.parallel.ai"` (98%) |
+| `signature-input` | `(present)` (98%) |
+| `upgrade-insecure-requests` | `1` (18%) |
 
 ## Blocking with robots.txt
 
@@ -66,10 +84,11 @@ documented. A reverse lookup of three listed addresses on 2026-10-15 returned
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `ShapBot`. In Hyperwatch `main` (after 5.3.3),
+`@hyperwatch/useragent` returns the family `ShapBot`. In Hyperwatch `main` (after 5.4.0),
 `src/modules/identity.js` sets the identity `Parallel` on a cloud hostname ending with
-`.googleusercontent.com` or the published list (`shapbot-ips.json`). The cloud hostname is not
-documented by Parallel, and any Google Cloud customer passes it.
+`.googleusercontent.com`, the published list (`shapbot-ips.json`) or a verified signature of
+`https://shapbot.parallel.ai` (needs the `webbotauth` module, off by default). The cloud hostname is
+not documented by Parallel, and any Google Cloud customer passes it.
 
 ## Misc
 

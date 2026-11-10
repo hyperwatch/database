@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: FlipboardProxy
   identity: Flipboard
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # FlipboardProxy
@@ -35,7 +35,12 @@ Flipboard names the user agents `Flipboard` and `FlipboardProxy` but gives no fu
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as Flipboard by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (100%) |
+| `accept-language` | `en-US,en;q=0.5` (100%) |
 
 ## Blocking with robots.txt
 
@@ -54,8 +59,8 @@ without ranges, hostnames or an ASN.
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `FlipboardProxy` for user agents carrying
-`FlipboardProxy/<version>`. `src/modules/identity.js` sets the identity `Flipboard` when the reverse
-DNS hostname ends with `.flipboard.com`. This reads the unconfirmed hostname, and the suffix is not
+`FlipboardProxy/<version>`. In Hyperwatch `main` (after 5.4.0), `src/modules/identity.js` sets the
+identity `Flipboard` on the forward-confirmed hostname `*.proxy.flipboard.com`. The pattern is not
 documented by Flipboard, which says its requests come from Amazon EC2.
 
 ## Misc

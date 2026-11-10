@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: Yeti
   identity: Naver
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Yeti
@@ -52,7 +52,19 @@ Naver says version details may change without notice.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as Naver by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (57%), `*/*` (43%) |
+| `accept-language` | `ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4` (100%) |
+| `sec-fetch-dest` | `document` (57%), `empty` (43%) |
+| `sec-fetch-mode` | `navigate` (57%), `cors` (43%) |
+| `sec-fetch-site` | `none` (57%), `same-origin` (43%) |
+| `signature` | `(present)` (100%) |
+| `signature-agent` | `sig1="https://bot.naver.com"` (100%) |
+| `signature-input` | `(present)` (100%) |
+| `sunny-proxy-server-address` | `(present)` (43%) |
 
 ## Blocking with robots.txt
 
@@ -80,9 +92,13 @@ No ASN is documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses both strings above as family `Yeti`. In Hyperwatch `main` (after
-5.3.3), `src/modules/identity.js` sets the identity `Naver` on an unconfirmed hostname ending with
-`.naver.com` or the published list (`naverbot-ips.json`). Naver documents a forward-confirmed check;
-the hostname is still not confirmed.
+5.4.0), `src/modules/identity.js` sets the identity `Naver` on a forward-confirmed hostname matching
+`crawl.*.web.naver.com`, the published list (`naverbot-ips.json`) or a verified signature of
+`https://bot.naver.com` (needs the `webbotauth` module, off by default). Naver signs with the
+dictionary form of `Signature-Agent` (`sig1="https://bot.naver.com"`), covering `@method` and
+`@path` too. A "hostname only" fallback sets `Naver` on the same forward-confirmed names whatever
+the user agent. The pattern follows Naver's example name, narrower than the documented `.naver.com`
+suffix.
 
 ## Misc
 

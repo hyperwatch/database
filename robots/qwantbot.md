@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: Qwantbot
   identity: Qwant
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Qwantbot
@@ -51,7 +51,12 @@ Mozilla/5.0 (compatible; Qwantbot/1.0; +https://help.qwant.com/bot/)
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as Qwant by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (100%) |
+| `accept-language` | `de-DE, de;q=0.9, en;q=0.5, *;q=0.3` (67%), `fr-FR, fr;q=0.9, en;q=0.5, *;q=0.3` (33%) |
 
 ## Blocking with robots.txt
 
@@ -81,13 +86,13 @@ Qwant's own reverse DNS example is not in that prefix. No ASN is documented.
 one. The `help.qwant.com` family is a parser issue:
 https://github.com/hyperwatch/useragent/issues/226.
 
-In Hyperwatch `main` (after 5.3.3), `src/modules/identity.js` sets the identity `Qwant` for the
-families `Qwantify`, `Qwantify-dev`, `Qwantbot` and `Qwantbot-news` when the unconfirmed hostname
-ends with `.qwant.com` or the address is in the published list `src/data/qwantbot-ips.json`
-(Qwant's qwantbot.json). The family `help.qwant.com` is not in the rule; such requests get the
-identity `Qwant` only from the "Hostname only" fallback: any request, whatever its user agent, whose
-unconfirmed hostname ends with `.qwant.com`. Qwant documents a forward-confirmed check; neither
-check uses the confirmed hostname.
+In Hyperwatch `main` (after 5.4.0), `src/modules/identity.js` sets the identity `Qwant` for the
+families `Qwantify`, `Qwantify-dev`, `Qwantbot` and `Qwantbot-news` on a forward-confirmed hostname
+matching `qwantbot-*.qwant.com` or the published list `src/data/qwantbot-ips.json` (Qwant's
+qwantbot.json). The family `help.qwant.com` is not in the rule; such requests get the identity
+`Qwant` only from the "hostname only" fallback: any request, whatever its user agent, with a
+forward-confirmed hostname matching `qwantbot-*.qwant.com`. The pattern follows Qwant's example
+name; Qwant documents any name ending in `qwant.com`.
 
 ## Misc
 

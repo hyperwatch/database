@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: meta-webindexer
   identity: Meta
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # meta-webindexer
@@ -44,7 +44,22 @@ the page does not say whether the crawler now sends that form.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on hundreds of requests seen on 2026-11-10, pages, verified as Meta by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `image/jxl,image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8` (85%), `text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7` (10%), `*/*` (6%) |
+| `accept-language` | `en-US,en;q=0.9;q=0.9` (93%), `en-US,en;q=0.9` (4%) |
+| `priority` | `u=1, i` (2%) |
+| `sec-ch-ua` | `"Not-A.Brand";v="99", "Google Chrome";v="157", "Chromium";v="157"` (4%) |
+| `sec-ch-ua-mobile` | `?0` (4%) |
+| `sec-ch-ua-platform` | `"Windows"` (2%), `"macOS"` (2%) |
+| `sec-fetch-dest` | `image` (85%), `document` (10%), `empty` (2%) |
+| `sec-fetch-mode` | `no-cors` (85%), `navigate` (10%), `cors` (2%) |
+| `sec-fetch-site` | `same-site` (73%), `cross-site` (10%), `none` (10%), and 1 other value |
+| `sec-fetch-storage-access` | `active` (10%) |
+| `sec-fetch-user` | `?1` (10%) |
+| `upgrade-insecure-requests` | `1` (10%) |
 
 ## Blocking with robots.txt
 
@@ -76,7 +91,7 @@ once nested ones were removed (50 IPv4, 9 IPv6). No reverse DNS hostname is docu
 `src/modules/identity.js`, Hyperwatch sets the identity `Meta` for the families
 `meta-externalagent`, `meta-webindexer` and `Hyperlink` when the address is in
 `src/data/meta-ips.json`, the AS32934 routes from RADb written by `node scripts/fetch-ips.js`. In
-Hyperwatch `main` (after 5.3.3) the file holds 59 ranges, the same as the live query on 2026-10-15.
+Hyperwatch `main` (after 5.4.0) the file holds 59 ranges, the same as the live query on 2026-10-15.
 
 ## Misc
 

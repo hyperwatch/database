@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: Sogou web spider
   identity: Sogou
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Sogou web spider
@@ -64,12 +64,12 @@ None published. Sogou documents no reverse DNS hostnames, IP list or ASN.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the Known Agents string as family `Sogou web spider`.
-`src/modules/identity.js` sets the identity `Sogou` for the families `Sogou web spider` and
-`Sogou Pic Spider` when the unconfirmed hostname ends with `.sogou.com`. A fallback also sets
-`Sogou` for any request, whatever its user agent, whose unconfirmed hostname ends with
-`.crawl.sogou.com`. Sogou does not document either suffix, so neither check comes from the operator,
-and neither is forward-confirmed.
+`@hyperwatch/useragent` parses the Known Agents string as family `Sogou web spider`. In Hyperwatch
+`main` (after 5.4.0), `src/modules/identity.js` sets the identity `Sogou` for the families
+`Sogou web spider` and `Sogou Pic Spider` on a forward-confirmed hostname matching
+`sogouspider-*.crawl.sogou.com`. A "hostname only" fallback also sets `Sogou` for any request,
+whatever its user agent, with a forward-confirmed hostname matching the same pattern. Sogou
+documents no hostname, so the pattern does not come from the operator.
 
 ## Misc
 

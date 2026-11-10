@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: YouBot
   identity: You.com
-last_checked: 2026-10-16
+last_checked: 2026-11-10
 ---
 
 # YouBot
@@ -94,9 +94,11 @@ https://you.com/.well-known/http-message-signatures-directory. No ASN is documen
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses both strings above as family `YouBot`. In Hyperwatch `main` (after
-5.3.3), `src/modules/identity.js` sets the identity `You.com` on an unconfirmed hostname ending with
-`.search.you.com` or the inline range `68.67.112.0/24`. It does not do the forward lookup You.com
-documents, and does not check Web Bot Auth signatures.
+5.4.0), `src/modules/identity.js` sets the identity `You.com` on a forward-confirmed hostname
+matching `youbot-*.search.you.com`, the inline range `68.67.112.0/24` or a verified signature from
+`https://you.com`. A "hostname only" fallback sets `You.com` on the same forward-confirmed names
+whatever the user agent. All three follow You.com's documentation; the signature is only verified
+when the `webbotauth` module is active (it is off by default).
 
 ## Misc
 

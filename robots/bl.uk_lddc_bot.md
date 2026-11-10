@@ -69,7 +69,7 @@ None published. No hostnames or ASN are documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `bl.uk lddc bot`. In Hyperwatch `main`
-(after 5.3.3), `src/modules/identity.js` sets the identity `British Library` for the families
+(after 5.4.0), `src/modules/identity.js` sets the identity `British Library` for the families
 `bl.uk lddc bot` and `bl.uk ldfc bot` when the unconfirmed hostname ends with `.bl.uk`. The British
 Library does not document this hostname, and no source found documents a `bl.uk_ldfc_bot` user
 agent.

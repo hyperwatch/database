@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: PingdomBot
   identity: Pingdom
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # PingdomBot
@@ -40,7 +40,11 @@ Pingdom.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on hundreds of requests seen on 2026-11-10, pages, verified as Pingdom by Hyperwatch 5.4.0.
+
+No header other than the user agent and those set on the way.
+
+Never sent: `accept`, `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -50,24 +54,26 @@ No token is documented, and Pingdom does not say whether its checks read `robots
 
 Pingdom publishes its probe addresses in three formats, linked from the documentation page:
 
-- https://my.pingdom.com/probes/ipv4: plain text, one address per line. 149 addresses on
-  2026-10-15.
+- https://my.pingdom.com/probes/ipv4: plain text, one address per line. 153 addresses on
+  2026-11-10 (149 on 2026-10-15).
 - https://my.pingdom.com/probes/ipv6: plain text, one address per line. 57 addresses on
-  2026-10-15.
+  2026-11-10.
 - https://my.pingdom.com/probes/feed: RSS, one item per probe with its address, hostname, country,
-  city, region and state. 149 items on 2026-10-15; its `lastBuildDate` is the time of the request.
+  city, region and state. 149 items on 2026-11-10; its `lastBuildDate` is the time of the request.
 
-The feed's hostnames are not a documented verification method. On 2026-10-15, 73 were under
+The feed's hostnames are not a documented verification method. On 2026-11-10, as on 2026-10-15, 73 were under
 `pingdom.com`, 50 under `cloud.solarwinds.com`, and 26 probes had their address in place of a
 hostname. No ASN is documented.
 
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `PingdomBot` for the three forms above. In Hyperwatch
-`main` (after 5.3.3), `src/modules/identity.js` sets the identity `Pingdom` on an unconfirmed
-hostname ending with `.pingdom.com` or the published list (`pingdom-ips.json`, the IPv4 and IPv6
-probe lists joined). Reverse DNS is not a method Pingdom documents, and the hostname is not
-confirmed with a forward lookup: whoever controls an address's reverse DNS can pass it.
+`main` (after 5.4.0), `src/modules/identity.js` sets the identity `Pingdom` on a forward-confirmed
+hostname matching `s*.pingdom.com` or the published list (`pingdom-ips.json`, the IPv4 and IPv6
+probe lists joined: 210 addresses, the same as the published lists on 2026-11-10). The pattern is
+the form of the `pingdom.com` names in the probe feed (all of them on 2026-11-10), which Pingdom
+does not document as a verification method; the probes under `cloud.solarwinds.com` are covered by
+the list only.
 
 ## Misc
 
@@ -77,6 +83,6 @@ confirmed with a forward lookup: whoever controls an address's reverse DNS can p
 
 - https://documentation.solarwinds.com/en/success_center/pingdom/content/topics/pingdom-probe-servers-ip-addresses.htm (checked 2026-10-15)
 - https://documentation.solarwinds.com/en/success_center/pingdom/content/topics/google-analytics-and-pingdom.htm (checked 2026-10-15)
-- https://my.pingdom.com/probes/ipv4 (checked 2026-10-15)
-- https://my.pingdom.com/probes/ipv6 (checked 2026-10-15)
-- https://my.pingdom.com/probes/feed (checked 2026-10-15)
+- https://my.pingdom.com/probes/ipv4 (checked 2026-11-10)
+- https://my.pingdom.com/probes/ipv6 (checked 2026-11-10)
+- https://my.pingdom.com/probes/feed (checked 2026-11-10)

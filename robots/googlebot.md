@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: Googlebot
   identity: Googlebot
-last_checked: 2026-10-16
+last_checked: 2026-11-10
 ---
 
 # Googlebot
@@ -124,10 +124,12 @@ Common crawlers always respect `robots.txt` for automatic crawls. Special-case c
 
 `@hyperwatch/useragent` returns the family `Googlebot` for the `Googlebot`, `Googlebot/2.1` and
 smartphone strings, and `Googlebot-Image` for `Googlebot-Image/1.0`. In Hyperwatch `main` (after
-5.3.3), `src/modules/identity.js` sets the identity `Googlebot` for the families `Googlebot`,
-`Googlebot-Image` and `Googlebot-Video` on an unconfirmed hostname ending with `.googlebot.com` or
-the published list (`googlebot-ips.json`, Google's `common-crawlers.json`, 317 prefixes). Google
-documents a forward lookup back to the same address; the hostname is still not confirmed.
+5.4.0), `src/modules/identity.js` sets the identity `Googlebot` for the families `Googlebot`,
+`Googlebot-Image` and `Googlebot-Video` on the forward-confirmed hostname `crawl-*.googlebot.com`
+or `geo-crawl-*.geo.googlebot.com`, or the published list (`googlebot-ips.json`, Google's
+`common-crawlers.json`, 317 prefixes). The "hostname only" fallback gives `Googlebot` to any other
+user agent from the same confirmed names. The patterns follow Google's documented names; `*`
+accepts any characters within the label, not only the address's four numbers.
 
 ## Misc
 

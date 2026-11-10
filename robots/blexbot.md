@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: BLEXBot
   identity: WebMeUp
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # BLEXBot
@@ -73,9 +73,10 @@ documented. Whether this is still true could not be checked on the live site.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `BLEXBot`. Hyperwatch sets the identity
-`WebMeUp` when the unconfirmed hostname ends with `.webmeup.com` (the same rule as
-[AwarioBot](awariobot.md)). The name is not confirmed by a forward lookup.
+`@hyperwatch/useragent` parses the string above as family `BLEXBot`. Hyperwatch `main` (after
+5.4.0) sets the identity `WebMeUp` on a forward-confirmed hostname matching `pot*.webmeup.com` (the
+same rule as [AwarioBot](awariobot.md)). The archived page documents any subdomain of
+`webmeup.com`; the pattern is narrower.
 
 ## Misc
 

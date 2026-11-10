@@ -12,8 +12,8 @@ verification:
   hostnames: []
 hyperwatch:
   family: GoogleImageProxy
-  identity: Google
-last_checked: 2026-10-15
+  identity: Google Proxy
+last_checked: 2026-11-10
 ---
 
 # GoogleImageProxy
@@ -47,7 +47,11 @@ ScientiaMobile says the proxy replaces the reader's user agent with its own.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as Google by Hyperwatch 5.4.0.
+
+No header other than the user agent and those set on the way.
+
+Never sent: `accept`, `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -62,10 +66,20 @@ proxy, so its user-triggered fetcher lists and reverse DNS names (`google-proxy-
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `GoogleImageProxy` for the string above. In
-`src/modules/identity.js`, Hyperwatch sets the identity `Google` for the families `Google`,
-`GoogleDocs`, `docs.google.com`, `Google Favicon` and `GoogleImageProxy` when the reverse DNS
-hostname (not forward-confirmed) ends with `.google.com`. It uses no address list for them.
+`@hyperwatch/useragent` returns the family `GoogleImageProxy` for the string above. In Hyperwatch
+`main` (after 5.4.0), `src/modules/identity.js` gives the families `Google`, `GoogleDocs`,
+`docs.google.com`, `Google Favicon` and `GoogleImageProxy` the identity of the Google address pool
+the request comes from. `Google Special Crawlers` is checked first: the published list
+`google-special-crawlers-ips.json` (Google's `special-crawlers.json`) or the forward-confirmed
+hostname `rate-limited-proxy-*.google.com`. Then `Google Agent`, whose published list
+`google-user-triggered-agents-ips.json` (Google's `user-triggered-agents.json`) is the only check,
+and `Google Proxy`: the published list `google-user-triggered-fetchers-google-ips.json` (Google's
+`user-triggered-fetchers-google.json`) or the forward-confirmed hostname
+`google-proxy-*.google.com`. The same check runs for any user agent after the "hostname only"
+fallback. `*.gae.googleusercontent.com` and `user-triggered-fetchers.json` are not used: they cover
+Google Cloud customers' code. Google does not document which pool the Gmail image proxy uses: from
+its user-triggered fetchers' pool it gets `Google Proxy`, from the special crawlers' pool
+`Google Special Crawlers`, from any other none.
 
 ## Misc
 

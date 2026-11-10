@@ -12,8 +12,8 @@ verification:
   hostnames: []
 hyperwatch:
   family: Google Favicon
-  identity: Google
-last_checked: 2026-10-15
+  identity: Google Proxy
+last_checked: 2026-11-10
 ---
 
 # Google Favicon
@@ -69,12 +69,20 @@ belongs to Google Cloud customers' App Engine apps.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Google Favicon`. In `src/modules/identity.js`,
-Hyperwatch sets the identity `Google` for the families `Google`, `GoogleDocs`, `docs.google.com`,
-`Google Favicon` and `GoogleImageProxy` when the reverse DNS hostname (not forward-confirmed) ends
-with `.google.com`. It uses no address list for them:
-`src/data/google-user-triggered-fetchers-ips.json` (Google's `user-triggered-fetchers.json`, fetched
-by `node scripts/fetch-ips.js`) is not read by `identity.js` in Hyperwatch `main` (after 5.3.3).
+`@hyperwatch/useragent` returns the family `Google Favicon`. In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` gives the families `Google`, `GoogleDocs`, `docs.google.com`,
+`Google Favicon` and `GoogleImageProxy` the identity of the Google address pool the request comes
+from. `Google Special Crawlers` is checked first: the published list
+`google-special-crawlers-ips.json` (Google's `special-crawlers.json`) or the forward-confirmed
+hostname `rate-limited-proxy-*.google.com`. Then `Google Agent`, whose published list
+`google-user-triggered-agents-ips.json` (Google's `user-triggered-agents.json`) is the only check,
+and `Google Proxy`: the published list `google-user-triggered-fetchers-google-ips.json` (Google's
+`user-triggered-fetchers-google.json`) or the forward-confirmed hostname
+`google-proxy-*.google.com`. The same check runs for any user agent after the "hostname only"
+fallback. `*.gae.googleusercontent.com` and `user-triggered-fetchers.json` are not used: they cover
+Google Cloud customers' code. Google does not say which pool this fetcher uses: from its
+user-triggered fetchers' pool it gets `Google Proxy`, from the special crawlers' pool
+`Google Special Crawlers`, from any other none.
 
 ## Misc
 

@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: Amzn-User
   identity: Amazon User
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # Amzn-User
@@ -74,11 +74,11 @@ No reverse DNS hostname or ASN is documented for Amzn-User.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Amzn-User`. In `src/modules/identity.js`, Hyperwatch
-sets the identity `Amazon User` when the reverse DNS hostname (not forward-confirmed) ends with
-`.crawl.amazonbot.amazon`, or when the address is in `src/data/amazon-user-ips.json`. That file is
+`@hyperwatch/useragent` returns the family `Amzn-User`. In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` sets the identity `Amazon User` on a forward-confirmed hostname matching
+`*.crawl.amazonbot.amazon`, or when the address is in `src/data/amazon-user-ips.json`. That file is
 updated by hand; on 2026-10-15 it held the same 1,023 addresses as the published list. The hostname
-suffix is not documented for Amzn-User: it comes from Amazon's older Amazonbot documentation.
+pattern is not documented for Amzn-User: it comes from Amazon's older Amazonbot documentation.
 
 ## Misc
 

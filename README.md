@@ -16,6 +16,7 @@ for adding or updating robots.
 | Robot | Operator | Category | Verification | Hyperwatch identity |
 |---|---|---|---|---|
 | [360Spider](robots/360spider.md) | 360 Search (Qihoo 360) | search-engine | ip-list | 360Spider |
+| [AdsBot-Google](robots/adsbot-google.md) | Google | marketing | both | Google Special Crawlers |
 | [AhrefsBot](robots/ahrefsbot.md) | Ahrefs | seo | both | Ahrefs |
 | [AhrefsSiteAudit](robots/ahrefssiteaudit.md) | Ahrefs | seo | both | Ahrefs |
 | [AIWebIndex](robots/aiwebindex.md) | Aleksma Ai, Inc. (Lyrenth) | ai-search | both | Lyrenth |
@@ -40,6 +41,7 @@ for adding or updating robots.
 | [bl.uk_lddc_bot](robots/bl.uk_lddc_bot.md) | British Library (UK legal deposit libraries) | archive | none | British Library |
 | [BLEXBot](robots/blexbot.md) | WebMeUp | seo | reverse-dns | WebMeUp |
 | [BluechipBacklinks](robots/bluechipbacklinks.md) | Bluechip Backlinks | seo | none | Bluechip Backlinks |
+| [bne.es_bot](robots/bne.es_bot.md) | Biblioteca Nacional de España (BNE), Archivo de la Web Española | archive | none | - |
 | [bnf.fr_bot](robots/bnf.fr_bot.md) | Bibliothèque nationale de France (BnF) | archive | none | BnF.fr |
 | [Buck](robots/buck.md) | Hypefactors | marketing | none | - |
 | [Bytespider](robots/bytespider.md) | ByteDance | unknown | none | Bytespider |
@@ -60,16 +62,21 @@ for adding or updating robots.
 | [DotBot](robots/dotbot.md) | Moz | seo | none | Moz |
 | [DuckAssistBot](robots/duckassistbot.md) | DuckDuckGo | ai-search | ip-list | DuckDuckGo |
 | [DuckDuckBot](robots/duckduckbot.md) | DuckDuckGo | search-engine | ip-list | DuckDuckGo |
+| [ElevenlabsBot](robots/elevenlabsbot.md) | ElevenLabs | ai-assistant | none | - |
+| [ElevenlabsCrawler](robots/elevenlabscrawler.md) | ElevenLabs | ai-training | none | - |
 | [ev-crawler](robots/ev-crawler.md) | Headline | other | none | Headline |
 | [ExaSearchBot](robots/exasearchbot.md) | Exa | ai-search | web-bot-auth | Exa |
+| [ExaSearchBot-Images](robots/exasearchbot-images.md) | Exa | ai-search | web-bot-auth | Exa |
 | [facebookexternalhit](robots/facebookexternalhit.md) | Meta | social-preview | ip-list | Facebook |
 | [FlipboardProxy](robots/flipboardproxy.md) | Flipboard | other | none | Flipboard |
 | [fyndbot](robots/fyndbot.md) | Fynd | search-engine | none | - |
 | [github-camo](robots/github-camo.md) | GitHub | other | none | GitHub Camo |
-| [Google Favicon](robots/google-favicon.md) | Google | other | none | Google |
+| [Google Favicon](robots/google-favicon.md) | Google | other | none | Google Proxy |
+| [Google-Agent](robots/google-agent.md) | Google | ai-assistant | ip-list | Google Agent |
 | [Googlebot](robots/googlebot.md) | Google | search-engine | both | Googlebot |
-| [GoogleDocs](robots/googledocs.md) | Google | other | none | Google |
-| [GoogleImageProxy](robots/googleimageproxy.md) | Google | other | none | Google |
+| [GoogleDocs](robots/googledocs.md) | Google | other | none | Google Proxy |
+| [GoogleImageProxy](robots/googleimageproxy.md) | Google | other | none | Google Proxy |
+| [GooglePlusBot](robots/googleplusbot.md) | Google | social-preview | none | Google Proxy |
 | [GPTBot](robots/gptbot.md) | OpenAI | ai-training | ip-list | OpenAI GPTBot |
 | [HaloBot](robots/halobot.md) | HaloScan | seo | ip-list | HaloScan |
 | [HappyApps-WebCheck](robots/happyapps-webcheck.md) | Happy Apps, LLC | monitoring | none | Happy Apps |
@@ -78,13 +85,16 @@ for adding or updating robots.
 | [Hyperlink](robots/hyperlink.md) | Unknown | unknown | none | Meta |
 | [ibou-search](robots/ibou-search.md) | ibou | search-engine | both | ibou |
 | [IbouBot](robots/iboubot.md) | ibou | search-engine | both | - |
+| [ICC-Crawler](robots/icc-crawler.md) | National Institute of Information and Communications Technology (NICT), Universal Communication Research Institute | research | ip-list | NICT |
 | [IdarusBot](robots/idarusbot.md) | Idarus | search-engine | ip-list | Idarus |
 | [image-crawler](robots/image-crawler.md) | Unknown | unknown | none | - |
 | [InfoTigerBot](robots/infotigerbot.md) | Infotiger UG (haftungsbeschränkt) | search-engine | reverse-dns | InfoTiger |
 | [JerryOSINT](robots/jerryosint.md) | unknown | research | none | - |
+| [KakaoBot](robots/kakaobot.md) | Kakao | search-engine | ip-list | Kakao |
 | [Keenable-User](robots/keenable-user.md) | Keenable.ai, Inc. | ai-assistant | ip-list | Keenable |
 | [KeenableBot](robots/keenablebot.md) | Keenable.ai, Inc. | ai-search | ip-list | Keenable |
 | [Linespider](robots/linespider.md) | LINE | search-engine | none | Line |
+| [LinkCheckerBot](robots/linkcheckerbot.md) | LinkChecker.pro | seo | ip-list | LinkChecker |
 | [LinkedInBot](robots/linkedinbot.md) | LinkedIn | social-preview | none | LinkedIn |
 | [LinkupBot](robots/linkupbot.md) | Linkup | ai-search | ip-list | Linkup |
 | [Mail.RU_Bot](robots/mail.ru_bot.md) | Mail.ru (by the link in its user agent; documentation not available) | unknown | none | Mail.RU |
@@ -108,6 +118,7 @@ for adding or updating robots.
 | [RavenCrawler](robots/ravencrawler.md) | Raven Tools (TapClicks, Inc.) | seo | none | - |
 | [Reflectionbot](robots/reflectionbot.md) | Reflection AI | ai-training | both | Reflection |
 | [Riddler](robots/riddler.md) | F-Secure (riddler.io is registered to WithSecure Corporation) | research | none | Riddler |
+| [RiverBot](robots/riverbot.md) | River AI Inc. | ai-training | both | River |
 | [RootCrawl](robots/rootcrawl.md) | RootCrawl (operated by DataChaser) | archive | web-bot-auth | RootCrawl |
 | [RyteBot](robots/rytebot.md) | Semrush (formerly Ryte GmbH, acquired by Semrush in 2024) | seo | none | Semrush |
 | [SeekportBot](robots/seekportbot.md) | SISTRIX | search-engine | ip-list | Seekport |
@@ -135,6 +146,7 @@ for adding or updating robots.
 | [Stripebot](robots/stripebot.md) | Stripe | other | reverse-dns | Stripe |
 | [TalarionSearchBot](robots/talarionsearchbot.md) | Talarion, Inc. | ai-search | none | - |
 | [TikTokSpider](robots/tiktokspider.md) | TikTok (ByteDance), by its user agent; not confirmed by TikTok documentation | unknown | none | TikTok |
+| [trendictionbot](robots/trendictionbot.md) | Trendiction S.A. (Luxembourg) | marketing | none | - |
 | [Twitterbot](robots/twitterbot.md) | X Corp. (formerly Twitter) | social-preview | both | Twitter |
 | [um-LN](robots/um-ln.md) | Ubermetrics Technologies | marketing | none | Ubermetrics |
 | [UptimeRobot](robots/uptimerobot.md) | UptimeRobot | monitoring | ip-list | Uptime Robot |
@@ -144,6 +156,7 @@ for adding or updating robots.
 | [Yahoo! Slurp](robots/slurp.md) | Yahoo | search-engine | none | Yahoo |
 | [YahooMailProxy](robots/yahoomailproxy.md) | Yahoo | other | ip-list | Yahoo |
 | [YandexBot](robots/yandexbot.md) | Yandex | search-engine | reverse-dns | Yandex |
+| [YepBot](robots/yepbot.md) | Ahrefs (Yep) | search-engine | both | Ahrefs |
 | [Yeti](robots/yeti.md) | Naver | search-engine | both | Naver |
 | [YisouSpider](robots/yisouspider.md) | Shenma (by Hyperwatch's hostname rule; not confirmed by Shenma documentation) | unknown | none | Shenma |
 | [YouBot](robots/youbot.md) | You.com | search-engine | both | You.com |

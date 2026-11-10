@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: MojeekBot
   identity: Mojeek
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # MojeekBot
@@ -77,9 +77,10 @@ with an `ipv4Prefix` key. On 2026-10-15 it held 1 IPv4 prefix (`5.102.173.64/28`
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `MojeekBot`. In Hyperwatch `main` (after
-5.3.3), `src/modules/identity.js` sets the identity `Mojeek` on an unconfirmed hostname ending with
-`.mojeek.com` or the published list (`mojeekbot-ips.json`). Mojeek recommends a forward-confirmed
-check; the hostname is still not confirmed.
+5.4.0), `src/modules/identity.js` sets the identity `Mojeek` on a forward-confirmed hostname
+matching `crawl-*.mojeek.com` or the published list (`mojeekbot-ips.json`). The pattern follows
+Mojeek's example name; Mojeek documents any name in `mojeek.com`, so a crawler under another name
+there gets no identity from the hostname.
 
 ## Misc
 

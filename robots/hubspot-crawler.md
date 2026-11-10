@@ -80,7 +80,7 @@ Reverse DNS hostnames:
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the user agent as family `HubSpot Crawler`. In Hyperwatch `main`
-(after 5.3.3), `src/modules/identity.js` sets the identity `HubSpot` when the address is in the
+(after 5.4.0), `src/modules/identity.js` sets the identity `HubSpot` when the address is in the
 published list (`hubspot-ips.json`, the 36 `WEB_SCRAPING` ranges). Those ranges cover all of
 HubSpot's crawling and user-generated traffic, not only HubSpot Crawler.
 

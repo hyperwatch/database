@@ -16,7 +16,7 @@ verification:
 hyperwatch:
   family: YandexBot
   identity: Yandex
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # YandexBot
@@ -93,11 +93,13 @@ Networks of the addresses verified by reverse DNS (the operator publishes no ran
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `YandexBot`. `src/modules/identity.js` sets the identity
-`Yandex` for the families `YandexBot`, `YandexImages`, `YandexMobileBot` and
-`YandexAccessibilityBot` when the reverse DNS hostname ends with `.yandex.com`, without the forward lookup Yandex
-documents. Hostnames in
-`yandex.ru` or `yandex.net`, which Yandex also documents, are not accepted by that rule.
+`@hyperwatch/useragent` returns the family `YandexBot`. In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` sets the identity `Yandex` for the families `YandexBot`, `YandexImages`,
+`YandexMobileBot` and `YandexAccessibilityBot` on a forward-confirmed hostname matching
+`*.spider.yandex.com`. A "hostname only" fallback sets `Yandex` on the same forward-confirmed names
+whatever the user agent. The pattern is narrower than Yandex's documentation: hostnames in
+`yandex.ru` or `yandex.net`, and names in `yandex.com` outside `spider.yandex.com`, are not
+accepted.
 
 ## Misc
 

@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: MJ12bot
   identity: Majestic
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # MJ12bot
@@ -47,7 +47,13 @@ full v2 string.
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, `robots.txt` only, verified as Majestic by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (100%) |
+
+Never sent: `accept-language`.
 
 ## Blocking with robots.txt
 
@@ -82,10 +88,12 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `MJ12bot`. Hyperwatch sets the identity
-`Majestic` when the reverse DNS hostname ends with `.mj12bot.com`, without a forward lookup to confirm it. This hostname suffix is not
-documented by Majestic. Hyperwatch also sets `Majestic` for requests with no other identity whose
-header signature is `3d36aa5118581a33dd2704f3b0c22a0b`.
+`@hyperwatch/useragent` parses the string above as family `MJ12bot`. In Hyperwatch `main` (after
+5.4.0), `src/modules/identity.js` sets the identity `Majestic` on a forward-confirmed hostname
+matching `crawl-*.mj12bot.com`. Majestic documents no hostname: the pattern is taken from the names
+observed in traffic. Hyperwatch also sets `Majestic` for requests with no other identity whose
+signature is `3d36aa5118581a33dd2704f3b0c22a0b`. It does not use Majestic's pre-arranged ident
+string.
 
 ## Misc
 

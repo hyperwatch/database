@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: AIWebIndex
   identity: Lyrenth
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # AIWebIndex
@@ -55,7 +55,19 @@ The third string is used for domain ownership checks, which fetch
 
 ## Observed HTTP headers
 
-No requests from this robot were captured with their headers yet.
+Based on fewer than 10 requests seen on 2026-11-10, pages, verified as Lyrenth by Hyperwatch 5.4.0.
+
+| Header | Values (share of requests) |
+|---|---|
+| `accept` | `*/*` (50%), `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8` (50%) |
+| `accept-language` | `en-US,en;q=0.9` (50%), `en-US,en;q=0.5` (50%) |
+| `priority` | `u=1, i` (50%) |
+| `sec-fetch-dest` | `empty` (50%) |
+| `sec-fetch-mode` | `cors` (50%) |
+| `sec-fetch-site` | `same-origin` (50%) |
+| `signature` | `(present)` (50%) |
+| `signature-agent` | `"https://api.lyrenth.com"` (50%) |
+| `signature-input` | `(present)` (50%) |
 
 ## Blocking with robots.txt
 
@@ -85,11 +97,13 @@ No ASN is documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `AIWebIndex` for the first and third strings and
-`AIWebIndex-Agent` for the second. In Hyperwatch `main` (after 5.3.3), `src/modules/identity.js`
-sets the identity `Lyrenth` for both families on an unconfirmed hostname ending with `.lyrenth.com`
-or the published list (`lyrenth-ips.json`). The code comment says forward-confirmed, but the rule
-reads `hostname`, not `verifiedHostname`, so the forward lookup Lyrenth documents is not checked.
-The Web Bot Auth signatures are not checked either.
+`AIWebIndex-Agent` for the second. In Hyperwatch `main` (after 5.4.0), `src/modules/identity.js`
+sets the identity `Lyrenth` for both families on a forward-confirmed hostname matching
+`crawler-*.lyrenth.com` or `render-*.lyrenth.com`, the published list (`lyrenth-ips.json`), or a
+verified signature from `https://api.lyrenth.com` (only with the `webbotauth` module, off by
+default). A "hostname only" fallback also sets `Lyrenth` for any user agent on those two
+forward-confirmed patterns. Lyrenth documents any name under `lyrenth.com`; the patterns are
+narrower, so a confirmed name of another shape passes only through the list or the signature.
 
 ## Misc
 

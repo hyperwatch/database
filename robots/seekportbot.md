@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: SeekportBot
   identity: Seekport
-last_checked: 2026-10-15
+last_checked: 2026-11-10
 ---
 
 # SeekportBot
@@ -67,10 +67,10 @@ forward lookup, and no name for the other 5. Seekport does not document this dom
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `SeekportBot`. In Hyperwatch `main` (after 5.3.3),
-`src/modules/identity.js` sets the identity `Seekport` on an unconfirmed hostname ending with
-`.007ac9.net` or the published list (`seekportbot-ips.json`). The suffix is not documented by
-Seekport, and the hostname is not confirmed with a forward lookup.
+`@hyperwatch/useragent` returns the family `SeekportBot`. In Hyperwatch `main` (after 5.4.0),
+`src/modules/identity.js` sets the identity `Seekport` on a forward-confirmed hostname ending with
+`.007ac9.net` or the published list (`seekportbot-ips.json`). The suffix is taken from the names
+observed on the list's addresses; Seekport does not document it.
 
 The rule also covers the family `Seekport Crawler` (for example
 `Mozilla/5.0 (compatible; Seekport Crawler; http://seekport.com/)`) on a cloud hostname ending with
