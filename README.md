@@ -46,6 +46,7 @@ for adding or updating robots.
 | [Buck](robots/buck.md) | Hypefactors | marketing | none | - |
 | [Bytespider](robots/bytespider.md) | ByteDance | unknown | none | Bytespider |
 | [CCBot](robots/ccbot.md) | Common Crawl Foundation | archive | both | Common Crawl |
+| [ChatGPT Agent](robots/chatgpt-agent.md) | OpenAI | ai-assistant | web-bot-auth | ChatGPT Agent |
 | [ChatGPT-User](robots/chatgpt-user.md) | OpenAI | ai-assistant | ip-list | ChatGPT |
 | [ClatterLabsSearchBot](robots/clatterlabssearchbot.md) | Unknown | unknown | none | - |
 | [Claude-SearchBot](robots/claude-searchbot.md) | Anthropic | ai-search | ip-list | Claude |
@@ -67,6 +68,7 @@ for adding or updating robots.
 | [ev-crawler](robots/ev-crawler.md) | Headline | other | none | Headline |
 | [ExaSearchBot](robots/exasearchbot.md) | Exa | ai-search | web-bot-auth | Exa |
 | [ExaSearchBot-Images](robots/exasearchbot-images.md) | Exa | ai-search | web-bot-auth | Exa |
+| [ExaUser](robots/exauser.md) | Exa | ai-assistant | web-bot-auth | Exa |
 | [facebookexternalhit](robots/facebookexternalhit.md) | Meta | social-preview | ip-list | Facebook |
 | [FlipboardProxy](robots/flipboardproxy.md) | Flipboard | other | none | Flipboard |
 | [fyndbot](robots/fyndbot.md) | Fynd | search-engine | none | - |
@@ -89,6 +91,7 @@ for adding or updating robots.
 | [IdarusBot](robots/idarusbot.md) | Idarus | search-engine | ip-list | Idarus |
 | [image-crawler](robots/image-crawler.md) | Unknown | unknown | none | - |
 | [InfoTigerBot](robots/infotigerbot.md) | Infotiger UG (haftungsbeschränkt) | search-engine | reverse-dns | InfoTiger |
+| [IsonSearchBot](robots/isonsearchbot.md) | IsonAI (PT Epithre Teknologi Indonesia) | ai-search | ip-list | Ison |
 | [JerryOSINT](robots/jerryosint.md) | unknown | research | none | - |
 | [KakaoBot](robots/kakaobot.md) | Kakao | search-engine | ip-list | Kakao |
 | [Keenable-User](robots/keenable-user.md) | Keenable.ai, Inc. | ai-assistant | ip-list | Keenable |
@@ -109,11 +112,13 @@ for adding or updating robots.
 | [Neevabot](robots/neevabot.md) | Neeva (shut down in 2023) | search-engine | none | Neevabot |
 | [NumberLensBot](robots/numberlensbot.md) | unknown | unknown | none | - |
 | [OAI-SearchBot](robots/oai-searchbot.md) | OpenAI | ai-search | ip-list | OpenAI SearchBot |
+| [OctenSearchBot](robots/octensearchbot.md) | Octen | ai-search | web-bot-auth | Octen |
 | [Perplexity-User](robots/perplexity-user.md) | Perplexity AI | ai-assistant | ip-list | Perplexity |
 | [PerplexityBot](robots/perplexitybot.md) | Perplexity AI | ai-search | ip-list | Perplexity |
 | [PetalBot](robots/petalbot.md) | Huawei (Petal Search) | search-engine | reverse-dns | PetalBot |
 | [PingdomBot](robots/pingdombot.md) | SolarWinds (Pingdom) | monitoring | ip-list | Pingdom |
 | [Pinterestbot](robots/pinterestbot.md) | Pinterest | social-preview | reverse-dns | Pinterest |
+| [PostHogImageFetcherBot](robots/posthogimagefetcherbot.md) | PostHog | ai-training | web-bot-auth | PostHog |
 | [Qwantbot](robots/qwantbot.md) | Qwant | search-engine | both | Qwant |
 | [RavenCrawler](robots/ravencrawler.md) | Raven Tools (TapClicks, Inc.) | seo | none | - |
 | [Reflectionbot](robots/reflectionbot.md) | Reflection AI | ai-training | both | Reflection |
@@ -133,6 +138,7 @@ for adding or updating robots.
 | [SEOkicks](robots/seokicks.md) | Jobkicks SLU (SEOkicks) | seo | none | SEOkicks |
 | [SERankingBacklinksBot](robots/serankingbacklinksbot.md) | SE Ranking | seo | both | SE Ranking |
 | [SeznamBot](robots/seznambot.md) | Seznam.cz, a.s. | search-engine | both | Seznam |
+| [Shap-User](robots/shap-user.md) | Parallel Web Systems | ai-assistant | web-bot-auth | Parallel |
 | [ShapBot](robots/shapbot.md) | Parallel Web Systems | ai-search | ip-list | Parallel |
 | [Shields.io](robots/shields.io.md) | Shields.io (open-source project) | other | none | Shields.io |
 | [Sirportly t.co expander](robots/sirportly.md) | Krystal Hosting Ltd (Sirportly) | other | none | Sirportly |
@@ -144,6 +150,7 @@ for adding or updating robots.
 | [SpiderFoot](robots/spiderfoot.md) | Intel 471 (SpiderFoot HX); the open-source version is run by its users | other | none | SpiderFoot |
 | [SplitSignalBot](robots/splitsignalbot.md) | Semrush | seo | none | Semrush |
 | [Stripebot](robots/stripebot.md) | Stripe | other | reverse-dns | Stripe |
+| [SubstackContentFetch](robots/substackcontentfetch.md) | Substack | unknown | web-bot-auth | Substack |
 | [TalarionSearchBot](robots/talarionsearchbot.md) | Talarion, Inc. | ai-search | none | - |
 | [TikTokSpider](robots/tiktokspider.md) | TikTok (ByteDance), by its user agent; not confirmed by TikTok documentation | unknown | none | TikTok |
 | [trendictionbot](robots/trendictionbot.md) | Trendiction S.A. (Luxembourg) | marketing | none | - |
