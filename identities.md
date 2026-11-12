@@ -37,7 +37,7 @@ signature" needs the `webbotauth` module (off by default).
 | British Library | `bl.uk ldfc bot`, `bl.uk lddc bot` | unconfirmed hostname `.bl.uk` | [bl.uk_lddc_bot](robots/bl.uk_lddc_bot.md) | - |
 | Bytespider | `Bytespider` | unconfirmed hostname `.crawl.bytedance.com` or cloud hostname `.ap-southeast-1.compute.amazonaws.com` | [Bytespider](robots/bytespider.md) | 2026-11 |
 | ChatGPT | `ChatGPT-User` | published list | [ChatGPT-User](robots/chatgpt-user.md) | 2026-11 |
-| ChatGPT Agent | signed only `https://chatgpt.com` | any user agent: verified signature `https://chatgpt.com` (a `ChatGPT-User` request with one too) | [ChatGPT Agent](robots/chatgpt-agent.md) | - |
+| ChatGPT Agent | signed only `https://chatgpt.com` | any user agent: verified signature `https://chatgpt.com` (a `ChatGPT-User` request with one too) | [ChatGPT Agent](robots/chatgpt-agent.md) | 2026-11 |
 | Claude | `ClaudeBot`, `Claude-User`, `Claude-SearchBot`, `Claude-Web`, `anthropic-ai` | published list | [ClaudeBot](robots/claudebot.md), [Claude-User](robots/claude-user.md), [Claude-SearchBot](robots/claude-searchbot.md) | 2026-11 |
 | Cliqz | `Cliqzbot` | cloud hostname `.eu-central-1.compute.amazonaws.com` | [Cliqzbot](robots/cliqzbot.md) | - |
 | Coc Coc | `Coc Coc Bot`, `Coc Coc Bot Web`, `Coc Coc Bot Image`, `coccocbot-fast`, `coccocbot-ads`, `coccocbot-shopping`; hostname only `bot-*.coccoc.com` (forward-confirmed) | forward-confirmed hostname `bot-*.coccoc.com` | [coccocbot](robots/coccocbot.md) | 2026-11 |
