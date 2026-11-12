@@ -49,9 +49,9 @@ Read Hyperwatch's source at the version named in `identities.md`, not memory:
   1. "signed only": the `signedOnly` map, before the families: a verified signature of one of its
      agents gives the identity whatever the user agent;
   2. the `case` for that family;
-  3. the "Hostname only" and "Signature" fallbacks after the `switch`, then Google's fetcher pools
+  3. after the `switch`, for any user agent: the "Hostname only" fallback, Google's fetcher pools
      (`googleFetcher`: special-case crawlers, user-triggered agents, user-triggered fetchers),
-     any user agent;
+     then the "Signature" fallback;
 - the lists the rule uses in `src/data/`: `*-ips.json` (published lists) and
   `webbotauth-agents.json` (the signers whose key directories Hyperwatch fetches; their keys are
   in `webbotauth-keys.json`).
