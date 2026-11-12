@@ -84,7 +84,7 @@ for adding or updating robots.
 | [HubSpot Crawler](robots/hubspot-crawler.md) | HubSpot | seo | ip-list | HubSpot |
 | [Hyperlink](robots/hyperlink.md) | Unknown | unknown | none | Meta |
 | [ibou-search](robots/ibou-search.md) | ibou | search-engine | both | ibou |
-| [IbouBot](robots/iboubot.md) | ibou | search-engine | both | - |
+| [IbouBot](robots/iboubot.md) | ibou | search-engine | both | ibou |
 | [ICC-Crawler](robots/icc-crawler.md) | National Institute of Information and Communications Technology (NICT), Universal Communication Research Institute | research | ip-list | NICT |
 | [IdarusBot](robots/idarusbot.md) | Idarus | search-engine | ip-list | Idarus |
 | [image-crawler](robots/image-crawler.md) | Unknown | unknown | none | - |
@@ -119,7 +119,7 @@ for adding or updating robots.
 | [Reflectionbot](robots/reflectionbot.md) | Reflection AI | ai-training | both | Reflection |
 | [Riddler](robots/riddler.md) | F-Secure (riddler.io is registered to WithSecure Corporation) | research | none | Riddler |
 | [RiverBot](robots/riverbot.md) | River AI Inc. | ai-training | both | River |
-| [RootCrawl](robots/rootcrawl.md) | RootCrawl (operated by DataChaser) | archive | web-bot-auth | RootCrawl |
+| [RootCrawl](robots/rootcrawl.md) | RootCrawl (operated by DataChaser) | archive | both | RootCrawl |
 | [RyteBot](robots/rytebot.md) | Semrush (formerly Ryte GmbH, acquired by Semrush in 2024) | seo | none | Semrush |
 | [SeekportBot](robots/seekportbot.md) | SISTRIX | search-engine | ip-list | Seekport |
 | [SemanticScholarBot](robots/semanticscholarbot.md) | Allen Institute for AI (Ai2) | research | none | - |

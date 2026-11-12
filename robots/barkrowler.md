@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: Barkrowler
   identity: Babbar
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # Barkrowler
@@ -78,13 +78,20 @@ Crawl-Delay: 10
 
 No ASN is documented by Babbar.
 
+Babbar's page doesn't mention signed requests. Hyperwatch lists Barkrowler, with ibou-search,
+under the Web Bot Auth agent `https://ibou.io`, whose key directory,
+https://ibou.io/.well-known/http-message-signatures-directory, held one `OKP` / `Ed25519` key on
+2026-11-12, with its JWK thumbprint as `kid` (a signature's `keyid` finds it either way). The
+`Signature-Agent` value Barkrowler sends is not documented.
+
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the user agent as family `Barkrowler`. In Hyperwatch `main` (after
-5.4.0), `src/modules/identity.js` sets the identity `Babbar` on a forward-confirmed hostname
-matching `c*.babbar.eu` or the published list (`barkrowler-ips.json`). Babbar gives only the suffix
+`@hyperwatch/useragent` parses the user agent as family `Barkrowler`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` sets the identity `Babbar` on a forward-confirmed hostname matching
+`c*.babbar.eu`, a verified signature of `https://ibou.io` (needs the `webbotauth` module, off by
+default), then the published list (`barkrowler-ips.json`). Babbar gives only the suffix
 `babbar.eu`, without example hostnames, so the pattern is narrower than the documentation and does
-not come from it.
+not come from it. The signature check doesn't come from Babbar's documentation either.
 
 ## Misc
 
@@ -95,3 +102,4 @@ address on the crawler page.
 
 - https://babbar.tech/crawler (checked 2026-10-15)
 - https://www.babbar.tech/barkrowler-ip-ranges.json (checked 2026-10-15)
+- https://ibou.io/.well-known/http-message-signatures-directory (checked 2026-11-12)

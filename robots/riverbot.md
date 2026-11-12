@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: RiverBot
   identity: River
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # RiverBot
@@ -80,16 +80,17 @@ says; a `5xx` or an unreachable file means it fetches nothing from the site unti
 - Web Bot Auth: every request is signed with HTTP Message Signatures (RFC 9421), with a
   `Signature-Agent` header of `"https://river.ai"`. The key directory,
   https://river.ai/.well-known/http-message-signatures-directory, held one `OKP` / `Ed25519` key on
-  2026-11-10.
+  2026-11-12, as on 2026-11-10, with its JWK thumbprint as `kid` (a signature's `keyid` finds it
+  either way).
 - ASN: not documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `RiverBot`. In Hyperwatch `main` (after 5.4.0),
+`@hyperwatch/useragent` returns the family `RiverBot`. In Hyperwatch 5.6.0,
 `src/modules/identity.js` sets the identity `River` on a forward-confirmed hostname ending with
-`.bot.river.ai`, the published list (`riverbot-ips.json`, 100 prefixes, the same as the published
-list on 2026-11-10) or a verified signature from `https://river.ai`, which needs the `webbotauth`
-module.
+`.bot.river.ai`, a verified signature of `https://river.ai` (needs the `webbotauth` module, off by
+default), then the published list (`riverbot-ips.json`, 100 prefixes, the same as the published
+list on 2026-11-10).
 
 ## Misc
 
@@ -100,4 +101,4 @@ address of the requests. River says it stops crawling the sites it is told to le
 
 - https://river.ai/bot (checked 2026-11-10)
 - https://river.ai/riverbot.json (checked 2026-11-10)
-- https://river.ai/.well-known/http-message-signatures-directory (checked 2026-11-10)
+- https://river.ai/.well-known/http-message-signatures-directory (checked 2026-11-12)

@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: ibou-search
   identity: ibou
-last_checked: 2026-10-16
+last_checked: 2026-11-12
 ---
 
 # ibou-search
@@ -47,7 +47,7 @@ with `www.` in the URL. Its technical table gives the version as 1.0 while the u
 
 ## Observed HTTP headers
 
-Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch did not verify this robot then, so other clients using its name may be included.
 
 | Header | Values (share of requests) |
 |---|---|
@@ -81,14 +81,21 @@ Crawl-Delay: 10
   `creationTime` 2026-11-04 (on 2026-10-15, the first and the last, dated 2026-09-28). ibou says
   the list may change and should be fetched periodically.
 - Reverse DNS: forward-confirmed names under `ibou.io`, for example `c40037.ibou.io`.
+- Web Bot Auth: ibou's page doesn't mention it, but the requests above are signed, with
+  `Signature-Agent` set to the bare URL `https://ibou.io` (not a quoted string or a dictionary).
+  The key directory, https://ibou.io/.well-known/http-message-signatures-directory, held one `OKP`
+  / `Ed25519` key on 2026-11-12, with its JWK thumbprint as `kid` (a signature's `keyid` finds it
+  either way).
 - ASN: not documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `ibou-search`. In Hyperwatch `main` (after 5.4.0),
+`@hyperwatch/useragent` returns the family `ibou-search`. In Hyperwatch 5.6.0,
 `src/modules/identity.js` sets the identity `ibou` on a forward-confirmed hostname ending with
-`.ibou.io` or the published list (`ibou-ips.json`, the same 3 prefixes). IbouBot has its own rule
-and list (see [IbouBot](iboubot.md)).
+`.ibou.io`, a verified signature of `https://ibou.io` (needs the `webbotauth` module, off by
+default; since 5.6.0 it accepts a bare-URL `Signature-Agent` like ibou's), then the published list
+(`ibou-ips.json`, the same 3 prefixes). The same signature also gives Barkrowler the identity
+`Babbar`. IbouBot has its own rule and list (see [IbouBot](iboubot.md)).
 
 ## Misc
 
@@ -100,3 +107,4 @@ and list (see [IbouBot](iboubot.md)).
 
 - https://www.ibou.com/crawlers.html (checked 2026-10-15)
 - https://www.ibou.com/ibousearch-ip-ranges.json (checked 2026-11-10)
+- https://ibou.io/.well-known/http-message-signatures-directory (checked 2026-11-12)

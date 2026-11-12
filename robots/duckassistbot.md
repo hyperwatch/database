@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: DuckAssistBot
   identity: DuckDuckGo
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # DuckAssistBot
@@ -42,7 +42,7 @@ The documented string is `DuckAssistBot/1.2; (+http://duckduckgo.com/duckassistb
 
 ## Observed HTTP headers
 
-Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch did not verify this robot then, so other clients using its name may be included.
 
 | Header | Values (share of requests) |
 |---|---|
@@ -81,17 +81,25 @@ https://duckduckgo.com/duckassistbot.json. The format is an object with `creatio
 (mostly single `/32` addresses), with `creationTime` 2026-09-01, and its content was identical to
 https://duckduckgo.com/duckduckbot.json. No IPv6 entries, reverse DNS names or ASN are documented.
 
+DuckAssistBot also signs its requests with Web Bot Auth (RFC 9421), with the `Signature-Agent`
+value `"https://assistbot.duckduckgo.com"` (seen in the requests above; DuckDuckGo's pages checked
+don't document it). The key directory,
+https://assistbot.duckduckgo.com/.well-known/http-message-signatures-directory, held one `OKP` /
+`Ed25519` key on 2026-11-12, whose `kid` is its JWK thumbprint, so a signature's `keyid` finds it
+either way.
+
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `DuckAssistBot`. In Hyperwatch `main` (after 5.4.0),
-`src/modules/identity.js` sets the identity `DuckDuckGo` for the families `DuckDuckGo` (the
-DuckDuckGo browser's user agent), `DuckDuckBot`, `DuckDuckBot-Https`, `DuckAssistBot` and
-`DuckDuckGo-Favicons-Bot` on the forward-confirmed hostname `*.crawl.duckduckgo.com`, the published
-lists (`duckduckbot-ips.json` and `duckassistbot-ips.json`, joined), or a verified signature of
-`https://assistbot.duckduckgo.com` (needs the `webbotauth` module, off by default). DuckDuckGo
-documents no reverse DNS names: the hostname pattern is Hyperwatch's own. Its pages checked do not
-document the signature either; the requests observed carry it.
+`@hyperwatch/useragent` returns the family `DuckAssistBot`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` first sets the identity `DuckDuckGo` on a verified signature of
+`https://bot.duckduckgo.com` (DuckDuckBot's), whatever the user agent ("signed only"). Then, for
+the families `DuckDuckGo` (the DuckDuckGo browser's user agent), `DuckDuckBot`, `DuckDuckBot-Https`,
+`DuckAssistBot` and `DuckDuckGo-Favicons-Bot`, it checks the forward-confirmed hostname
+`*.crawl.duckduckgo.com`, a verified signature of `https://assistbot.duckduckgo.com`, then the
+published lists (`duckduckbot-ips.json` and `duckassistbot-ips.json`, joined). Signatures need the
+`webbotauth` module, off by default. DuckDuckGo documents no reverse DNS names: the hostname
+pattern is Hyperwatch's own.
 
 ## Misc
 
@@ -108,3 +116,4 @@ document the signature either; the requests observed carry it.
 - https://duckduckgo.com/duckassistbot.json (checked 2026-10-15)
 - https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot (checked 2026-10-15)
 - https://duckduckgo.com/duckduckbot.json (checked 2026-10-15)
+- https://assistbot.duckduckgo.com/.well-known/http-message-signatures-directory (checked 2026-11-12)

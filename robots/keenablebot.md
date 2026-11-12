@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: KeenableBot
   identity: Keenable
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # KeenableBot
@@ -88,8 +88,12 @@ is not from Keenable. The addresses are on Google Cloud, so reverse DNS
 
 Keenable says it is adding Web Bot Auth signatures (HTTP Message Signatures), with key directories
 at `keenablebot.keenable.ai` and `keenable-user.keenable.ai`. As of the documentation date its
-requests do not carry signatures yet, and it says to check the address instead. No ASN is
-documented.
+requests do not carry signatures yet, and it says to check the address instead (still the case
+on 2026-11-12). Both directories exist: on 2026-11-12,
+https://keenablebot.keenable.ai/.well-known/http-message-signatures-directory and
+https://keenable-user.keenable.ai/.well-known/http-message-signatures-directory each held one
+`OKP` / `Ed25519` key with no `kid`, so a signature's `keyid` would have to be the key's JWK
+thumbprint. No `Signature-Agent` value is documented. No ASN is documented.
 
 ### Observed
 
@@ -101,11 +105,12 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the user agent as family `KeenableBot`. In Hyperwatch `main` (after
-5.4.0), `src/modules/identity.js` sets the identity `Keenable` when the address is in the published
-list (`keenablebot-ips.json`, refreshed by `node scripts/fetch-ips.js`: 30 ranges, the same as the
-published list on 2026-10-15) or on a verified signature from `https://keenablebot.keenable.ai`,
-which needs the `webbotauth` module. Keenable says its requests do not carry signatures yet.
+`@hyperwatch/useragent` parses the user agent as family `KeenableBot`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` sets the identity `Keenable` on a verified signature of
+`https://keenablebot.keenable.ai` (needs the `webbotauth` module, off by default), then when the
+address is in the published list (`keenablebot-ips.json`, refreshed by `node scripts/fetch-ips.js`:
+30 ranges, the same as the published list on 2026-10-15). Keenable says its requests do not carry
+signatures yet.
 
 ## Misc
 
@@ -117,7 +122,8 @@ automatically. Its user agent is:
 Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Keenable-User/1.0; +https://keenable.ai/bot)
 ```
 
-Hyperwatch parses it as family `Keenable-User` and sets identity `Keenable` when the address is in
+Hyperwatch parses it as family `Keenable-User` and sets identity `Keenable` on a verified signature
+of `https://keenable-user.keenable.ai`, then when the address is in
 `src/data/keenable-user-ips.json`.
 
 The documentation was first published in September 2026. The IP lists were added in October 2026.
@@ -129,3 +135,5 @@ Contact: abuse@keenable.ai.
 - https://app.keenable.ai/bot (checked 2026-10-15)
 - https://app.keenable.ai/bot/keenablebot.json (checked 2026-10-15)
 - https://app.keenable.ai/bot/keenable-user.json (checked 2026-10-15)
+- https://keenablebot.keenable.ai/.well-known/http-message-signatures-directory (checked 2026-11-12)
+- https://keenable-user.keenable.ai/.well-known/http-message-signatures-directory (checked 2026-11-12)

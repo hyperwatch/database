@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: ChatGPT-User
   identity: ChatGPT
-last_checked: 2026-10-15
+last_checked: 2026-11-12
 ---
 
 # ChatGPT-User
@@ -71,10 +71,16 @@ documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `ChatGPT-User`. Hyperwatch sets the
-identity `ChatGPT` when the client address is inside the ranges of `src/data/chatgpt-user-ips.json`,
-a copy of OpenAI's list refreshed by `node scripts/fetch-ips.js` (in Hyperwatch `main` (after
-5.4.0), 237 ranges, the same as the published list on 2026-11-10).
+`@hyperwatch/useragent` parses the string above as family `ChatGPT-User`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` first sets the identity `ChatGPT Agent` on a verified signature of
+`https://chatgpt.com`, whatever the user agent ("signed only"; needs the `webbotauth` module, off by
+default), so a `ChatGPT-User` request signed that way gets `ChatGPT Agent` (see
+[ChatGPT Agent](chatgpt-agent.md)), not `ChatGPT`, even outside OpenAI's ranges. OpenAI's bots page
+doesn't say whether ChatGPT-User signs its requests; the key directory,
+https://chatgpt.com/.well-known/http-message-signatures-directory, held one `OKP` / `Ed25519` key on
+2026-11-12, with its JWK thumbprint as `kid`. Otherwise Hyperwatch sets the identity `ChatGPT` when
+the client address is inside the ranges of `src/data/chatgpt-user-ips.json`, a copy of OpenAI's list
+refreshed by `node scripts/fetch-ips.js` (237 ranges, the same as the published list on 2026-11-10).
 
 ## Misc
 
@@ -83,5 +89,6 @@ and IP list.
 
 ## Sources
 
-- https://developers.openai.com/api/docs/bots (checked 2026-10-15)
+- https://developers.openai.com/api/docs/bots (checked 2026-11-12)
 - https://openai.com/chatgpt-user.json (checked 2026-11-10)
+- https://chatgpt.com/.well-known/http-message-signatures-directory (checked 2026-11-12)

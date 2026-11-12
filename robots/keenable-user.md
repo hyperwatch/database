@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: Keenable-User
   identity: Keenable
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # Keenable-User
@@ -66,15 +66,20 @@ format Googlebot uses": an object with `creationTime` and a `prefixes` array of
 that token's list is not from Keenable.
 
 Keenable says it is adding Web Bot Auth signatures (key directory at `keenable-user.keenable.ai`),
-but that its requests "do not carry signatures yet". No reverse DNS hostname or ASN is documented.
+but that its requests "do not carry signatures yet" (still the case on 2026-11-12). The directory,
+https://keenable-user.keenable.ai/.well-known/http-message-signatures-directory, held one `OKP` /
+`Ed25519` key with no `kid` on 2026-11-12, so a signature's `keyid` would have to be the key's JWK
+thumbprint. No `Signature-Agent` value is documented. No reverse DNS hostname or ASN is
+documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `Keenable-User`. In Hyperwatch `main` (after 5.4.0),
-`src/modules/identity.js` sets the identity `Keenable` when the address is in the published list
-(`keenable-user-ips.json`, refreshed by `node scripts/fetch-ips.js`: 7 addresses, the same as the
-published list on 2026-10-15) or on a verified signature from `https://keenable-user.keenable.ai`,
-which needs the `webbotauth` module. Keenable says its requests do not carry signatures yet.
+`@hyperwatch/useragent` returns the family `Keenable-User`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` sets the identity `Keenable` on a verified signature of
+`https://keenable-user.keenable.ai` (needs the `webbotauth` module, off by default), then when the
+address is in the published list (`keenable-user-ips.json`, refreshed by
+`node scripts/fetch-ips.js`: 7 addresses, the same as the published list on 2026-10-15). Keenable
+says its requests do not carry signatures yet.
 
 ## Misc
 
@@ -85,3 +90,4 @@ which needs the `webbotauth` module. Keenable says its requests do not carry sig
 
 - https://keenable.ai/bot (checked 2026-10-15, redirects to https://app.keenable.ai/bot)
 - https://app.keenable.ai/bot/keenable-user.json (checked 2026-10-15)
+- https://keenable-user.keenable.ai/.well-known/http-message-signatures-directory (checked 2026-11-12)

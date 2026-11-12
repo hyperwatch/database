@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: AIWebIndex
   identity: Lyrenth
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # AIWebIndex
@@ -87,9 +87,11 @@ Lyrenth documents three checks:
    object with `creationTime`, `policy`, `contact`, `userAgents` and a `prefixes` array of
    `{"ipv4Prefix": ...}` objects. On 2026-10-15 it held 22 IPv4 prefixes, all `/32`, with
    `creationTime` 2026-08-16. It lists the first two user agents above.
-2. Requests carry a Web Bot Auth signature (RFC 9421); the key directory is
-   https://api.lyrenth.com/.well-known/http-message-signatures-directory (one Ed25519 key on
-   2026-10-15).
+2. Requests carry a Web Bot Auth signature (RFC 9421), with the `Signature-Agent` value
+   `"https://api.lyrenth.com"` (seen in the requests above); the key directory is
+   https://api.lyrenth.com/.well-known/http-message-signatures-directory (one `OKP` / `Ed25519` key
+   on 2026-11-12, as on 2026-10-15, with its JWK thumbprint as `kid`, so a signature's `keyid` finds
+   it either way).
 3. Every address has forward-confirmed reverse DNS under `lyrenth.com`.
 
 No ASN is documented.
@@ -97,13 +99,13 @@ No ASN is documented.
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `AIWebIndex` for the first and third strings and
-`AIWebIndex-Agent` for the second. In Hyperwatch `main` (after 5.4.0), `src/modules/identity.js`
-sets the identity `Lyrenth` for both families on a forward-confirmed hostname matching
-`crawler-*.lyrenth.com` or `render-*.lyrenth.com`, the published list (`lyrenth-ips.json`), or a
-verified signature from `https://api.lyrenth.com` (only with the `webbotauth` module, off by
-default). A "hostname only" fallback also sets `Lyrenth` for any user agent on those two
-forward-confirmed patterns. Lyrenth documents any name under `lyrenth.com`; the patterns are
-narrower, so a confirmed name of another shape passes only through the list or the signature.
+`AIWebIndex-Agent` for the second. In Hyperwatch 5.6.0, `src/modules/identity.js` sets the identity
+`Lyrenth` for both families on a forward-confirmed hostname matching `crawler-*.lyrenth.com` or
+`render-*.lyrenth.com`, a verified signature of `https://api.lyrenth.com` (only with the
+`webbotauth` module, off by default), then the published list (`lyrenth-ips.json`). A "hostname
+only" fallback also sets `Lyrenth` for any user agent on those two forward-confirmed patterns.
+Lyrenth documents any name under `lyrenth.com`; the patterns are narrower, so a confirmed name of
+another shape passes only through the signature or the list.
 
 ## Misc
 
@@ -113,4 +115,4 @@ narrower, so a confirmed name of another shape passes only through the list or t
 
 - https://lyrenth.com/bot (checked 2026-10-15, redirects to https://www.lyrenth.com/bot)
 - https://lyrenth.com/bot/ip-ranges.json (checked 2026-10-15)
-- https://api.lyrenth.com/.well-known/http-message-signatures-directory (checked 2026-10-15)
+- https://api.lyrenth.com/.well-known/http-message-signatures-directory (checked 2026-11-12)

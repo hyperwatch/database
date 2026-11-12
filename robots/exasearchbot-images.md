@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: ExaSearchBot-Images
   identity: Exa
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # ExaSearchBot-Images
@@ -66,16 +66,21 @@ ExaSearchBot, and that verification does not depend on the address.
 Requests are signed with HTTP Message Signatures (RFC 9421) following Web Bot Auth, with Ed25519
 keys, and carry `Signature`, `Signature-Input` and `Signature-Agent` headers. The keys are at
 https://images.crawler.exa.ai/.well-known/http-message-signatures-directory, a directory separate
-from ExaSearchBot's. No reverse DNS hostnames or ASN are documented.
+from ExaSearchBot's: on 2026-11-12 it held one `OKP` / `Ed25519` key, whose `kid` is its JWK
+thumbprint, so a signature's `keyid` finds it either way. Exa's page says the `Signature-Agent`
+header identifies Exa without giving the value; Hyperwatch expects
+`"https://images.crawler.exa.ai"`. No reverse DNS hostnames or ASN are documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `ExaSearchBot-Images`. In Hyperwatch `main` (after
-5.4.0), `src/modules/identity.js` sets the identity `Exa` on a verified signature of
-`https://images.crawler.exa.ai` when the `webbotauth` module is active (it is off by default); then
-only the signature counts. Without the module, it checks the header only: `Signature-Agent` must
-contain `"https://images.crawler.exa.ai"`, and the signature is not validated against the key
-directory. In 5.4.0 the family has no rule.
+`@hyperwatch/useragent` returns the family `ExaSearchBot-Images`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` first sets the identity `Exa` on a verified signature of ExaUser's
+`https://exauser.crawler.exa.ai`, whatever the user agent ("signed only"). For the family
+`ExaSearchBot-Images`, it then sets `Exa` on a verified signature of `https://images.crawler.exa.ai`
+when the `webbotauth` module is active (it is off by default); then only the signature counts.
+Without the module, it checks the header only: `Signature-Agent` must contain
+`"https://images.crawler.exa.ai"`, quotes included, and the signature is not validated against the
+key directory.
 
 ## Misc
 
@@ -88,3 +93,4 @@ Contact: support@exa.ai, preferably from an address on the domain concerned.
 
 - https://images.crawler.exa.ai/ (checked 2026-11-10)
 - https://crawler.exa.ai/ (checked 2026-11-10)
+- https://images.crawler.exa.ai/.well-known/http-message-signatures-directory (checked 2026-11-12)

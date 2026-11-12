@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: ShapBot
   identity: Parallel
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # ShapBot
@@ -27,9 +27,11 @@ through Parallel's web APIs and search features".
 
 ## Behavior
 
-Parallel says webmasters "can manage automated access using robots.txt with the User-agent: ShapBot
-directive". Crawl rate, `Crawl-delay` support, JavaScript rendering and `robots.txt` caching are not
-documented.
+Parallel says ShapBot follows the rules in the `User-agent: ShapBot` group, or the `*` group if
+there is none, and that `robots.txt` changes take effect within about a day. It supports
+`Crawl-delay` in the ShapBot group, pauses when a 429 or 503 response carries a `Retry-After`
+header, and slows down on its own when a site is rate-limiting it, overloaded or not responding.
+Crawl rate and JavaScript rendering are not documented.
 
 ## User agents
 
@@ -70,6 +72,13 @@ User-agent: ShapBot
 Disallow: /
 ```
 
+To slow it down instead (Parallel's example):
+
+```
+User-agent: ShapBot
+Crawl-delay: 5
+```
+
 Parallel's other agent, Shap-User, accesses content on behalf of users and "is intended to provide
 visibility rather than to be managed through automated controls": Parallel points to ShapBot for
 controlling automated crawling.
@@ -80,26 +89,42 @@ Parallel publishes the addresses at https://docs.parallel.ai/resources/shapbot.j
 `creationTime` and a `prefixes` array of `{"ipv4Prefix": ...}` objects. On 2026-10-15 it held 10
 IPv4 prefixes, all `/32`, with `creationTime` 2026-07-14. No reverse DNS hostname or ASN is
 documented. A reverse lookup of three listed addresses on 2026-10-15 returned
-`*.bc.googleusercontent.com` names, a Google Cloud suffix shared by all its customers.
+`*.bc.googleusercontent.com` names, a Google Cloud suffix shared by all its customers. On
+2026-11-12 the list was unchanged.
+
+ShapBot also signs its requests with Web Bot Auth (RFC 9421), with the `Signature-Agent` value
+`"https://shapbot.parallel.ai"` (seen in the requests above; Parallel gives the directory, not the
+value). The key directory,
+https://shapbot.parallel.ai/.well-known/http-message-signatures-directory, held two `OKP` /
+`Ed25519` keys on 2026-11-12, each with its JWK thumbprint as `kid`, so a signature's `keyid` finds
+it either way.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `ShapBot`. In Hyperwatch `main` (after 5.4.0),
-`src/modules/identity.js` sets the identity `Parallel` on a cloud hostname ending with
-`.googleusercontent.com`, the published list (`shapbot-ips.json`) or a verified signature of
-`https://shapbot.parallel.ai` (needs the `webbotauth` module, off by default). The cloud hostname is
-not documented by Parallel, and any Google Cloud customer passes it.
+`@hyperwatch/useragent` returns the family `ShapBot`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` first sets the identity `Parallel` on a verified signature of Shap-User's
+`https://shap-user.parallel.ai`, whatever the user agent ("signed only"). For the family `ShapBot`,
+it then checks a cloud hostname ending with `.googleusercontent.com`, a verified signature of
+`https://shapbot.parallel.ai`, then the published list (`shapbot-ips.json`, 10 prefixes, the same
+as the published list on 2026-11-12). Signatures need the `webbotauth` module, off by default. The
+cloud hostname is not documented by Parallel, and any Google Cloud customer passes it.
 
 ## Misc
 
-- Shap-User: `Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Shap-User/0.1.0`.
+- [Shap-User](shap-user.md): `Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Shap-User/0.1.0`.
   Parallel says it "is not used for crawling the web in an automatic fashion". No list is published
-  for it. Hyperwatch parses it as the family `Shap-User` and gives it no identity.
+  for it. It signs its requests with Web Bot Auth; its key directory,
+  https://shap-user.parallel.ai/.well-known/http-message-signatures-directory, held two `OKP` /
+  `Ed25519` keys on 2026-11-12, each with its JWK thumbprint as `kid`. Hyperwatch parses it as the
+  family `Shap-User`; 5.6.0 sets the identity `Parallel` on a verified signature of
+  `https://shap-user.parallel.ai` only.
 - Parallel's contacts: support@parallel.ai for crawler issues, index@parallel.ai for content
   questions.
 
 ## Sources
 
-- https://parallel.ai/parallel-web-systems-bots (checked 2026-10-15)
+- https://parallel.ai/parallel-web-systems-bots (checked 2026-11-12)
 - https://docs.parallel.ai/resources/crawler (checked 2026-10-15)
-- https://docs.parallel.ai/resources/shapbot.json (checked 2026-10-15)
+- https://docs.parallel.ai/resources/shapbot.json (checked 2026-11-12)
+- https://shapbot.parallel.ai/.well-known/http-message-signatures-directory (checked 2026-11-12)
+- https://shap-user.parallel.ai/.well-known/http-message-signatures-directory (checked 2026-11-12)

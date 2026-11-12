@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: Yeti
   identity: Naver
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # Yeti
@@ -89,12 +89,20 @@ Naver documents two checks:
 
 No ASN is documented.
 
+Yeti also signs its requests with Web Bot Auth (RFC 9421), with the dictionary form of
+`Signature-Agent`, `sig1="https://bot.naver.com"` (seen in the requests above; the Naver pages
+checked don't mention signatures). The key directory,
+https://bot.naver.com/.well-known/http-message-signatures-directory, held two `OKP` / `Ed25519` keys
+on 2026-11-12, each with its JWK thumbprint as `kid` (a signature's `keyid` finds it either way).
+The two overlap: one valid from 2026-11-05 to 2026-11-15, the other from 2026-11-12 with no expiry
+date given.
+
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses both strings above as family `Yeti`. In Hyperwatch `main` (after
-5.4.0), `src/modules/identity.js` sets the identity `Naver` on a forward-confirmed hostname matching
-`crawl.*.web.naver.com`, the published list (`naverbot-ips.json`) or a verified signature of
-`https://bot.naver.com` (needs the `webbotauth` module, off by default). Naver signs with the
+`@hyperwatch/useragent` parses both strings above as family `Yeti`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` sets the identity `Naver` on a forward-confirmed hostname matching
+`crawl.*.web.naver.com`, a verified signature of `https://bot.naver.com` (needs the `webbotauth`
+module, off by default), then the published list (`naverbot-ips.json`). Naver signs with the
 dictionary form of `Signature-Agent` (`sig1="https://bot.naver.com"`), covering `@method` and
 `@path` too. A "hostname only" fallback sets `Naver` on the same forward-confirmed names whatever
 the user agent. The pattern follows Naver's example name, narrower than the documented `.naver.com`
@@ -111,3 +119,4 @@ which fetches link previews for the blog editor and other services.
 - https://searchadvisor.naver.com/guide/seo-basic-robots (checked 2026-10-15)
 - https://searchadvisor.naver.com/doc/naverbot.json (checked 2026-10-15)
 - https://help.naver.com/service/5626/contents/8026?lang=ko (checked 2026-10-15)
+- https://bot.naver.com/.well-known/http-message-signatures-directory (checked 2026-11-12)

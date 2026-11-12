@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: DuckDuckBot
   identity: DuckDuckGo
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # DuckDuckBot
@@ -63,15 +63,23 @@ https://duckduckgo.com/duckduckbot.json, an object with `creationTime` and a `pr
 content was identical to https://duckduckgo.com/duckassistbot.json. No IPv6 addresses, reverse DNS
 names or ASN are documented.
 
+DuckDuckGo's pages checked don't mention signed requests, but a Web Bot Auth key directory exists
+at https://bot.duckduckgo.com/.well-known/http-message-signatures-directory: on 2026-11-12 it held
+one `OKP` / `Ed25519` key, whose `kid` is its JWK thumbprint, so a signature's `keyid` finds it
+either way. The `Signature-Agent` value DuckDuckBot sends is not documented; Hyperwatch lists
+`https://bot.duckduckgo.com` as DuckDuckBot's agent.
+
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `DuckDuckBot`. In Hyperwatch `main` (after 5.4.0),
-`src/modules/identity.js` sets the identity `DuckDuckGo` for the families `DuckDuckGo` (the
-DuckDuckGo browser's user agent), `DuckDuckBot`, `DuckDuckBot-Https`, `DuckAssistBot` and
-`DuckDuckGo-Favicons-Bot` on the forward-confirmed hostname `*.crawl.duckduckgo.com`, the published
-lists (`duckduckbot-ips.json` and `duckassistbot-ips.json`, joined), or a verified signature of
-`https://assistbot.duckduckgo.com` (DuckAssistBot's, needs the `webbotauth` module, off by
-default). DuckDuckGo documents no reverse DNS names: the hostname pattern is Hyperwatch's own.
+`@hyperwatch/useragent` returns the family `DuckDuckBot`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` first sets the identity `DuckDuckGo` on a verified signature of
+`https://bot.duckduckgo.com`, whatever the user agent ("signed only"). Then, for the families
+`DuckDuckGo` (the DuckDuckGo browser's user agent), `DuckDuckBot`, `DuckDuckBot-Https`,
+`DuckAssistBot` and `DuckDuckGo-Favicons-Bot`, it checks the forward-confirmed hostname
+`*.crawl.duckduckgo.com`, a verified signature of `https://assistbot.duckduckgo.com`
+(DuckAssistBot's), then the published lists (`duckduckbot-ips.json` and `duckassistbot-ips.json`,
+joined). Signatures need the `webbotauth` module, off by default. DuckDuckGo documents no reverse
+DNS names: the hostname pattern is Hyperwatch's own.
 
 ## Misc
 
@@ -84,3 +92,4 @@ the same address list.
 - https://duckduckgo.com/duckduckbot.json (checked 2026-10-15)
 - https://duckduckgo.com/duckassistbot.json (checked 2026-10-15)
 - https://duckduckgo.com/duckduckgo-help-pages/privacy/favicons (checked 2026-10-15)
+- https://bot.duckduckgo.com/.well-known/http-message-signatures-directory (checked 2026-11-12)

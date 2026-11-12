@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: AhrefsBot
   identity: Ahrefs
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # AhrefsBot
@@ -90,14 +90,20 @@ Two lists cover both AhrefsBot and AhrefsSiteAudit:
 Neither file says when it was generated. The help article that lists the same ranges as text was
 dated 2026-09-03. No ASN is documented.
 
+AhrefsBot also signs its requests with Web Bot Auth (RFC 9421), with the `Signature-Agent` value
+`"https://ahrefs.com"` (seen in the requests above; the robot page doesn't mention signatures). The
+key directory, https://ahrefs.com/.well-known/http-message-signatures-directory, held two `OKP` /
+`Ed25519` keys on 2026-11-12, each with its JWK thumbprint as `kid`, so a signature's `keyid` finds
+it either way.
+
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the string above as family `AhrefsBot`. In Hyperwatch `main` (after
-5.4.0), `src/modules/identity.js` sets the identity `Ahrefs` for the families `AhrefsBot`,
-`AhrefsSiteAudit` and `YepBot` on a forward-confirmed hostname ending with `.ahrefs.com`, the
-published list (`ahrefs-ips.json`, fetched from `crawler-ip-ranges`) or a verified signature of
-`https://ahrefs.com` (needs the `webbotauth` module, off by default). `.ahrefs.net`, which Ahrefs
-documents, is not accepted: such an address passes only through the list.
+`@hyperwatch/useragent` parses the string above as family `AhrefsBot`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` sets the identity `Ahrefs` for the families `AhrefsBot`,
+`AhrefsSiteAudit` and `YepBot` on a forward-confirmed hostname ending with `.ahrefs.com`, a verified
+signature of `https://ahrefs.com` (needs the `webbotauth` module, off by default), then the
+published list (`ahrefs-ips.json`, fetched from `crawler-ip-ranges`). `.ahrefs.net`, which Ahrefs
+documents, is not accepted: such an address passes only through the signature or the list.
 
 ## Misc
 
@@ -110,3 +116,4 @@ crawling go to the support address given on the robot page.
 - https://api.ahrefs.com/v3/public/crawler-ip-ranges (checked 2026-10-15)
 - https://api.ahrefs.com/v3/public/crawler-ips (checked 2026-10-15)
 - https://help.ahrefs.com/en/articles/78658-what-is-the-list-of-your-ip-ranges (checked 2026-10-15)
+- https://ahrefs.com/.well-known/http-message-signatures-directory (checked 2026-11-12)

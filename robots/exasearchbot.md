@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: ExaSearchBot
   identity: Exa
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # ExaSearchBot
@@ -76,7 +76,9 @@ Instead, requests are signed with HTTP Message Signatures (RFC 9421) following t
 scheme, with Ed25519 keys. They carry `Signature`, `Signature-Input` and `Signature-Agent` headers.
 The public keys are a JSON Web Key Set at
 https://crawler.exa.ai/.well-known/http-message-signatures-directory (one `OKP` / `Ed25519` key on
-2026-11-10; two on 2026-10-15). No reverse DNS hostnames or ASN are documented.
+2026-11-12, as on 2026-11-10; two on 2026-10-15). The key's `kid` is its JWK thumbprint, so a
+signature's `keyid` finds it either way. The `Signature-Agent` value is `"https://crawler.exa.ai"`.
+No reverse DNS hostnames or ASN are documented.
 
 ### Observed
 
@@ -94,16 +96,18 @@ Networks this user agent came from. The operator publishes no ranges or hostname
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses the user agent as family `ExaSearchBot`. In Hyperwatch `main` (after
-5.4.0), `src/modules/identity.js` sets identity `Exa` on a verified signature of
-`https://crawler.exa.ai` when the `webbotauth` module is active (it is off by default); then only
-the signature counts. Without the module, it checks the header only: `Signature-Agent` must contain
-`"https://crawler.exa.ai"`, quotes included, and the signature is not validated against the key
-directory. ExaSearchBot-Images is checked against its own value.
+`@hyperwatch/useragent` parses the user agent as family `ExaSearchBot`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` first sets identity `Exa` on a verified signature of ExaUser's
+`https://exauser.crawler.exa.ai`, whatever the user agent ("signed only"). For the family
+`ExaSearchBot`, it then sets `Exa` on a verified signature of `https://crawler.exa.ai` when the
+`webbotauth` module is active (it is off by default); then only the signature counts. Without the
+module, it checks the header only: `Signature-Agent` must contain `"https://crawler.exa.ai"`,
+quotes included, and the signature is not validated against the key directory. ExaSearchBot-Images
+is checked against its own value.
 
 ## Misc
 
-ExaUser is Exa's second agent. It fetches a page live when a user, or an application built on the
+[ExaUser](exauser.md) is Exa's second agent. It fetches a page live when a user, or an application built on the
 Exa API, asks for its current content. It does not crawl, and Exa says `robots.txt` rules may not
 apply to it because each fetch is user-initiated. Its requests are also signed with Web Bot Auth. Its documentation moved from
 https://crawler.exa.ai/exauser to https://exauser.crawler.exa.ai/, and the URL in its user agent
@@ -114,7 +118,11 @@ Its user agent is:
 Mozilla/5.0 (compatible; ExaUser/1.0; +https://exauser.crawler.exa.ai)
 ```
 
-Hyperwatch parses it as family `ExaUser` and gives it no identity.
+Hyperwatch parses it as family `ExaUser`. Hyperwatch 5.6.0 sets the identity `Exa` on a verified
+signature of `https://exauser.crawler.exa.ai` (needs the `webbotauth` module), whatever the user
+agent; ExaUser's key directory,
+https://exauser.crawler.exa.ai/.well-known/http-message-signatures-directory, held one `OKP` /
+`Ed25519` key on 2026-11-12, its `kid` being its JWK thumbprint.
 
 Contact: support@exa.ai, preferably from an address on the domain concerned.
 
@@ -122,4 +130,5 @@ Contact: support@exa.ai, preferably from an address on the domain concerned.
 
 - https://crawler.exa.ai/ (checked 2026-11-10)
 - https://exauser.crawler.exa.ai/ (checked 2026-11-10)
-- https://crawler.exa.ai/.well-known/http-message-signatures-directory (checked 2026-11-10)
+- https://crawler.exa.ai/.well-known/http-message-signatures-directory (checked 2026-11-12)
+- https://exauser.crawler.exa.ai/.well-known/http-message-signatures-directory (checked 2026-11-12)

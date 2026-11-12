@@ -55,7 +55,7 @@ did not resolve in DNS on 2026-10-15.
 
 ## Observed HTTP headers
 
-Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+Based on hundreds of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch did not verify this robot then, so other clients using its name may be included.
 
 | Header | Values (share of requests) |
 |---|---|

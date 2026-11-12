@@ -14,7 +14,7 @@ verification:
 hyperwatch:
   family: YepBot
   identity: Ahrefs
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # YepBot
@@ -73,12 +73,15 @@ not `ahrefs.com`: these requests do not pass the documented checks.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `YepBot`. In Hyperwatch `main` (after 5.4.0),
+`@hyperwatch/useragent` returns the family `YepBot`. In Hyperwatch 5.6.0,
 `src/modules/identity.js` gives it the `Ahrefs` rule, shared with `AhrefsBot` and `AhrefsSiteAudit`:
-the identity `Ahrefs` on a forward-confirmed hostname ending with `.ahrefs.com`, Ahrefs' published
-list (`ahrefs-ips.json`) or a verified signature of `https://ahrefs.com` (needs the `webbotauth`
-module, off by default). The first two follow Yep's documentation, which doesn't mention signatures.
-The requests observed above fail the hostname and list checks, so they would still get no identity.
+the identity `Ahrefs` on a forward-confirmed hostname ending with `.ahrefs.com`, a verified
+signature of `https://ahrefs.com` (needs the `webbotauth` module, off by default), then Ahrefs'
+published list (`ahrefs-ips.json`). The hostname and the list follow Yep's documentation, which
+doesn't mention signatures; Ahrefs' key directory,
+https://ahrefs.com/.well-known/http-message-signatures-directory, held two `OKP` / `Ed25519` keys on
+2026-11-12 (see [AhrefsBot](ahrefsbot.md)). The requests observed above fail the hostname and list
+checks, so they would still get no identity.
 
 ## Misc
 

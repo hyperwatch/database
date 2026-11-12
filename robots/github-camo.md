@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: github-camo
   identity: GitHub Camo
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # github-camo
@@ -69,13 +69,12 @@ others, with no date in the file). None of the arrays is named for Camo.
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `github-camo` for user agents starting with
-`github-camo`, and `Camo Asset Proxy` for the open-source default. `src/modules/identity.js` sets
-the identity `GitHub Camo` for the family `github-camo` when the address is in
-`src/data/github-ips.json` (published list: the `hooks`, `web`, `api`, `git`, `pages`, `packages`,
-`importer`, `github_enterprise_importer` and `copilot` ranges of `api.github.com/meta`, refreshed
-with `node scripts/fetch-ips.js`; in Hyperwatch `main` (after 5.4.0) 183 prefixes; on 2026-11-10
-those arrays held 188 distinct prefixes, so the copy is a refresh behind) or in the inline range
-`9.234.0.0/17`.
+`github-camo`, and `Camo Asset Proxy` for the open-source default. In Hyperwatch 5.6.0,
+`src/modules/identity.js` sets the identity `GitHub Camo` for the family `github-camo` when the
+address is in `src/data/github-ips.json` (published list: the `hooks`, `web`, `api`, `git`, `pages`,
+`packages`, `importer`, `github_enterprise_importer` and `copilot` ranges of `api.github.com/meta`,
+refreshed with `node scripts/fetch-ips.js`; 195 prefixes, the same as those arrays' distinct
+prefixes on 2026-11-12) or in the inline range `9.234.0.0/17`.
 
 Where it falls short:
 
@@ -92,4 +91,4 @@ Where it falls short:
 - https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-anonymized-urls (checked 2026-10-15)
 - https://github.blog/news-insights/product-news/proxying-user-images (checked 2026-10-15)
 - https://github.com/atmos/camo (checked 2026-10-15)
-- https://api.github.com/meta (checked 2026-11-10)
+- https://api.github.com/meta (checked 2026-11-12)

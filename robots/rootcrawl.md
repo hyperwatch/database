@@ -7,14 +7,14 @@ category: archive
 robots_txt_token: RootCrawl
 respects_robots_txt: partial
 verification:
-  method: web-bot-auth
+  method: both
   ip_list: https://rootcrawl.org/.well-known/rootcrawl-crawler-ips.json
   hostnames:
     - .rootcrawl.org
 hyperwatch:
   family: RootCrawl
   identity: RootCrawl
-last_checked: 2026-11-10
+last_checked: 2026-11-12
 ---
 
 # RootCrawl
@@ -75,8 +75,11 @@ addresses, and keeps a permanent exclusion list for domains sent by mail.
 RootCrawl says the user agent should not be trusted and recommends checking the signature. Every
 request is signed with Ed25519 under Web Bot Auth (RFC 9421 HTTP Message Signatures), tag
 `web-bot-auth`, covering `@authority` and `signature-agent`, with a five-minute validity window. The
-key directory is https://rootcrawl.org/.well-known/http-message-signatures-directory. On 2026-10-15
-it held one key, ID `IkXmhDbJmDVtmvSawe59edaeKKH35uTlnhYWWCHPqcE`.
+key directory is https://rootcrawl.org/.well-known/http-message-signatures-directory. On 2026-11-12,
+as on 2026-10-15, it held one `OKP` / `Ed25519` key, ID
+`IkXmhDbJmDVtmvSawe59edaeKKH35uTlnhYWWCHPqcE`, which RootCrawl gives as the JWK thumbprint, also the
+key's `kid` in the directory. The `Signature-Agent` value, from the blocking advice on the bot page,
+is `"https://rootcrawl.org"`.
 
 Addresses are published at https://rootcrawl.org/.well-known/rootcrawl-crawler-ips.json, a JSON
 object with an `updated` field and a `prefixes` array of objects with `ipv4Prefix` or `ipv6Prefix`
@@ -87,12 +90,12 @@ to the same address. No ASN is documented.
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` parses both strings above as family `RootCrawl`. In Hyperwatch `main` (after
-5.4.0), `src/modules/identity.js` sets the identity `RootCrawl` for the families `RootCrawl` and
-`RootCrawl-Crawler` on a forward-confirmed hostname ending with `.rootcrawl.org`, the published list
-(`rootcrawl-ips.json`, 5 entries) or a verified signature from `https://rootcrawl.org`. The suffix
-is the one RootCrawl documents. The signature, which RootCrawl recommends checking, is only verified
-when the `webbotauth` module is active (it is off by default).
+`@hyperwatch/useragent` parses both strings above as family `RootCrawl`. In Hyperwatch 5.6.0,
+`src/modules/identity.js` sets the identity `RootCrawl` for the families `RootCrawl` and
+`RootCrawl-Crawler` on a forward-confirmed hostname ending with `.rootcrawl.org`, a verified
+signature of `https://rootcrawl.org`, then the published list (`rootcrawl-ips.json`, 5 entries).
+The suffix is the one RootCrawl documents. The signature, which RootCrawl recommends checking, is
+only verified when the `webbotauth` module is active (it is off by default).
 
 ## Misc
 
@@ -104,5 +107,5 @@ is answered by a human.
 - https://rootcrawl.org/bot (checked 2026-10-15)
 - https://rootcrawl.org/ (checked 2026-10-15)
 - https://rootcrawl.org/.well-known/rootcrawl-crawler-ips.json (checked 2026-10-15)
-- https://rootcrawl.org/.well-known/http-message-signatures-directory (checked 2026-10-15)
+- https://rootcrawl.org/.well-known/http-message-signatures-directory (checked 2026-11-12)
 - https://web.archive.org/web/20260213173742/https://rootcrawl.org/ (checked 2026-10-15)
