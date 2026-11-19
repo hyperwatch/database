@@ -1,6 +1,6 @@
 # Hyperwatch identities
 
-Every identity set by Hyperwatch 5.6.0 (`src/modules/identity.js`), checked 2026-11-12: the agent
+Every identity set by Hyperwatch main at 736acaf (5.7.0, and Meta Agent, merged after it) (`src/modules/identity.js`), checked 2026-11-19: the agent
 families leading to it, what is checked, and the robot files it covers. The terms in "Check" are
 defined in [`AGENTS.md`](AGENTS.md#hyperwatch-section). Hostnames are patterns (`*` stands for part
 of one label) or suffixes (starting with a dot). Rules apply in this order: "signed only" first (a
@@ -19,16 +19,18 @@ signature" needs the `webbotauth` module (off by default).
 |---|---|---|---|---|
 | 360Spider | `360Spider` | published list (`360spider-ips.json`, copied by hand) | [360Spider](robots/360spider.md) | - |
 | Ahrefs | `AhrefsBot`, `AhrefsSiteAudit`, `YepBot` | forward-confirmed hostname `.ahrefs.com`, verified signature `https://ahrefs.com` or published list | [AhrefsBot](robots/ahrefsbot.md), [AhrefsSiteAudit](robots/ahrefssiteaudit.md), [YepBot](robots/yepbot.md) | 2026-11 |
+| Aidealio | signed only `https://www.aidealio.com` | any user agent: verified signature `https://www.aidealio.com` | [aidealioBot](robots/aidealiobot.md) | 2026-11 |
 | Alexa | `alexa site audit` | unconfirmed hostname `.alexa.com` | [alexa site audit](robots/alexa-site-audit.md) | - |
 | AliyunSecBot | `AliyunSecBot` | inline range `8.217.0.0/16` | [AliyunSecBot](robots/aliyunsecbot.md) | - |
 | Amazon Quick | `amazon-Quick-on-behalf-of` | published list (`amazon-quick-ips.json`, copied by hand) | [amazon-Quick-on-behalf-of](robots/amazon-quick-on-behalf-of.md) | 2026-11 |
 | Amazon SearchBot | `Amzn-SearchBot` | forward-confirmed hostname `*.crawl.amazonbot.amazon` or published list (copied by hand) | [Amzn-SearchBot](robots/amzn-searchbot.md) | - |
 | Amazon User | `Amzn-User` | forward-confirmed hostname `*.crawl.amazonbot.amazon` or published list (copied by hand) | [Amzn-User](robots/amzn-user.md) | - |
 | Amazonbot | `Amazonbot` | forward-confirmed hostname `*.crawl.amazonbot.amazon` or published list (copied by hand) | [Amazonbot](robots/amazonbot.md) | 2026-11 |
+| AntiClone | signed only `https://anticlone.de` | any user agent: verified signature `https://anticlone.de` | [AntiCloneBot](robots/anticlonebot.md) | 2026-11 |
 | Applebot | `Applebot` | forward-confirmed hostname `*.applebot.apple.com` or published list | [Applebot](robots/applebot.md) | 2026-11 |
-| Aranet | `Aranet-SearchBot` | cloud hostname `.googleusercontent.com` | [Aranet-SearchBot](robots/aranet-searchbot.md) | - |
+| Aranet | `Aranet-SearchBot` | cloud hostname `.googleusercontent.com` | [Aranet-SearchBot](robots/aranet-searchbot.md) | 2026-11 |
 | Archive.org | `archive.org bot`, `special archiver`; hostname only `crawl*.us.archive.org`, `wbgrp-crawl*.us.archive.org` (forward-confirmed) | forward-confirmed hostname `k8s-worker-*.ca.archive.org`, `crawl*.us.archive.org`, `wbgrp-crawl*.us.archive.org` | [archive.org_bot](robots/archive.org_bot.md) | 2026-11 |
-| Arquivo | `arquivo-web-crawler`, `Arquivo-web-crawler` | forward-confirmed hostname `p*.arquivo.pt` or published list | [Arquivo-web-crawler](robots/arquivo-web-crawler.md) | - |
+| Arquivo | `arquivo-web-crawler`, `Arquivo-web-crawler` | forward-confirmed hostname `p*.arquivo.pt` or published list | [Arquivo-web-crawler](robots/arquivo-web-crawler.md) | 2026-11 |
 | Babbar | `Barkrowler` | forward-confirmed hostname `c*.babbar.eu`, verified signature `https://ibou.io` or published list | [Barkrowler](robots/barkrowler.md) | 2026-11 |
 | Baidu | `Baiduspider`, `Baiduspider-render`, `Baiduspider-image` | unconfirmed hostname `baiduspider-*.crawl.baidu.com` | [Baiduspider](robots/baiduspider.md) | - |
 | Bing | `BingBot`, `BingPreview`; hostname only `msnbot-*.search.msn.com` (forward-confirmed) | forward-confirmed hostname `msnbot-*.search.msn.com` or published list | [bingbot](robots/bingbot.md) | 2026-11 |
@@ -40,13 +42,18 @@ signature" needs the `webbotauth` module (off by default).
 | ChatGPT Agent | signed only `https://chatgpt.com` | any user agent: verified signature `https://chatgpt.com` (a `ChatGPT-User` request with one too) | [ChatGPT Agent](robots/chatgpt-agent.md) | 2026-11 |
 | Claude | `ClaudeBot`, `Claude-User`, `Claude-SearchBot`, `Claude-Web`, `anthropic-ai` | published list | [ClaudeBot](robots/claudebot.md), [Claude-User](robots/claude-user.md), [Claude-SearchBot](robots/claude-searchbot.md) | 2026-11 |
 | Cliqz | `Cliqzbot` | cloud hostname `.eu-central-1.compute.amazonaws.com` | [Cliqzbot](robots/cliqzbot.md) | - |
+| CMU | `ClueWeb-Crawler` | forward-confirmed hostname `crawl-*.lti.cs.cmu.edu` | [ClueWeb-Crawler](robots/clueweb-crawler.md) | 2026-11 |
 | Coc Coc | `Coc Coc Bot`, `Coc Coc Bot Web`, `Coc Coc Bot Image`, `coccocbot-fast`, `coccocbot-ads`, `coccocbot-shopping`; hostname only `bot-*.coccoc.com` (forward-confirmed) | forward-confirmed hostname `bot-*.coccoc.com` | [coccocbot](robots/coccocbot.md) | 2026-11 |
 | Common Crawl | `CCBot` | published list | [CCBot](robots/ccbot.md) | 2026-11 |
+| Comscore | signed only `https://crawler-key.proximic.com` | any user agent: verified signature `https://crawler-key.proximic.com` | [proximic](robots/proximic.md) | 2026-11 |
 | DataForSeo | `DataForSeoBot` | forward-confirmed hostname `crawling-gateway-*.dataforseo.com` or published list (`dataforseo-ips.json`, copied by hand) | [DataForSeoBot](robots/dataforseobot.md) | 2026-11 |
+| Dataprovider.com | hostname only `crawl-*.dataproviderbot.com` (forward-confirmed) | forward-confirmed hostname `crawl-*.dataproviderbot.com` | [Dataprovider.com](robots/dataprovider.com.md) | - |
 | Daum | `Daum` | published list (`daumbot-ips.json`, copied by hand) | [Daum](robots/daum.md) | - |
 | Discord | `Discordbot` | cloud hostname `.googleusercontent.com` or published list | [Discordbot](robots/discordbot.md) | 2026-11 |
 | Dolfe | `DolfeEngineCrawler` | cloud hostname `.googleusercontent.com` | [DolfeEngineCrawler](robots/dolfeenginecrawler.md) | - |
+| DomainsBot | signed only `https://domainsbot.com` | any user agent: verified signature `https://domainsbot.com` | [Pandalytics](robots/pandalytics.md) | 2026-11 |
 | DuckDuckGo | `DuckDuckGo`, `DuckDuckBot`, `DuckDuckBot-Https`, `DuckAssistBot`, `DuckDuckGo-Favicons-Bot`; signed only `https://bot.duckduckgo.com` | forward-confirmed hostname `*.crawl.duckduckgo.com`, verified signature `https://assistbot.duckduckgo.com` or published lists (DuckDuckBot's and DuckAssistBot's); any user agent: verified signature `https://bot.duckduckgo.com` | [DuckDuckBot](robots/duckduckbot.md), [DuckAssistBot](robots/duckassistbot.md) | 2026-11 |
+| EcoGPT | `HyperSearchBot` | forward-confirmed hostname `crawl-*.hypersearchbot.ecogpt.com` or published list (`hypersearchbot-ips.json`) | [HyperSearchBot](robots/hypersearchbot.md) | 2026-11 |
 | Exa | `ExaSearchBot`, `ExaSearchBot-Images`; signed only `https://exauser.crawler.exa.ai` | with the `webbotauth` module, verified signature `https://crawler.exa.ai` (`ExaSearchBot`), `https://images.crawler.exa.ai` (`ExaSearchBot-Images`); without it, header `signature-agent` contains `"https://crawler.exa.ai"` or `"https://images.crawler.exa.ai"`; any user agent: verified signature `https://exauser.crawler.exa.ai` | [ExaSearchBot](robots/exasearchbot.md), [ExaSearchBot-Images](robots/exasearchbot-images.md), [ExaUser](robots/exauser.md) | 2026-11 |
 | Facebook | `FacebookBot` | forward-confirmed hostname `fwdproxy-*.fbsv.net` or published list (`meta-ips.json`) | [facebookexternalhit](robots/facebookexternalhit.md) | 2026-11 |
 | Flipboard | `FlipboardProxy` | forward-confirmed hostname `*.proxy.flipboard.com` | [FlipboardProxy](robots/flipboardproxy.md) | 2026-11 |
@@ -58,12 +65,14 @@ signature" needs the `webbotauth` module (off by default).
 | HaloScan | `HaloBot` | published list (read from a table on its crawler page) | [HaloBot](robots/halobot.md) | 2026-11 |
 | Happy Apps | `HappyApps-WebCheck` | cloud hostname `.compute-1.amazonaws.com` | [HappyApps-WebCheck](robots/happyapps-webcheck.md) | - |
 | Headline | `ev-crawler` | forward-confirmed hostname `*.core.headline.com` | [ev-crawler](robots/ev-crawler.md) | 2026-11 |
-| HubSpot | `HubSpot Crawler` | published list (the `WEB_SCRAPING` ranges of its network origins API) | [HubSpot Crawler](robots/hubspot-crawler.md) | - |
+| HubSpot | `HubSpot Crawler` | published list (the `WEB_SCRAPING` ranges of its network origins API) | [HubSpot Crawler](robots/hubspot-crawler.md) | 2026-11 |
 | ibou | `ibou-search`, `IbouBot` | forward-confirmed hostname `.ibou.io`, verified signature `https://ibou.io` (`ibou-search` only) or published list (one per family) | [ibou-search](robots/ibou-search.md), [IbouBot](robots/iboubot.md) | 2026-11 |
 | Idarus | `IdarusBot` | inline range `141.94.42.166/32` | [IdarusBot](robots/idarusbot.md) | - |
+| Iframely | signed only `https://iframely.com` | any user agent: verified signature `https://iframely.com` (its published lists and `.iframely.com` hostnames are not used) | [Iframely](robots/iframely.md) | 2026-11 |
 | InfoTiger | `InfoTigerBot` | unconfirmed hostname `.infotiger.com` | [InfoTigerBot](robots/infotigerbot.md) | - |
 | Ison | signed only `https://search.isonai.com` | any user agent: verified signature `https://search.isonai.com`; the published list is not used | [IsonSearchBot](robots/isonsearchbot.md) | - |
 | Kakao | `KakaoBot` | published list (`kakaobot-ips.json`, read from Kakao's HTML help page) | [KakaoBot](robots/kakaobot.md) | - |
+| Kamata | signed only `https://api.kamata.ai` | any user agent: verified signature `https://api.kamata.ai` | [KamataBot](robots/kamatabot.md) | - |
 | Keenable | `KeenableBot`, `Keenable-User` | verified signatures (`https://keenablebot.keenable.ai`, `https://keenable-user.keenable.ai`) or published lists | [KeenableBot](robots/keenablebot.md), [Keenable-User](robots/keenable-user.md) | - |
 | Line | `Linespider` | unconfirmed hostname `.search.line-apps.com` | [Linespider](robots/linespider.md) | - |
 | LinkChecker | `LinkCheckerBot` | published list (`linkcheckerbot-ips.json`) | [LinkCheckerBot](robots/linkcheckerbot.md) | 2026-11 |
@@ -72,15 +81,17 @@ signature" needs the `webbotauth` module (off by default).
 | Lyrenth | `AIWebIndex`, `AIWebIndex-Agent`; hostname only `crawler-*.lyrenth.com`, `render-*.lyrenth.com` (forward-confirmed) | forward-confirmed hostname `crawler-*.lyrenth.com`, `render-*.lyrenth.com`, verified signature `https://api.lyrenth.com` or published list | [AIWebIndex](robots/aiwebindex.md) | 2026-11 |
 | Mail.RU | `Mail.RU Bot`, `Mail.RU Bot Img`, `Mail.RU Bot Fast`, `Mail.RU Bot Robots` | unconfirmed hostname `.go.mail.ru` | [Mail.RU_Bot](robots/mail.ru_bot.md) | - |
 | Majestic | `MJ12bot`; signature `3d36aa5118581a33dd2704f3b0c22a0b` | forward-confirmed hostname `crawl-*.mj12bot.com` or signature | [MJ12bot](robots/mj12bot.md) | 2026-11 |
+| Marginalia | `search.marginalia.nu` | published list (`marginalia-ips.json`, copied by hand) | [search.marginalia.nu](robots/search.marginalia.nu.md) | - |
 | MegaIndex.ru | `MegaIndex.ru` | cloud hostname `.clients.your-server.de` | [MegaIndex.ru](robots/megaindex.ru.md) | - |
 | Meta | `meta-externalagent`, `meta-webindexer`, `Hyperlink` | published list (`meta-ips.json`) | [meta-externalagent](robots/meta-externalagent.md), [meta-webindexer](robots/meta-webindexer.md), [Hyperlink](robots/hyperlink.md) | 2026-11 |
-| Mojeek | `MojeekBot` | forward-confirmed hostname `crawl-*.mojeek.com` or published list | [MojeekBot](robots/mojeekbot.md) | - |
+| Meta Agent | signed only `https://www.meta.com` (main, after 5.7.0) | any user agent: verified signature `https://www.meta.com` | [meta-webindexer](robots/meta-webindexer.md) (signed requests) | - |
+| Mojeek | `MojeekBot` | forward-confirmed hostname `crawl-*.mojeek.com` or published list | [MojeekBot](robots/mojeekbot.md) | 2026-11 |
 | Monitor Backlinks | `MBCrawler` | cloud hostname `.compute-1.amazonaws.com` | [MBCrawler](robots/mbcrawler.md) | - |
 | Moz | `DotBot` | inline range `216.244.64.0/19` | [DotBot](robots/dotbot.md) | 2026-11 |
 | Naver | `Yeti`; hostname only `crawl.*.web.naver.com` (forward-confirmed) | forward-confirmed hostname `crawl.*.web.naver.com`, verified signature `https://bot.naver.com` or published list | [Yeti](robots/yeti.md) | 2026-11 |
 | Neevabot | `Neevabot` | unconfirmed hostname `.neevabot.com` | [Neevabot](robots/neevabot.md) | - |
 | NICT | `ICC-Crawler` | inline ranges (NICT's two addresses: `202.180.34.186/32`, `61.86.246.72/32`) | [ICC-Crawler](robots/icc-crawler.md) | 2026-11 |
-| Octen | signed only `https://crawler.octen.ai` | any user agent: verified signature `https://crawler.octen.ai` | [OctenSearchBot](robots/octensearchbot.md) | - |
+| Octen | signed only `https://crawler.octen.ai` | any user agent: verified signature `https://crawler.octen.ai` | [OctenSearchBot](robots/octensearchbot.md) | 2026-11 |
 | OpenAI GPTBot | `GPTBot` | published list | [GPTBot](robots/gptbot.md) | 2026-11 |
 | OpenAI SearchBot | `OAI-SearchBot` | published list | [OAI-SearchBot](robots/oai-searchbot.md) | 2026-11 |
 | Parallel | `ShapBot`; signed only `https://shap-user.parallel.ai` | cloud hostname `.googleusercontent.com`, verified signature `https://shapbot.parallel.ai` or published list; any user agent: verified signature `https://shap-user.parallel.ai` | [ShapBot](robots/shapbot.md), [Shap-User](robots/shap-user.md) | 2026-11 |
@@ -88,13 +99,13 @@ signature" needs the `webbotauth` module (off by default).
 | Perplexity | `PerplexityBot`, `Perplexity-User` | published lists | [PerplexityBot](robots/perplexitybot.md), [Perplexity-User](robots/perplexity-user.md) | 2026-11 |
 | PetalBot | `PetalBot` | forward-confirmed hostname `petalbot-*.petalsearch.com` | [PetalBot](robots/petalbot.md) | 2026-11 |
 | Pingdom | `PingdomBot` | forward-confirmed hostname `s*.pingdom.com` or published list | [PingdomBot](robots/pingdombot.md) | 2026-11 |
-| Pinterest | `Pinterest`, `Pinterestbot` | forward-confirmed hostname `crawl-*.pinterest.com` or inline range `54.236.1.0/24` | [Pinterestbot](robots/pinterestbot.md); the parser also returns `Pinterest` for Pinterest's Android and some iOS in-app browsers | - |
-| PostHog | signed only `https://us.posthog.com` | any user agent: verified signature `https://us.posthog.com` | [PostHogImageFetcherBot](robots/posthogimagefetcherbot.md) | - |
+| Pinterest | `Pinterest`, `Pinterestbot` | forward-confirmed hostname `crawl-*.pinterest.com` or inline range `54.236.1.0/24` | [Pinterestbot](robots/pinterestbot.md); the parser also returns `Pinterest` for Pinterest's Android and some iOS in-app browsers | 2026-11 |
+| PostHog | signed only `https://us.posthog.com` | any user agent: verified signature `https://us.posthog.com` | [PostHogImageFetcherBot](robots/posthogimagefetcherbot.md) | 2026-11 |
 | Qwant | `Qwantify`, `Qwantify-dev`, `Qwantbot`, `Qwantbot-news`; hostname only `qwantbot-*.qwant.com` (forward-confirmed) | forward-confirmed hostname `qwantbot-*.qwant.com` or published list | [Qwantbot](robots/qwantbot.md) | 2026-11 |
 | Raven | `Raven` | cloud hostname `.compute-1.amazonaws.com` | none matches: [RavenCrawler](robots/ravencrawler.md) parses as `RavenCrawler` | - |
 | Reflection | `Reflectionbot` | forward-confirmed hostname `.reflection.ai` or published list | [Reflectionbot](robots/reflectionbot.md) | 2026-11 |
 | Riddler | `Riddler` | cloud hostname `.eu-west-1.compute.amazonaws.com` | [Riddler](robots/riddler.md) | - |
-| River | `RiverBot` | forward-confirmed hostname `.bot.river.ai`, verified signature `https://river.ai` or published list | [RiverBot](robots/riverbot.md) | - |
+| River | `RiverBot` | forward-confirmed hostname `.bot.river.ai`, verified signature `https://river.ai` or published list | [RiverBot](robots/riverbot.md) | 2026-11 |
 | RootCrawl | `RootCrawl`, `RootCrawl-Crawler` | forward-confirmed hostname `.rootcrawl.org`, verified signature `https://rootcrawl.org` or published list | [RootCrawl](robots/rootcrawl.md) | - |
 | SE Ranking | `SERankingBacklinksBot` | forward-confirmed hostname `discovery-crawler*.blex.seranking.com` or published list | [SERankingBacklinksBot](robots/serankingbacklinksbot.md) | 2026-11 |
 | Seekport | `SeekportBot`, `Seekport Crawler` | published list, or forward-confirmed hostname `.007ac9.net` (`SeekportBot`), cloud hostname `.clients.your-server.de` (`Seekport Crawler`) | [SeekportBot](robots/seekportbot.md) | - |
@@ -111,14 +122,16 @@ signature" needs the `webbotauth` module (off by default).
 | Sogou | `Sogou web spider`, `Sogou Pic Spider`; hostname only `sogouspider-*.crawl.sogou.com` (forward-confirmed) | forward-confirmed hostname `sogouspider-*.crawl.sogou.com` | [Sogou web spider](robots/sogou-web-spider.md) | - |
 | SpiderFoot | hostname only `.hx.spiderfoot.net`; signature `6877bffcee5eb4b80f4f974d7697e809` | unconfirmed hostname or signature | [SpiderFoot](robots/spiderfoot.md) | - |
 | Stripe | `Stripe`, `Stripebot`; hostname only `crawl.stripe.com`, `*.crawl.stripe.com`, `ip-*.stripe.com` (forward-confirmed) | forward-confirmed hostname `crawl.stripe.com`, `*.crawl.stripe.com`, `ip-*.stripe.com` | [Stripebot](robots/stripebot.md); `Stripe` is Stripe's webhooks, not a robot | 2026-11 |
-| Substack | signed only `https://substack.com` | any user agent: verified signature `https://substack.com` | [SubstackContentFetch](robots/substackcontentfetch.md) | - |
+| Substack | signed only `https://substack.com` | any user agent: verified signature `https://substack.com` | [SubstackContentFetch](robots/substackcontentfetch.md) | 2026-11 |
+| threadsearch | signed only `https://threadsearch.app` | any user agent: verified signature `https://threadsearch.app` | [threadsearch](robots/threadsearch.md) | - |
 | TikTok | `TikTokSpider` | unconfirmed hostname `.crawl.bytedance.com` or cloud hostname `.ap-southeast-1.compute.amazonaws.com` | [TikTokSpider](robots/tiktokspider.md) | 2026-11 |
+| Truvon | signed only `https://truvon.ai` | any user agent: verified signature `https://truvon.ai` | [TruvonBot](robots/truvonbot.md) | - |
 | Twitter | `Twitterbot` | forward-confirmed hostname `r-*.twttr.com` or inline ranges (X's three: `199.16.156.0/22`, `199.59.148.0/22`, `192.133.76.0/22`) | [Twitterbot](robots/twitterbot.md) | 2026-11 |
 | Ubermetrics | `Ubermetrics` | cloud hostname `.your-server.de` | [um-LN](robots/um-ln.md) | - |
 | Uptime Robot | `UptimeRobot` | forward-confirmed hostname `checker-*.uptimerobot.com` or published list | [UptimeRobot](robots/uptimerobot.md) | 2026-11 |
 | Velen | `VelenPublicWebCrawler` | cloud hostname `.googleusercontent.com` | [VelenPublicWebCrawler](robots/velenpublicwebcrawler.md) | - |
 | WebMeUp | `AwarioBot`, `BLEXBot` | forward-confirmed hostname `pot*.webmeup.com` | [AwarioBot](robots/awariobot.md), [BLEXBot](robots/blexbot.md) | - |
 | Wise | `TransferWise-Webhook` | cloud hostname `.eu-central-1.compute.amazonaws.com` | - (webhooks, not a robot) | 2026-11 |
-| Yahoo | `Yahoo`, `Yahoo! Slurp`, `YahooMailProxy` | unconfirmed hostname `.crawl.yahoo.net` (`Yahoo`, `Yahoo! Slurp`), `.yahoo.net` (`YahooMailProxy`) | [Slurp](robots/slurp.md), [YahooMailProxy](robots/yahoomailproxy.md) (old user agent only) | - |
+| Yahoo | `Yahoo`, `Yahoo! Slurp`, `YahooMailProxy`; signed only `https://ecp.yusercontent.com` | unconfirmed hostname `.crawl.yahoo.net` (`Yahoo`, `Yahoo! Slurp`), `.yahoo.net` (`YahooMailProxy`); any user agent: verified signature `https://ecp.yusercontent.com` | [Slurp](robots/slurp.md), [YahooMailProxy](robots/yahoomailproxy.md) (old user agent, or signed) | 2026-11 |
 | Yandex | `YandexBot`, `YandexImages`, `YandexMobileBot`, `YandexAccessibilityBot`; hostname only `*.spider.yandex.com` (forward-confirmed) | forward-confirmed hostname `*.spider.yandex.com` | [YandexBot](robots/yandexbot.md) | 2026-11 |
 | You.com | `YouBot`; hostname only `youbot-*.search.you.com` (forward-confirmed) | forward-confirmed hostname `youbot-*.search.you.com`, verified signature `https://you.com` or inline range `68.67.112.0/24` | [YouBot](robots/youbot.md) | 2026-11 |
