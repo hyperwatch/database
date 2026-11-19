@@ -19,6 +19,7 @@ for adding or updating robots.
 | [AdsBot-Google](robots/adsbot-google.md) | Google | marketing | both | Google Special Crawlers |
 | [AhrefsBot](robots/ahrefsbot.md) | Ahrefs | seo | both | Ahrefs |
 | [AhrefsSiteAudit](robots/ahrefssiteaudit.md) | Ahrefs | seo | both | Ahrefs |
+| [aidealioBot](robots/aidealiobot.md) | Aidealio | search-engine | web-bot-auth | Aidealio |
 | [AIWebIndex](robots/aiwebindex.md) | Aleksma Ai, Inc. (Lyrenth) | ai-search | both | Lyrenth |
 | [alexa site audit](robots/alexa-site-audit.md) | Alexa Internet (Amazon); service shut down | seo | none | Alexa |
 | [AliyunSecBot](robots/aliyunsecbot.md) | Alibaba Cloud (by its user agent's contact address; not confirmed by Alibaba documentation) | other | none | AliyunSecBot |
@@ -27,6 +28,7 @@ for adding or updating robots.
 | [AmberAI-SourceReader](robots/amberai-sourcereader.md) | Unknown | unknown | none | - |
 | [Amzn-SearchBot](robots/amzn-searchbot.md) | Amazon | ai-search | ip-list | Amazon SearchBot |
 | [Amzn-User](robots/amzn-user.md) | Amazon | ai-assistant | ip-list | Amazon User |
+| [AntiCloneBot](robots/anticlonebot.md) | AntiClone | other | web-bot-auth | AntiClone |
 | [Applebot](robots/applebot.md) | Apple | search-engine | both | Applebot |
 | [Aranet-SearchBot](robots/aranet-searchbot.md) | Unknown | unknown | none | Aranet |
 | [archive.org_bot](robots/archive.org_bot.md) | Internet Archive | archive | none | Archive.org |
@@ -53,9 +55,10 @@ for adding or updating robots.
 | [Claude-User](robots/claude-user.md) | Anthropic | ai-assistant | ip-list | Claude |
 | [ClaudeBot](robots/claudebot.md) | Anthropic | ai-training | ip-list | Claude |
 | [Cliqzbot](robots/cliqzbot.md) | Cliqz GmbH (shut down in 2020) | search-engine | none | Cliqz |
-| [ClueWeb-Crawler](robots/clueweb-crawler.md) | Carnegie Mellon University (Language Technologies Institute) | research | none | - |
+| [ClueWeb-Crawler](robots/clueweb-crawler.md) | Carnegie Mellon University (Language Technologies Institute) | research | none | CMU |
 | [coccocbot](robots/coccocbot.md) | Cốc Cốc Company Limited | search-engine | reverse-dns | Coc Coc |
 | [DataForSeoBot](robots/dataforseobot.md) | DataForSEO | seo | both | DataForSeo |
+| [Dataprovider.com](robots/dataprovider.com.md) | Dataprovider.com | marketing | reverse-dns | Dataprovider.com |
 | [Daum](robots/daum.md) | Kakao (Daum) | search-engine | ip-list | Daum |
 | [Discordbot](robots/discordbot.md) | Discord | social-preview | ip-list | Discord |
 | [dksearch-bot](robots/dksearch-bot.md) | Unknown | research | none | - |
@@ -85,15 +88,18 @@ for adding or updating robots.
 | [heritrix (Image-Meta)](robots/image-meta.md) | Erie Data Systems, LLC | search-engine | none | - |
 | [HubSpot Crawler](robots/hubspot-crawler.md) | HubSpot | seo | ip-list | HubSpot |
 | [Hyperlink](robots/hyperlink.md) | Unknown | unknown | none | Meta |
+| [HyperSearchBot](robots/hypersearchbot.md) | EcoGPT | ai-search | ip-list | EcoGPT |
 | [ibou-search](robots/ibou-search.md) | ibou | search-engine | both | ibou |
 | [IbouBot](robots/iboubot.md) | ibou | search-engine | both | ibou |
 | [ICC-Crawler](robots/icc-crawler.md) | National Institute of Information and Communications Technology (NICT), Universal Communication Research Institute | research | ip-list | NICT |
 | [IdarusBot](robots/idarusbot.md) | Idarus | search-engine | ip-list | Idarus |
+| [Iframely](robots/iframely.md) | Itteco Software Corp. (Iframely) | social-preview | both | Iframely |
 | [image-crawler](robots/image-crawler.md) | Unknown | unknown | none | - |
 | [InfoTigerBot](robots/infotigerbot.md) | Infotiger UG (haftungsbeschränkt) | search-engine | reverse-dns | InfoTiger |
 | [IsonSearchBot](robots/isonsearchbot.md) | IsonAI (PT Epithre Teknologi Indonesia) | ai-search | ip-list | Ison |
 | [JerryOSINT](robots/jerryosint.md) | unknown | research | none | - |
 | [KakaoBot](robots/kakaobot.md) | Kakao | search-engine | ip-list | Kakao |
+| [KamataBot](robots/kamatabot.md) | Kamata | marketing | web-bot-auth | Kamata |
 | [Keenable-User](robots/keenable-user.md) | Keenable.ai, Inc. | ai-assistant | ip-list | Keenable |
 | [KeenableBot](robots/keenablebot.md) | Keenable.ai, Inc. | ai-search | ip-list | Keenable |
 | [Linespider](robots/linespider.md) | LINE | search-engine | none | Line |
@@ -113,12 +119,14 @@ for adding or updating robots.
 | [NumberLensBot](robots/numberlensbot.md) | unknown | unknown | none | - |
 | [OAI-SearchBot](robots/oai-searchbot.md) | OpenAI | ai-search | ip-list | OpenAI SearchBot |
 | [OctenSearchBot](robots/octensearchbot.md) | Octen | ai-search | web-bot-auth | Octen |
+| [Pandalytics](robots/pandalytics.md) | Domainsbot Inc. | marketing | web-bot-auth | DomainsBot |
 | [Perplexity-User](robots/perplexity-user.md) | Perplexity AI | ai-assistant | ip-list | Perplexity |
 | [PerplexityBot](robots/perplexitybot.md) | Perplexity AI | ai-search | ip-list | Perplexity |
 | [PetalBot](robots/petalbot.md) | Huawei (Petal Search) | search-engine | reverse-dns | PetalBot |
 | [PingdomBot](robots/pingdombot.md) | SolarWinds (Pingdom) | monitoring | ip-list | Pingdom |
 | [Pinterestbot](robots/pinterestbot.md) | Pinterest | social-preview | reverse-dns | Pinterest |
 | [PostHogImageFetcherBot](robots/posthogimagefetcherbot.md) | PostHog | ai-training | web-bot-auth | PostHog |
+| [proximic](robots/proximic.md) | Comscore, Inc. | marketing | web-bot-auth | Comscore |
 | [Qwantbot](robots/qwantbot.md) | Qwant | search-engine | both | Qwant |
 | [RavenCrawler](robots/ravencrawler.md) | Raven Tools (TapClicks, Inc.) | seo | none | - |
 | [Reflectionbot](robots/reflectionbot.md) | Reflection AI | ai-training | both | Reflection |
@@ -126,6 +134,7 @@ for adding or updating robots.
 | [RiverBot](robots/riverbot.md) | River AI Inc. | ai-training | both | River |
 | [RootCrawl](robots/rootcrawl.md) | RootCrawl (operated by DataChaser) | archive | both | RootCrawl |
 | [RyteBot](robots/rytebot.md) | Semrush (formerly Ryte GmbH, acquired by Semrush in 2024) | seo | none | Semrush |
+| [search.marginalia.nu](robots/search.marginalia.nu.md) | Marginalia Search | search-engine | ip-list | Marginalia |
 | [SeekportBot](robots/seekportbot.md) | SISTRIX | search-engine | ip-list | Seekport |
 | [SemanticScholarBot](robots/semanticscholarbot.md) | Allen Institute for AI (Ai2) | research | none | - |
 | [SemrushBot](robots/semrushbot.md) | Semrush | seo | reverse-dns | Semrush |
@@ -152,8 +161,10 @@ for adding or updating robots.
 | [Stripebot](robots/stripebot.md) | Stripe | other | reverse-dns | Stripe |
 | [SubstackContentFetch](robots/substackcontentfetch.md) | Substack | unknown | web-bot-auth | Substack |
 | [TalarionSearchBot](robots/talarionsearchbot.md) | Talarion, Inc. | ai-search | none | - |
+| [threadsearch](robots/threadsearch.md) | threadsearch | search-engine | web-bot-auth | threadsearch |
 | [TikTokSpider](robots/tiktokspider.md) | TikTok (ByteDance), by its user agent; not confirmed by TikTok documentation | unknown | none | TikTok |
 | [trendictionbot](robots/trendictionbot.md) | Trendiction S.A. (Luxembourg) | marketing | none | - |
+| [TruvonBot](robots/truvonbot.md) | Truvon | ai-search | web-bot-auth | Truvon |
 | [Twitterbot](robots/twitterbot.md) | X Corp. (formerly Twitter) | social-preview | both | Twitter |
 | [um-LN](robots/um-ln.md) | Ubermetrics Technologies | marketing | none | Ubermetrics |
 | [UptimeRobot](robots/uptimerobot.md) | UptimeRobot | monitoring | ip-list | Uptime Robot |

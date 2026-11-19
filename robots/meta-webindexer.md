@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: meta-webindexer
   identity: Meta
-last_checked: 2026-11-10
+last_checked: 2026-11-19
 ---
 
 # meta-webindexer
@@ -85,13 +85,35 @@ whois -h whois.radb.net -- '-i origin AS32934' | grep ^route
 It warned that these addresses change often. On 2026-10-15 that query returned 1,091 routes, 59
 once nested ones were removed (50 IPv4, 9 IPv6). No reverse DNS hostname is documented.
 
+Meta's page, checked again on 2026-11-19, says nothing about Web Bot Auth (RFC 9421). Yet
+`https://www.meta.com` publishes a key directory,
+https://www.meta.com/.well-known/http-message-signatures-directory: on 2026-11-19 it held five
+`OKP` / `Ed25519` keys, each `kid` being the key's JWK thumbprint, so a signature's `keyid` finds a
+key either way. The directory signs its own response (`tag="http-message-signatures-directory"`).
+
+According to a comment on Hyperwatch's issue #728, and to a blog post at Tin
+Computer on Meta's Muse agent, the requests signed with these keys carry `Signature-Agent: "https://www.meta.com"`
+and the user agent `meta-webindexer/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)`,
+but do not come from Meta's network: they come from Cloudflare (AS13335), from
+`2606:54c1:1::/48`, with a new address on almost every request. The same report says that the
+`meta-webindexer` requests from Meta's own network are never signed, and that signatures were
+missing entirely on some days (10 and 11 November 2026). Meta does not document any of this.
+
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `meta-webindexer` for both strings. In
-`src/modules/identity.js`, Hyperwatch sets the identity `Meta` for the families
-`meta-externalagent`, `meta-webindexer` and `Hyperlink` when the address is in
-`src/data/meta-ips.json`, the AS32934 routes from RADb written by `node scripts/fetch-ips.js`. In
-Hyperwatch `main` (after 5.4.0) the file holds 59 ranges, the same as the live query on 2026-10-15.
+`@hyperwatch/useragent` 4.1.1, which Hyperwatch 5.7.0 depends on, returns the family
+`meta-webindexer` for both strings. In `src/modules/identity.js`, Hyperwatch sets the identity
+`Meta` for the families `meta-externalagent`, `meta-webindexer` and `Hyperlink` when the address is
+in the published list `src/data/meta-ips.json`, the AS32934 routes from RADb written by
+`node scripts/fetch-ips.js`. In Hyperwatch `main` (after 5.7.0) the file holds 59 ranges (50 IPv4,
+9 IPv6), the same as the live query on 2026-10-15.
+
+In Hyperwatch `main` (after 5.7.0, not released yet), a verified signature of
+`https://www.meta.com` gives the identity `Meta Agent`, whatever the user agent ("signed only",
+checked before the family rules; needs the `webbotauth` module). A signed `meta-webindexer` request
+therefore gets `Meta Agent`, not `Meta`, wherever it comes from. Hyperwatch's pull request #753
+explains the split by the report above: the signed requests do not come from the crawler that Meta's
+addresses identify. Hyperwatch 5.7.0 does not know this signer.
 
 ## Misc
 
@@ -99,9 +121,24 @@ Hyperwatch `main` (after 5.4.0) the file holds 59 ranges, the same as the live q
   and indexing), `meta-externalads` (advertising) and `meta-externalfetcher` (user-requested
   fetches, which may bypass `robots.txt`).
 - Meta's contact for crawler questions is webmasters@meta.com.
+- According to the same comment and blog post, the signed
+  `meta-webindexer` requests are one step of a fetch by Muse, Meta's personal AI agent, of a link
+  a user gave it. The same Cloudflare range sends three requests per link: a `HEAD` with a stock
+  Chrome 138 on Linux user agent, about 10 seconds later the signed `meta-webindexer` `GET`, then,
+  within 2 seconds, a request with the user agent
+  `HatchFeed/1.0 (+https://agent.meta.ai; link preview)`, which also fetches the page's preview
+  images. It reports that Muse never requested `robots.txt`. `https://agent.meta.ai` redirects to
+  `https://muse.ai/` (checked 2026-11-19). Meta's crawler page does not list Muse or HatchFeed.
+  `@hyperwatch/useragent` 4.1.1 parses that user agent as the family `HatchFeed`, for which
+  Hyperwatch has no rule.
 
 ## Sources
 
-- https://developers.facebook.com/docs/sharing/webmasters/web-crawlers (checked 2026-10-15)
+- https://developers.facebook.com/docs/sharing/webmasters/web-crawlers (checked 2026-11-19)
 - https://web.archive.org/web/20251228060335/https://developers.facebook.com/docs/sharing/webmasters/web-crawlers (checked 2026-10-15)
 - whois.radb.net, query `-i origin AS32934` (checked 2026-10-15)
+- https://www.meta.com/.well-known/http-message-signatures-directory (checked 2026-11-19)
+- https://github.com/hyperwatch/hyperwatch/issues/728#issuecomment-6917769244 (checked 2026-11-19)
+- https://tin.computer/blog/meta-muse-hatchfeed-user-agent (checked 2026-11-19)
+- https://agent.meta.ai/ (checked 2026-11-19)
+- https://github.com/hyperwatch/hyperwatch/pull/753 (checked 2026-11-19)

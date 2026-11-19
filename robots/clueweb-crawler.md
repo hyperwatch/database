@@ -12,8 +12,8 @@ verification:
   hostnames: []
 hyperwatch:
   family: ClueWeb-Crawler
-  identity: null
-last_checked: 2026-10-15
+  identity: CMU
+last_checked: 2026-11-19
 ---
 
 # ClueWeb-Crawler
@@ -46,7 +46,7 @@ This matches the string on CMU's crawler page.
 
 ## Observed HTTP headers
 
-Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch does not verify this robot, so other clients using its name may be included.
+Based on dozens of requests seen on 2026-10-15, all paths (`robots.txt` and pages). Hyperwatch didn't verify this robot then (the `CMU` identity came with 5.7.0), so other clients using its name may be included.
 
 | Header | Values (share of requests) |
 |---|---|
@@ -84,8 +84,13 @@ Reverse DNS hostnames:
 
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns the family `ClueWeb-Crawler`. `src/modules/identity.js` has no rule
-for it, so it gets no identity.
+`@hyperwatch/useragent` 4.1.1, which Hyperwatch 5.7.0 depends on, returns the family
+`ClueWeb-Crawler`. Since Hyperwatch 5.7.0, `src/modules/identity.js` sets the identity `CMU` for
+the family `ClueWeb-Crawler` on a forward-confirmed hostname matching `crawl-*.lti.cs.cmu.edu`.
+
+CMU documents no hostname: the pattern follows the names of its crawling servers
+(`crawl-<rack>-<host>.lti.cs.cmu.edu`, according to Hyperwatch's pull request #738), so a server
+named otherwise gets no identity.
 
 ## Misc
 
@@ -95,6 +100,7 @@ for it, so it gets no identity.
 
 ## Sources
 
-- https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/ (checked 2026-10-15)
+- https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/ (checked 2026-11-19)
 - https://arxiv.org/pdf/2211.15848 (checked 2026-10-15)
 - https://crawlconsole.com/web-crawlers/clueweb-crawler (checked 2026-10-15)
+- https://github.com/hyperwatch/hyperwatch/pull/738 (checked 2026-11-19)

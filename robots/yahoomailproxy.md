@@ -13,7 +13,7 @@ verification:
 hyperwatch:
   family: null
   identity: Yahoo
-last_checked: 2026-10-15
+last_checked: 2026-11-19
 ---
 
 # YahooMailProxy
@@ -59,16 +59,33 @@ city), with no date in it: on 2026-10-15 it held 594 prefixes (485 IPv4, 109 IPv
 gave its last modification as 2025-11-15. It does not say which prefixes the proxy uses. No reverse
 DNS hostname or ASN is documented.
 
+Yahoo does not document it, but the proxy also signs requests with Web Bot Auth (RFC 9421), as
+Hyperwatch's list of signers has it: the signer is `https://ecp.yusercontent.com`. The exact
+`Signature-Agent` value it sends is not documented. Its key directory,
+https://ecp.yusercontent.com/.well-known/http-message-signatures-directory, held one `OKP` /
+`Ed25519` key on 2026-11-19, whose `kid` is its JWK thumbprint, so a signature's `keyid` finds it
+either way. The directory signs its own response (`tag="http-message-signatures-directory"`).
+
 ## Hyperwatch
 
-`@hyperwatch/useragent` returns no family for the documented string, and the family
-`YahooMailProxy` for the older one. `src/modules/identity.js` sets the identity `Yahoo` for the
-family `YahooMailProxy` when the reverse DNS hostname ends with `.yahoo.net`.
+`@hyperwatch/useragent` 4.1.1, which Hyperwatch 5.7.0 depends on, returns no family for the
+documented string, and the family `YahooMailProxy` for the older one. `src/modules/identity.js`
+sets the identity `Yahoo` in two ways:
+
+- since Hyperwatch 5.7.0, on a verified signature of `https://ecp.yusercontent.com`, whatever the
+  user agent ("signed only", checked before the family rules; needs the `webbotauth` module);
+- for the family `YahooMailProxy`, when the unconfirmed reverse DNS hostname ends with
+  `.yahoo.net`.
+
+According to Hyperwatch's pull request #732, the proxy's signed requests come through a Cloudflare
+Worker, so only the signature can identify them.
 
 Where it falls short:
 
-- the documented user agent is not recognized, so it never gets an identity;
-- the rule reads the unconfirmed hostname, and the `.yahoo.net` suffix is not documented by Yahoo;
+- the documented user agent is not recognized, so an unsigned request with it never gets an
+  identity;
+- the family rule reads the unconfirmed hostname, and the `.yahoo.net` suffix is not documented by
+  Yahoo;
 - Hyperwatch does not use the ranges on the page or the linked list.
 
 ## Misc
@@ -78,6 +95,9 @@ Where it falls short:
 
 ## Sources
 
-- https://senders.yahooinc.com/mail-proxy-servers/ (checked 2026-10-15)
+- https://senders.yahooinc.com/mail-proxy-servers/ (checked 2026-11-19)
 - https://help.yahoo.com/kb/SLN28749.html (checked 2026-10-15)
+- https://help.yahoo.com/kb/yahoo-mail-proxy-SLN28749.html (checked 2026-11-19)
 - https://geoip.yahoo.net/georeport.csv (checked 2026-10-15)
+- https://ecp.yusercontent.com/.well-known/http-message-signatures-directory (checked 2026-11-19)
+- https://github.com/hyperwatch/hyperwatch/pull/732 (checked 2026-11-19)
