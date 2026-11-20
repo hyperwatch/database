@@ -1,9 +1,9 @@
 ---
 name: academyforinternetresearch.org
-operator: Academy For Internet Research (no organisation or person named)
+operator: Unknown
 website: https://academyforinternetresearch.org
 documentation: https://web.archive.org/web/20250711090029/https://securityscan.academyforinternetresearch.org/
-category: research
+category: unknown
 robots_txt_token: null
 respects_robots_txt: unknown
 verification:
@@ -23,7 +23,8 @@ last_checked: 2026-11-19
 The Academy For Internet Research described itself as "a group of Security Researchers interested in
 making the internet a safer place", whose "security scans help to the advance academic work and the
 study of the internet". It said the data is used "towards research and other programs intended on
-making the Internet safer". Its page names no organisation, institution or person.
+making the Internet safer". Its page names no organisation, institution or person, and neither do
+the domain's registration data nor its certificates (see [Misc](#misc)): the operator is unknown.
 
 That description comes from archived copies of `https://securityscan.academyforinternetresearch.org/`
 (the latest dated 2025-07-11). On 2026-11-19 that address served an unrelated online gambling page,
