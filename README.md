@@ -16,7 +16,7 @@ for adding or updating robots.
 | Robot | Operator | Category | Verification | Hyperwatch identity |
 |---|---|---|---|---|
 | [360Spider](robots/360spider.md) | 360 Search (Qihoo 360) | search-engine | ip-list | 360Spider |
-| [academyforinternetresearch.org](robots/academyforinternetresearch.org.md) | Academy For Internet Research (no organisation or person named) | research | none | - |
+| [academyforinternetresearch.org](robots/academyforinternetresearch.org.md) | Unknown | unknown | none | - |
 | [AdsBot-Google](robots/adsbot-google.md) | Google | marketing | both | Google Special Crawlers |
 | [AhrefsBot](robots/ahrefsbot.md) | Ahrefs | seo | both | Ahrefs |
 | [AhrefsSiteAudit](robots/ahrefssiteaudit.md) | Ahrefs | seo | both | Ahrefs |
@@ -60,7 +60,7 @@ for adding or updating robots.
 | [Cliqzbot](robots/cliqzbot.md) | Cliqz GmbH (shut down in 2020) | search-engine | none | Cliqz |
 | [ClueWeb-Crawler](robots/clueweb-crawler.md) | Carnegie Mellon University (Language Technologies Institute) | research | none | CMU |
 | [coccocbot](robots/coccocbot.md) | Cốc Cốc Company Limited | search-engine | reverse-dns | Coc Coc |
-| [CriminalIP](robots/criminalip.md) | AI SPERA (Criminal IP) | other | reverse-dns | - |
+| [CriminalIP](robots/criminalip.md) | AI SPERA (Criminal IP) | other | none | - |
 | [DataForSeoBot](robots/dataforseobot.md) | DataForSEO | seo | both | DataForSeo |
 | [Dataprovider.com](robots/dataprovider.com.md) | Dataprovider.com | marketing | reverse-dns | Dataprovider.com |
 | [Daum](robots/daum.md) | Kakao (Daum) | search-engine | ip-list | Daum |

@@ -7,9 +7,9 @@ category: other
 robots_txt_token: null
 respects_robots_txt: unknown
 verification:
-  method: reverse-dns
+  method: none
   ip_list: null
-  hostnames: ["security.criminalip.io"]
+  hostnames: []
 hyperwatch:
   family: CriminalIP
   identity: null
