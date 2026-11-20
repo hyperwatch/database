@@ -16,6 +16,7 @@ for adding or updating robots.
 | Robot | Operator | Category | Verification | Hyperwatch identity |
 |---|---|---|---|---|
 | [360Spider](robots/360spider.md) | 360 Search (Qihoo 360) | search-engine | ip-list | 360Spider |
+| [academyforinternetresearch.org](robots/academyforinternetresearch.org.md) | Academy For Internet Research (no organisation or person named) | research | none | - |
 | [AdsBot-Google](robots/adsbot-google.md) | Google | marketing | both | Google Special Crawlers |
 | [AhrefsBot](robots/ahrefsbot.md) | Ahrefs | seo | both | Ahrefs |
 | [AhrefsSiteAudit](robots/ahrefssiteaudit.md) | Ahrefs | seo | both | Ahrefs |
@@ -38,6 +39,7 @@ for adding or updating robots.
 | [Baiduspider](robots/baiduspider.md) | Baidu | search-engine | reverse-dns | Baidu |
 | [Barkrowler](robots/barkrowler.md) | Babbar.tech | seo | both | Babbar |
 | [BelleaireCrawler](robots/belleairecrawler.md) | Unknown | unknown | none | - |
+| [BinaryEdge](robots/binaryedge.md) | Coalition, Inc. | research | both | BinaryEdge |
 | [bingbot](robots/bingbot.md) | Microsoft | search-engine | both | Bing |
 | [BitMoversBot](robots/bitmoversbot.md) | Byte Dev Limited | research | none | - |
 | [bl.uk_lddc_bot](robots/bl.uk_lddc_bot.md) | British Library (UK legal deposit libraries) | archive | none | British Library |
@@ -48,6 +50,7 @@ for adding or updating robots.
 | [Buck](robots/buck.md) | Hypefactors | marketing | none | - |
 | [Bytespider](robots/bytespider.md) | ByteDance | unknown | none | Bytespider |
 | [CCBot](robots/ccbot.md) | Common Crawl Foundation | archive | both | Common Crawl |
+| [CensysInspect](robots/censysinspect.md) | Censys, Inc. | research | ip-list | Censys |
 | [ChatGPT Agent](robots/chatgpt-agent.md) | OpenAI | ai-assistant | web-bot-auth | ChatGPT Agent |
 | [ChatGPT-User](robots/chatgpt-user.md) | OpenAI | ai-assistant | ip-list | ChatGPT |
 | [ClatterLabsSearchBot](robots/clatterlabssearchbot.md) | Unknown | unknown | none | - |
@@ -57,6 +60,7 @@ for adding or updating robots.
 | [Cliqzbot](robots/cliqzbot.md) | Cliqz GmbH (shut down in 2020) | search-engine | none | Cliqz |
 | [ClueWeb-Crawler](robots/clueweb-crawler.md) | Carnegie Mellon University (Language Technologies Institute) | research | none | CMU |
 | [coccocbot](robots/coccocbot.md) | Cốc Cốc Company Limited | search-engine | reverse-dns | Coc Coc |
+| [CriminalIP](robots/criminalip.md) | AI SPERA (Criminal IP) | other | reverse-dns | - |
 | [DataForSeoBot](robots/dataforseobot.md) | DataForSEO | seo | both | DataForSeo |
 | [Dataprovider.com](robots/dataprovider.com.md) | Dataprovider.com | marketing | reverse-dns | Dataprovider.com |
 | [Daum](robots/daum.md) | Kakao (Daum) | search-engine | ip-list | Daum |
@@ -74,7 +78,9 @@ for adding or updating robots.
 | [ExaUser](robots/exauser.md) | Exa | ai-assistant | web-bot-auth | Exa |
 | [facebookexternalhit](robots/facebookexternalhit.md) | Meta | social-preview | ip-list | Facebook |
 | [FlipboardProxy](robots/flipboardproxy.md) | Flipboard | other | none | Flipboard |
+| [ForestEngine](robots/forestengine.md) | F.O.R.E.S.T. L.L.C (Forest) | research | ip-list | Forest |
 | [fyndbot](robots/fyndbot.md) | Fynd | search-engine | none | - |
+| [GenomeCrawlerd](robots/genomecrawlerd.md) | Nokia (Deepfield) | other | ip-list | Deepfield |
 | [github-camo](robots/github-camo.md) | GitHub | other | none | GitHub Camo |
 | [Google Favicon](robots/google-favicon.md) | Google | other | none | Google Proxy |
 | [Google-Agent](robots/google-agent.md) | Google | ai-assistant | ip-list | Google Agent |
@@ -83,6 +89,7 @@ for adding or updating robots.
 | [GoogleImageProxy](robots/googleimageproxy.md) | Google | other | none | Google Proxy |
 | [GooglePlusBot](robots/googleplusbot.md) | Google | social-preview | none | Google Proxy |
 | [GPTBot](robots/gptbot.md) | OpenAI | ai-training | ip-list | OpenAI GPTBot |
+| [HackerTarget](robots/hackertarget.md) | Hacker Target Pty Ltd | research | reverse-dns | HackerTarget |
 | [HaloBot](robots/halobot.md) | HaloScan | seo | ip-list | HaloScan |
 | [HappyApps-WebCheck](robots/happyapps-webcheck.md) | Happy Apps, LLC | monitoring | none | Happy Apps |
 | [heritrix (Image-Meta)](robots/image-meta.md) | Erie Data Systems, LLC | search-engine | none | - |
@@ -96,10 +103,13 @@ for adding or updating robots.
 | [Iframely](robots/iframely.md) | Itteco Software Corp. (Iframely) | social-preview | both | Iframely |
 | [image-crawler](robots/image-crawler.md) | Unknown | unknown | none | - |
 | [InfoTigerBot](robots/infotigerbot.md) | Infotiger UG (haftungsbeschränkt) | search-engine | reverse-dns | InfoTiger |
+| [Infrawatch](robots/infrawatch.md) | Infrawatch Limited | research | none | Infrawatch |
+| [internet-census.org](robots/internet-census.org.md) | Internet Census Group (led by BitSight Technologies, Inc.) | research | reverse-dns | Internet Census |
 | [IsonSearchBot](robots/isonsearchbot.md) | IsonAI (PT Epithre Teknologi Indonesia) | ai-search | ip-list | Ison |
 | [JerryOSINT](robots/jerryosint.md) | unknown | research | none | - |
 | [KakaoBot](robots/kakaobot.md) | Kakao | search-engine | ip-list | Kakao |
 | [KamataBot](robots/kamatabot.md) | Kamata | marketing | web-bot-auth | Kamata |
+| [Kaspersky CEREBRO](robots/kaspersky-cerebro.md) | Kaspersky | other | none | Kaspersky |
 | [Keenable-User](robots/keenable-user.md) | Keenable.ai, Inc. | ai-assistant | ip-list | Keenable |
 | [KeenableBot](robots/keenablebot.md) | Keenable.ai, Inc. | ai-search | ip-list | Keenable |
 | [Linespider](robots/linespider.md) | LINE | search-engine | none | Line |
@@ -150,6 +160,7 @@ for adding or updating robots.
 | [Shap-User](robots/shap-user.md) | Parallel Web Systems | ai-assistant | web-bot-auth | Parallel |
 | [ShapBot](robots/shapbot.md) | Parallel Web Systems | ai-search | ip-list | Parallel |
 | [Shields.io](robots/shields.io.md) | Shields.io (open-source project) | other | none | Shields.io |
+| [Shodan](robots/shodan.md) | Shodan | research | none | Shodan |
 | [Sirportly t.co expander](robots/sirportly.md) | Krystal Hosting Ltd (Sirportly) | other | none | Sirportly |
 | [SiteAuditBot](robots/siteauditbot.md) | Semrush | seo | both | Semrush |
 | [Slackbot-LinkExpanding](robots/slackbot-linkexpanding.md) | Slack | social-preview | none | Slack |
@@ -158,6 +169,7 @@ for adding or updating robots.
 | [Sogou web spider](robots/sogou-web-spider.md) | Sogou | search-engine | none | Sogou |
 | [SpiderFoot](robots/spiderfoot.md) | Intel 471 (SpiderFoot HX); the open-source version is run by its users | other | none | SpiderFoot |
 | [SplitSignalBot](robots/splitsignalbot.md) | Semrush | seo | none | Semrush |
+| [Stretchoid](robots/stretchoid.md) | Microsoft Corporation (by the domain's whois record; not stated on stretchoid.com) | research | none | Stretchoid |
 | [Stripebot](robots/stripebot.md) | Stripe | other | reverse-dns | Stripe |
 | [SubstackContentFetch](robots/substackcontentfetch.md) | Substack | unknown | web-bot-auth | Substack |
 | [TalarionSearchBot](robots/talarionsearchbot.md) | Talarion, Inc. | ai-search | none | - |
@@ -165,6 +177,7 @@ for adding or updating robots.
 | [TikTokSpider](robots/tiktokspider.md) | TikTok (ByteDance), by its user agent; not confirmed by TikTok documentation | unknown | none | TikTok |
 | [trendictionbot](robots/trendictionbot.md) | Trendiction S.A. (Luxembourg) | marketing | none | - |
 | [TruvonBot](robots/truvonbot.md) | Truvon | ai-search | web-bot-auth | Truvon |
+| [TUM GINO](robots/tum-gino.md) | Technical University of Munich (Chair of Network Architectures and Services) | research | both | TUM |
 | [Twitterbot](robots/twitterbot.md) | X Corp. (formerly Twitter) | social-preview | both | Twitter |
 | [um-LN](robots/um-ln.md) | Ubermetrics Technologies | marketing | none | Ubermetrics |
 | [UptimeRobot](robots/uptimerobot.md) | UptimeRobot | monitoring | ip-list | Uptime Robot |
