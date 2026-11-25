@@ -135,6 +135,7 @@ for adding or updating robots.
 | [PetalBot](robots/petalbot.md) | Huawei (Petal Search) | search-engine | reverse-dns | PetalBot |
 | [PingdomBot](robots/pingdombot.md) | SolarWinds (Pingdom) | monitoring | ip-list | Pingdom |
 | [Pinterestbot](robots/pinterestbot.md) | Pinterest | social-preview | reverse-dns | Pinterest |
+| [PoliasBot](robots/poliasbot.md) | Polias | search-engine | ip-list | Polias |
 | [PostHogImageFetcherBot](robots/posthogimagefetcherbot.md) | PostHog | ai-training | web-bot-auth | PostHog |
 | [proximic](robots/proximic.md) | Comscore, Inc. | marketing | web-bot-auth | Comscore |
 | [Qwantbot](robots/qwantbot.md) | Qwant | search-engine | both | Qwant |

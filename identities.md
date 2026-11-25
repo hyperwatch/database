@@ -108,6 +108,7 @@ signature" needs the `webbotauth` module (off by default).
 | PetalBot | `PetalBot` | forward-confirmed hostname `petalbot-*.petalsearch.com` | [PetalBot](robots/petalbot.md) | 2026-11 |
 | Pingdom | `PingdomBot` | forward-confirmed hostname `s*.pingdom.com` or published list | [PingdomBot](robots/pingdombot.md) | 2026-11 |
 | Pinterest | `Pinterest`, `Pinterestbot` | forward-confirmed hostname `crawl-*.pinterest.com` or inline range `54.236.1.0/24` | [Pinterestbot](robots/pinterestbot.md); the parser also returns `Pinterest` for Pinterest's Android and some iOS in-app browsers | 2026-11 |
+| Polias | `PoliasBot` | published list (`poliasbot-ips.json`) | [PoliasBot](robots/poliasbot.md) | - |
 | PostHog | signed only `https://us.posthog.com` | any user agent: verified signature `https://us.posthog.com` | [PostHogImageFetcherBot](robots/posthogimagefetcherbot.md) | 2026-11 |
 | Qwant | `Qwantify`, `Qwantify-dev`, `Qwantbot`, `Qwantbot-news`; hostname only `qwantbot-*.qwant.com` (forward-confirmed) | forward-confirmed hostname `qwantbot-*.qwant.com` or published list | [Qwantbot](robots/qwantbot.md) | 2026-11 |
 | Raven | `Raven` | cloud hostname `.compute-1.amazonaws.com` | none matches: [RavenCrawler](robots/ravencrawler.md) parses as `RavenCrawler` | - |
