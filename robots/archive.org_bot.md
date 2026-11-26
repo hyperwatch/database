@@ -70,6 +70,16 @@ info@archive.org.
 
 None published. No hostnames or ASN are documented.
 
+### Observed
+
+Requests verified as Archive.org with this user agent seen on 2026-11-24 and 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS7941 Internet Archive: `207.241.225.0/24`, `207.241.237.0/24`
+- AS399784 Internet Archive Canada: `204.62.248.0/24`, `204.62.249.0/24`
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the first string as family `archive.org bot` and the second as

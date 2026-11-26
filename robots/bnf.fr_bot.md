@@ -68,6 +68,15 @@ performance suffers can write to robot@bnf.fr.
 
 None published. No hostnames or ASN are documented.
 
+### Observed
+
+Requests verified as BnF.fr with this user agent seen on 2026-11-24 and 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS2200 Renater: `194.199.7.0/24`
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `bnf.fr bot`. In Hyperwatch `main`

@@ -66,6 +66,15 @@ Crawl-delay: 10
 
 None published. Moz documents no IP list, reverse DNS name or ASN.
 
+### Observed
+
+Requests verified as Moz with this user agent seen on 2026-11-24 and 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS23033 Wowrack.com: `216.244.66.0/24`
+
 ## Hyperwatch
 
 With no documented user agent string, the agent family could not be checked with

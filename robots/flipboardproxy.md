@@ -56,6 +56,15 @@ Flipboard does not say whether the proxy reads `robots.txt`. The token above is 
 None published. Flipboard says its requests "currently all originate from the Amazon EC2 cluster",
 without ranges, hostnames or an ASN.
 
+### Observed
+
+Requests verified as Flipboard with this user agent seen on 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS14618 Amazon.com, Inc.: `98.82.104.0/24`, `44.198.88.0/24`, `3.89.188.0/24`
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `FlipboardProxy` for user agents carrying

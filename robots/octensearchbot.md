@@ -72,6 +72,15 @@ https://crawler.octen.ai/.well-known/http-message-signatures-directory: on 2026-
 The directory's own response was signed with both keys. No reverse DNS hostnames or ASN are
 documented.
 
+### Observed
+
+Requests verified as Octen with this user agent seen on 2026-11-24 and 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS8075 Microsoft Corporation: `172.184.242.0/24`
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` 4.1.0 returns the family `OctenSearchBot`. In Hyperwatch 5.6.0,

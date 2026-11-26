@@ -64,6 +64,15 @@ signatures use that thumbprint as their `keyid`. The `Signature-Agent` value is 
 Hyperwatch expects `https://shap-user.parallel.ai`, the directory's origin. No reverse DNS hostnames
 or ASN are documented.
 
+### Observed
+
+Requests verified as Parallel with this user agent seen on 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS203020 HostRoyale Technologies Pvt Ltd: `204.3.100.0/24`
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `Shap-User`. In Hyperwatch 5.6.0,

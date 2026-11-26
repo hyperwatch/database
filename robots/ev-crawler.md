@@ -73,6 +73,15 @@ who would prefer not to be crawled to write to the address on its page.
 
 None published. No hostnames or ASN are documented.
 
+### Observed
+
+Requests verified as Headline with this user agent seen on 2026-11-24 and 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS6939 Hurricane Electric LLC: `2001:470:1::/48`
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `ev-crawler`. In Hyperwatch `main`
