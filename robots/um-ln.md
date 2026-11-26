@@ -57,6 +57,15 @@ The token is taken from the user agent. Whether the robot obeys `robots.txt` is 
 
 None published.
 
+### Observed
+
+Requests verified as Ubermetrics with this user agent seen on 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS24940 Hetzner Online GmbH: `144.76.95.0/24`
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` maps `um-LN` to the family `Ubermetrics`. Hyperwatch sets the identity

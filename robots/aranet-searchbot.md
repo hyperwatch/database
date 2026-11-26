@@ -56,6 +56,15 @@ The token is taken from the user agent. Whether the robot obeys `robots.txt` is 
 
 None published.
 
+### Observed
+
+Requests verified as Aranet with this user agent seen on 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS396982 Google LLC: `34.123.5.0/24`, `34.9.51.0/24`
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `Aranet-SearchBot`. Hyperwatch sets the

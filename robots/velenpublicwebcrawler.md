@@ -57,6 +57,15 @@ Disallow: /
 
 None published. No hostnames or ASN are documented.
 
+### Observed
+
+Requests verified as Velen with this user agent seen on 2026-11-24 and 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS396982 Google LLC: `34.76.233.0/24`, `34.14.92.0/24`, `35.233.53.0/24`, `34.156.142.0/24`, `35.233.45.0/24`, `34.76.148.0/24`, `35.187.45.0/24`, `34.77.147.0/24`, and 11 more
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` parses the string above as family `VelenPublicWebCrawler`. Hyperwatch sets

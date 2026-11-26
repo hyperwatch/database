@@ -66,6 +66,16 @@ https://api.github.com/meta (JSON, one array per service: `hooks`, `web`, `api`,
 `packages`, `importer`, `github_enterprise_importer`, `copilot`, `actions`, `codespaces` and
 others, with no date in the file). None of the arrays is named for Camo.
 
+### Observed
+
+Requests verified as GitHub Camo with this user agent seen on 2026-11-24 and 2026-11-25.
+None of GitHub's arrays is named for Camo; the addresses seen are in these networks and arrays:
+
+- AS8075 Microsoft Corporation: `9.234.98.0/24`, `9.234.106.0/24`, in `9.234.0.0/17` of the
+  `actions` array
+- AS36459 GitHub, Inc.: `140.82.115.0/24`, in `140.82.112.0/20` of the `hooks`, `web`, `api`,
+  `git`, `github_enterprise_importer` and `copilot` arrays
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `github-camo` for user agents starting with

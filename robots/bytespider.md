@@ -94,6 +94,10 @@ Networks this user agent came from. The operator publishes no ranges or hostname
 - AS20012 Interworks Networking Services (not a hosting network: prefixes not listed)
 - AS132892 Cloudflare, Inc.: `2a06:98c0:3600::/48`
 
+Also seen on 2026-11-24, networks not listed above, with the same caveat:
+
+- AS21859 Zenlayer Inc: `2602:ffe4:8::/48`
+
 Reverse DNS hostnames:
 
 - `*.ap-southeast-1.compute.amazonaws.com` (forward-confirmed)

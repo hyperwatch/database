@@ -71,6 +71,15 @@ thumbprint, so a signature's `keyid` finds it either way. Exa's page says the `S
 header identifies Exa without giving the value; Hyperwatch expects
 `"https://images.crawler.exa.ai"`. No reverse DNS hostnames or ASN are documented.
 
+### Observed
+
+Requests verified as Exa with this user agent seen on 2026-11-24 and 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS16509 Amazon.com, Inc.: `44.248.22.0/24`, `32.186.112.0/24`, `34.221.41.0/24`, `54.201.165.0/24`, `35.92.175.0/24`, `35.164.10.0/24`, `16.147.59.0/24`, `35.93.62.0/24`, and 39 more
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `ExaSearchBot-Images`. In Hyperwatch 5.6.0,

@@ -81,6 +81,15 @@ thumbprint. The directory's own response was signed with that key, its `keyid` b
 thumbprint, and carried `Signature-Agent: "https://crawler-key.proximic.com"`. The
 `Signature-Agent` value of the crawler's requests is not documented.
 
+### Observed
+
+Requests verified as Comscore with this user agent seen on 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS14618 Amazon.com, Inc.: `3.85.80.0/24`, `54.167.210.0/24`, `3.84.129.0/24`, `100.30.179.0/24`
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` 4.1.1 parses the user agent as family `proximic`. Since Hyperwatch 5.7.0,

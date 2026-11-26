@@ -60,6 +60,15 @@ request, through its contact form.
 
 None published. Slack documents no IP list, reverse DNS hostname or ASN.
 
+### Observed
+
+Requests verified as Slack with this user agent seen on 2026-11-24 and 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS14618 Amazon.com, Inc.: `13.219.91.0/24`, `44.220.175.0/24`, `44.220.56.0/24`, `54.196.171.0/24`, `44.210.104.0/24`, `34.224.156.0/24`, `13.221.131.0/24`, `54.146.183.0/24`, and 11 more
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` returns the family `Slackbot-LinkExpanding`. `src/modules/identity.js` sets

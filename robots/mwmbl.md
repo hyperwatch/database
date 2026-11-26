@@ -104,6 +104,11 @@ Networks this user agent came from. The operator publishes no ranges or hostname
 - AS20473 The Constant Company, LLC: `216.238.105.0/24`
 - 2 other networks
 
+Also seen on 2026-11-24 and 2026-11-25, networks not listed above, with the same caveat:
+
+- AS24940 Hetzner Online GmbH: `46.224.203.0/24`
+- AS213269 Oulun Seudun Sahko Kuitu Oy (not a hosting network: prefixes not listed)
+
 Reverse DNS hostnames:
 
 - `*.customers.as5482.net` (not forward-confirmed)

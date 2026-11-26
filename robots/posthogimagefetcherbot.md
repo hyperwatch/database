@@ -101,6 +101,15 @@ https://us.posthog.com/.well-known/http-message-signatures-directory: on 2026-11
 `OKP` / `Ed25519` key without a `kid`, and the directory's own signature used the key's JWK
 thumbprint as its `keyid`.
 
+### Observed
+
+Requests verified as PostHog with this user agent seen on 2026-11-24 and 2026-11-25.
+The operator publishes no ranges or hostnames.
+
+Networks:
+
+- AS14618 Amazon.com, Inc.: `44.205.89.0/24`
+
 ## Hyperwatch
 
 `@hyperwatch/useragent` 4.1.0 returns the family `PostHogImageFetcherBot`. In Hyperwatch 5.6.0,
